@@ -1,0 +1,50 @@
+aside .next-btn {
+  position: absolute;
+  font-family: FontAwesome;
+  text-align: center;
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  right: 0;
+  top: 50%;
+  z-index: 2;
+  font-size: 2.8rem;
+  color: gray;
+  -webkit-animation: right-waterfall 1.5s infinite ease-in-out;
+          animation: right-waterfall 1.5s infinite ease-in-out;
+}
+
+aside .next-btn:hover {
+  color: black;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+aside .next-btn:before {
+  content: "\f103";
+}
+
+aside .prev-btn {
+  position: absolute;
+  font-family: FontAwesome;
+  text-align: center;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  left: 0;
+  top: 50%;
+  z-index: 2;
+  font-size: 2.8rem;
+  color: gray;
+  -webkit-animation: left-waterfall 1.5s infinite ease-in-out;
+          animation: left-waterfall 1.5s infinite ease-in-out;
+}
+
+aside .prev-btn:hover {
+  color: green;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+aside .prev-btn:before {
+  content: "\f103";
+}
+/*# sourceMappingURL=sidebar.css.map */

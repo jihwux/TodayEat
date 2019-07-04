@@ -1,0 +1,60 @@
+@-webkit-keyframes right-waterfall {
+  0% {
+    opacity: 0;
+    right: 50px;
+  }
+  50% {
+    opacity: 1;
+    right: 30px;
+  }
+  100% {
+    opacity: 0;
+    right: 0;
+  }
+}
+
+@keyframes right-waterfall {
+  0% {
+    opacity: 0;
+    right: 50px;
+  }
+  50% {
+    opacity: 1;
+    right: 30px;
+  }
+  100% {
+    opacity: 0;
+    right: 0;
+  }
+}
+
+@-webkit-keyframes left-waterfall {
+  0% {
+    opacity: 0;
+    left: 50px;
+  }
+  50% {
+    opacity: 1;
+    left: 30px;
+  }
+  100% {
+    opacity: 0;
+    left: 0;
+  }
+}
+
+@keyframes left-waterfall {
+  0% {
+    opacity: 0;
+    left: 50px;
+  }
+  50% {
+    opacity: 1;
+    left: 30px;
+  }
+  100% {
+    opacity: 0;
+    left: 0;
+  }
+}
+/*# sourceMappingURL=utils.css.map */
