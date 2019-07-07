@@ -81,7 +81,7 @@ article .si-z {
   background-color: orange;
 }
 article .Visual_1 {
-  background-color: #ffe8cc;
+  background-color: #ffe066;
   left: 100%;
 }
 article .Visual_1 .contentMenu {
@@ -90,7 +90,6 @@ article .Visual_1 .contentMenu {
   left: 10%;
   width: 80%;
   height: 70%;
-  border: 1px solid blue;
 }
 article .Visual_1 .contentMenu .card {
   width: 100%;
@@ -119,19 +118,19 @@ article .Visual_1 .contentMenu div.cardContainer div {
   text-align: center;
 }
 article .Visual_1 .contentMenu .red {
-  background-color: green;
+  background-color: #ffe8cc;
 }
 article .Visual_1 .contentMenu .blue {
   background-color: blue;
 }
 article .Visual_1 .contentMenu .yellow {
-  background-color: yellow;
+  background-color: #ffd8a8;
 }
 article .Visual_1 .contentMenu .green {
   background-color: Green;
 }
 article .Visual_1 .contentMenu .skyblue {
-  background-color: skyblue;
+  background-color: #ffc078;
 }
 article .Visual_1 .contentMenu .darkblue {
   background-color: darkblue;
@@ -176,7 +175,8 @@ article .Visual_4 {
 
 .intro {
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 4rem;
+  line-height: 2rem;
 }
 
 /* The Modal (background) */
