@@ -81,7 +81,7 @@ article .si-z {
   background-color: orange;
 }
 article .Visual_1 {
-  background-color: #ffe066;
+  background-color: #f8f9fa;
   left: 100%;
 }
 article .Visual_1 .contentMenu {
@@ -179,7 +179,18 @@ article .Visual_4 {
   line-height: 2rem;
 }
 
-/* The Modal (background) */
+.header-wrap {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffe8cc;
+}
+.header-wrap .header {
+  padding: 3rem;
+  text-align: right;
+  margin-right: 0 auto;
+}
+
 .modal {
   display: none;
   /* Hidden by default */

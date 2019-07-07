@@ -1,4 +1,19 @@
-/* The Modal (background) */
+.header-wrap {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: $oc-orange-1;
+
+  .header {
+    position: absolute;
+    right: 0;
+    padding: 3rem;
+    text-align: right;
+    margin-left: 0 auto;    
+  }
+  
+}
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
