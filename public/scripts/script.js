@@ -75,7 +75,6 @@ $(function(){
   })
   $prevBtnBot.on('click',function(){
   $('.prev-btn').css('display','block');
-
     current += 4
     var currentEI = visual.eq(current);
     currentEI.css({
@@ -88,35 +87,55 @@ $(function(){
   next = 2;
   current = 0
   })
-  $('.prev-btn').css('display','block');
 
    
-      $("#myBtn").click(function() {
-        $("#myModal").fadeIn();
-        $("#modal-content").animate({
+      $("#login").click(function() {
+        $("#login-wrap").fadeIn();
+        $("#login-content").animate({
           top: "30%"
         })
       });
    
       $(".close").click(function() {
-        $("#myModal").fadeOut();
-        $("#modal-content").animate({
+        $("#login-wrap").fadeOut();
+        $("#login-content").animate({
           top : "0"
         });
       });
       
       $("html").click(function(event) {
         if (event.target.id === "myModal") {          
-          $("#myModal").fadeOut();
-          $("#modal-content").animate({
+          $("#login-wrap").fadeOut();
+          $("#login-content").animate({
             top : "0"
           });
         }
-        
       });
 
-    
-        
+      $("#join").click(function() {
+        $("#join-wrap").fadeIn();
+        $("#join-content").animate({
+          top: "30%"
+        })
+      });
+   
+      $(".close").click(function() {
+        $("#join-wrap").fadeOut();
+        $("#join-content").animate({
+          top : "0"
+        });
+      });
+      
+      $("html").click(function(event) {
+        if (event.target.id === "myModal") {          
+          $("#join-wrap").fadeOut();
+          $("#join-content").animate({
+            top : "0"
+          });
+        }
+      });
+
+            
    
    
 });
