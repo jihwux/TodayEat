@@ -14,46 +14,61 @@
         <div id="login-content" class="modal-content">
           <!-- <span class="close">×</span> -->
           <form id="login-form" action="/auth/login" method='post'>
-            <div class="input-group">
-              <label for="email">이메z일</label>
-              <input type="email" name="email" required autofocus>
+            <div class="form-header">
+              <h1>
+                오늘 뭐먹지?
+              </h1>
             </div>
             <div class="input-group">
-              <label for="password">비밀번호</label>
-              <input type="password" name="password" value="" required>
+              <!-- <label for="email">이메일</label> -->
+              <input type="email" name="email" required autofocus placeholder="Email">
+            </div>
+            <div class="input-group">
+              <!-- <label for="password">비밀번호</label> -->
+              <input type="password" name="password" value="" required placeholder="Password">
             </div>
             <% if (loginError) %>
             <div class="error-message">
               <%= loginError %>
             </div>
-            <a href="">회원가입</a>
-            <button type="submit">로그인</button>
+            <div class="form-footer">
+              <button type="submit" class="form-btn login-btn">로그인</button>
+              <button type="submit" class="form-btn kko-btn">카카오 로그인</button>
+            </div>
           </form>
           <% } %>
         </div>
       </div>
 
       <a id="join">회원가입</a>
-      <div id="join-wrap" class="modal"></div>
+      <div id="join-wrap" class="modal" style="display: none;">
         <div id="join-content" class="modal-content">
           <form id="join-form" action="/auth/join" method="post">
+            <div class="form-header">
+                <h1>
+                  오늘 뭐먹지?
+                </h1>
+              </div>
             <div class="input-group">
-              <label for="join-email">이메일</label>
-              <input type="email" name="email" value="">
+              <!-- <label for="join-email">이메일</label> -->
+              <input type="email" name="email" value="" placeholder="Email">
             </div>
             <div class="input-group">
-              <label for="join-email">닉네임</label>
-              <input type="text" name="nick" value="">
+              <!-- <label for="join-email">닉네임</label> -->
+              <input type="text" name="nick" value="" placeholder="Name">
             </div>
             <div class="input-group">
-              <label for="join-email">비밀번호</label>
-              <input type="password" name="password" value="">
+              <!-- <label for="join-email">비밀번호</label> -->
+              <input type="password" name="password" value="" placeholder="Password">
             </div>
-            
-            <button id="join-btn" class="btn" type="submit">회원가입</button>
+            <div class="form-footer">
+                <button type="submit" class="form-btn login-btn">회원가입</button>               
+              </div>
           </form>
         </div>
       </div>
+
+
+
+    </div>
   </div>
-  </div>
-  

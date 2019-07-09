@@ -104,7 +104,7 @@ $(function(){
       });
       
       $("html").click(function(event) {
-        if (event.target.id === "myModal") {          
+        if (event.target.id === "login-wrap") {          
           $("#login-wrap").fadeOut();
           $("#login-content").animate({
             top : "0"
@@ -127,7 +127,7 @@ $(function(){
       });
       
       $("html").click(function(event) {
-        if (event.target.id === "myModal") {          
+        if (event.target.id === "join-wrap") {          
           $("#join-wrap").fadeOut();
           $("#join-content").animate({
             top : "0"
