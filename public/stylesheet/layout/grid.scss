@@ -1,6 +1,5 @@
 @import '../utils.scss';
 
-// postition inital 해제 dispalt block 
 article {
   position: relative;
   width: 100%;
@@ -105,7 +104,7 @@ article {
         -o-transition: all 1.5s;
         padding-top: 80px;
         text-align: center;
-        box-shadow: 10px 10px 5px 0px rgba(255, 232, 204);
+        box-shadow: 10px 10px 5px 0px rgb(255, 232, 204);
       }
 
       .red {
@@ -163,7 +162,7 @@ article {
   }
 
   .Visual_2 {
-    background-color: green;
+    background-color: $oc-gray-0;
     left: 200%;
   }
 
@@ -174,7 +173,7 @@ article {
   }
 
   .Visual_4 {
-    background-color: gray;
+    background-color: $oc-gray-0;
     left: 100%;
     bottom: 100%;
   }
