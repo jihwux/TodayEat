@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>오늘뭐먹지!</title>
+  <title>Document</title>
 </head>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
@@ -21,7 +21,7 @@
       <div>
         <% include header %>
       </div>
-      <section class="si-z" >
+      <section class="si-z" style="display: none;">
         <div class="contentWrap">
           <h1>오늘뭐 <span>먹지?</span><span>!</span></h2>
             <img src="img/food.png" alt="순두부지개/">            
@@ -46,7 +46,8 @@
                 <img src="img/paper.png" alt="가위바위보">
               </div>
               <div class="blue">
-                <a href="#" class="top-btn btn">가위바위보</a>                             
+                <a href="#" class="top-btn btn">가위바위보</a>              
+                
               </div>
             </div>
             <div class="cardContainer">
@@ -69,44 +70,38 @@
           <a href="#"><span class="prev-btn btn"></span></a>
         </aside>
       </div>
-      <div class="Visual_2 si-z" >
+      <div class="Visual_2 si-z">
         <aside>
           <h1>월드컵</h1>
-          <p>승부차기로 이기면 메뉴를 정해 보세요.</p>
-          <!-- <p>게임에 졌다면 음식을 정해주지 않습니다. (다이어트)</p> -->
+          <p>컴퓨터와 가위바위보를 통해 승리하면 랜덤으로 음식을 정해줍니다.</p>
+          <p>게임에 졌다면 음식을 정해주지 않습니다. (다이어트)</p>
           <a href="#"><span class="prev-btn btn"></span></a>
-          <div class="GameContainer">            
-              <div>
-                  <% include ./Game/SoccerGame %>
-                </div>
+          <div class="GameContainer">
+            
             </div>
         </aside>
       </div>
-      <div class="Visual_3 si-z">
-        <aside> 
+      <div class="Visual_3 si-z" style="display: block; left:0 ; top: 0;">
+        <aside>
           <h1>가위바위보게임</h1>
           <p>컴퓨터와 가위바위보를 통해 승리하면 랜덤으로 음식을 정해줍니다.</p>
           <p>게임에 졌다면 음식을 정해주지 않습니다. (다이어트)</p>
           <div class="GameContainer">
-            <div>
-              <% include ./Game/PaperGame %>
-            </div>
+            
           </div>
               <a href="#">
                 <span class="prev-top btn prev-btn"></span>
               </a>
       </aside>
       </div>
-      <div class="Visual_4 si-z" >
+      <div class="Visual_4 si-z">
       <aside>
           <h1>돌림판</h1>
           <p>컴퓨터와 가위바위보를 통해 승리하면 랜덤으로 음식을 정해줍니다.</p>
           <p>게임에 졌다면 음식을 정해주지 않습니다. (다이어트)</p>
         <a href="#"><span class="prev-bot btn prev-btn"></span></a>
         <div class="GameContainer">
-            <div>
-                <% include ./Game/RouletteGame %>
-              </div>
+            
           </div>
       </aside>
       </div>
