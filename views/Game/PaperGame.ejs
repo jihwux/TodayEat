@@ -1,0 +1,34 @@
+  
+  
+  <body class="container">
+
+      <h1 class="center-align">Rock // Paper // Scissors</h1>
+  
+      <div class="row">
+        <div class="game left col s6">     
+          <p class="choose center-align">Choose your weapon:</p>
+          <input type="button" class="col s4" value="Rock" onclick="chooseWeapon('rock');" />
+          <input type="button" class="col s4" value="Paper" onclick="chooseWeapon('paper');" />
+          <input type="button" class="col s4" value="Scissors" onclick="chooseWeapon('scissors');" />
+        </div>
+        <div class="game right col s5">     
+          <table>
+            <th class="center-align">Wins</th>
+            <th class="center-align">Losses</th>
+            <th class="center-align">Ties</th>
+            <tr>
+              <td class="center-align" id="wins">0</td>
+              <td class="center-align" id="losses">0</td>
+              <td class="center-align" id="ties">0</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      
+      <br>
+          
+      <h5 class="center-align" id="choice"></h5>
+      
+      <br>
+      
+      <h5 class="center-align" id="fate"></h5>

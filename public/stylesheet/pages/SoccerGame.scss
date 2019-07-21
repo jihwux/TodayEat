@@ -1,0 +1,82 @@
+
+
+.panel-score{
+  font-size: 30px;
+  margin: 25px;
+}
+.wrap{
+  width: 100%;
+}
+.korea-shots{
+  display: inline-block;
+  width: 45%;
+  text-align: center;
+  background: white;
+}
+.japen-shots{
+  display: inline-block;
+  width: 45%;
+  text-align: center;
+  background: white;
+}
+.score-board{
+  width: 500px;
+  height: 400px;
+  margin: 0 auto;
+}
+.korea-score{
+  width: 45%;
+  float: left;
+  margin-top:20%;
+  text-align: center;
+  font-size: 18px;
+}
+.japen-score{
+  width:45%;
+  float: right;
+  margin-top:20%;
+  text-align: center;
+  font-size: 18px;
+  }
+#score-text{
+  height: 30px;
+  background-color: #fcfcfc;
+  text-align: center;
+  margin-top:60%;
+  border-radius: 10px;
+  border :2px solid steelblue;
+}
+.control-panel{
+  width: 500px;
+  margin: 0 auto;
+  height: 200px;
+}
+.div-korea{
+  width: 50%;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  margin-top:10%;
+}
+.div-japen{
+  width: 50%;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  margin-top:10%;
+}
+button{
+  padding: 20px 40px;
+  border-radius: 10px;
+  background-color: #fcfcfc;
+  border: 1px solid #dddddd;
+}
+button:hover{
+  border : 1px solid steelblue;
+  color: steelblue;
+  transition: 0.8s;
+}
+button:enabled{
+  color: steelblue;
+  font-weight: bold;
+}
