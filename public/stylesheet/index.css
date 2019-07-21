@@ -1,18 +1,184 @@
-/*
-Error: Invalid CP949 character "\xF0"
-        on line 3 of ../../node_modules/open-color/open-color.scss
-        from line 1 of utils.scss
-        from line 1 of layout/grid.scss
-        from line 3 of index.scss
+@charset "UTF-8";
+@import 'base/reset.css';
+@keyframes right-waterfall {
+  0% {
+    opacity: 0;
+    right: 50px;
+  }
+  50% {
+    opacity: 1;
+    right: 30px;
+  }
+  100% {
+    opacity: 0;
+    right: 0;
+  }
+}
+@keyframes left-waterfall {
+  0% {
+    opacity: 0;
+    left: 50px;
+  }
+  50% {
+    opacity: 1;
+    left: 30px;
+  }
+  100% {
+    opacity: 0;
+    left: 0;
+  }
+}
+article {
+  position: relative;
+  width: 100%;
+  height: 960px;
+  overflow: hidden;
+}
+article .contentWrap {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 30%;
+}
+article .contentWrap h1 {
+  font-size: 3.5rem;
+  color: White;
+}
+article .contentWrap span {
+  font-weight: 1000;
+  font-size: 3.8rem;
+  color: saddlebrown;
+}
+article .contentWrap img {
+  padding-top: 20px;
+  width: 150px;
+}
+article section {
+  left: 0;
+}
+article section .info {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+  color: #fff;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+article section .info span {
+  font-family: FontAwesome;
+  margin-right: 5px;
+  vertical-align: middle;
+  font-size: 15px;
+}
+article section .info span:before {
+  content: "";
+}
+article .si-z {
+  width: 100%;
+  height: 960px;
+  position: absolute;
+  background-color: orange;
+}
+article .Visual_1 {
+  background-color: #f8f9fa;
+  left: 100%;
+}
+article .Visual_1 .contentMenu {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  height: 70%;
+}
+article .Visual_1 .contentMenu .card {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 30px 0px;
+}
+article .Visual_1 .contentMenu div.cardContainer {
+  height: 450px;
+  width: 300px;
+  display: inline-block;
+  margin: 2%;
+}
+article .Visual_1 .contentMenu div.cardContainer div {
+  height: inherit;
+  width: inherit;
+  color: #FFF;
+  font-size: 24px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: all 1.5s;
+  -webkit-transition: all 1.5s;
+  -moz-transition: all 1.5s;
+  -o-transition: all 1.5s;
+  padding-top: 80px;
+  text-align: center;
+  box-shadow: 10px 10px 5px 0px #ffe8cc;
+}
+article .Visual_1 .contentMenu .red {
+  background-color: #ffe8cc;
+}
+article .Visual_1 .contentMenu .blue {
+  background-color: blue;
+}
+article .Visual_1 .contentMenu .yellow {
+  background-color: #ffd8a8;
+}
+article .Visual_1 .contentMenu .green {
+  background-color: Green;
+}
+article .Visual_1 .contentMenu .skyblue {
+  background-color: #ffc078;
+}
+article .Visual_1 .contentMenu .darkblue {
+  background-color: darkblue;
+}
+article .Visual_1 .contentMenu div.cardContainer div:last-child {
+  position: relative;
+  top: -530px;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+article .Visual_1 .contentMenu div.cardContainer:hover div:first-child {
+  transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+}
+article .Visual_1 .contentMenu div.cardContainer:hover div:last-child {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+}
+article .Visual_2 {
+  background-color: #f8f9fa;
+  left: 200%;
+}
+article .Visual_3 {
+  background-color: #f8f9fa;
+  left: 100%;
+  top: 100%;
+}
+article .Visual_4 {
+  background-color: #f8f9fa;
+  left: 100%;
+  bottom: 100%;
+}
 
-1: //
-2: //
-3: //  𝗖 𝗢 𝗟 𝗢 𝗥
-4: //  v 1.7.0
-5: //
-6: //  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-7:
-8:
+.intro {
+  text-align: center;
+  padding-top: 4rem;
+  line-height: 2rem;
+}
 
 aside {
   text-align: center;
