@@ -1,100 +1,413 @@
-/*
-Error: Invalid CP949 character "\xF0"
-        on line 3 of ../../node_modules/open-color/open-color.scss
-        from line 1 of utils.scss
-        from line 1 of layout/grid.scss
-        from line 3 of index.scss
+@charset "UTF-8";
+@import 'base/reset.css';
+@keyframes right-waterfall {
+  0% {
+    opacity: 0;
+    right: 50px;
+  }
+  50% {
+    opacity: 1;
+    right: 30px;
+  }
+  100% {
+    opacity: 0;
+    right: 0;
+  }
+}
+@keyframes left-waterfall {
+  0% {
+    opacity: 0;
+    left: 50px;
+  }
+  50% {
+    opacity: 1;
+    left: 30px;
+  }
+  100% {
+    opacity: 0;
+    left: 0;
+  }
+}
+article {
+  position: relative;
+  width: 100%;
+  height: 960px;
+  overflow: hidden;
+}
+article .contentWrap {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 30%;
+}
+article .contentWrap h1 {
+  font-size: 3.5rem;
+  color: White;
+}
+article .contentWrap span {
+  font-weight: 1000;
+  font-size: 3.8rem;
+  color: saddlebrown;
+}
+article .contentWrap img {
+  padding-top: 20px;
+  width: 150px;
+}
+article section {
+  left: 0;
+}
+article section .info {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+  color: #fff;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+article section .info span {
+  font-family: FontAwesome;
+  margin-right: 5px;
+  vertical-align: middle;
+  font-size: 15px;
+}
+article section .info span:before {
+  content: "";
+}
+article .si-z {
+  width: 100%;
+  height: 960px;
+  position: absolute;
+  background-color: orange;
+}
+article .Visual_1 {
+  background-color: #f8f9fa;
+  left: 100%;
+}
+article .Visual_1 .contentMenu {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  height: 70%;
+}
+article .Visual_1 .contentMenu .card {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 30px 0px;
+}
+article .Visual_1 .contentMenu div.cardContainer {
+  height: 450px;
+  width: 300px;
+  display: inline-block;
+  margin: 2%;
+}
+article .Visual_1 .contentMenu div.cardContainer div {
+  height: inherit;
+  width: inherit;
+  color: #FFF;
+  font-size: 24px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: all 1.5s;
+  -webkit-transition: all 1.5s;
+  -moz-transition: all 1.5s;
+  -o-transition: all 1.5s;
+  padding-top: 80px;
+  text-align: center;
+  box-shadow: 10px 10px 5px 0px #ffe8cc;
+}
+article .Visual_1 .contentMenu .red {
+  background-color: #ffe8cc;
+}
+article .Visual_1 .contentMenu .blue {
+  background-color: blue;
+}
+article .Visual_1 .contentMenu .yellow {
+  background-color: #ffd8a8;
+}
+article .Visual_1 .contentMenu .green {
+  background-color: Green;
+}
+article .Visual_1 .contentMenu .skyblue {
+  background-color: #ffc078;
+}
+article .Visual_1 .contentMenu .darkblue {
+  background-color: darkblue;
+}
+article .Visual_1 .contentMenu div.cardContainer div:last-child {
+  position: relative;
+  top: -530px;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+article .Visual_1 .contentMenu div.cardContainer:hover div:first-child {
+  transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+}
+article .Visual_1 .contentMenu div.cardContainer:hover div:last-child {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+}
+article .Visual_2 {
+  background-color: #f8f9fa;
+  left: 200%;
+}
+article .Visual_3 {
+  background-color: #f8f9fa;
+  left: 100%;
+  top: 100%;
+}
+article .Visual_4 {
+  background-color: #f8f9fa;
+  left: 100%;
+  bottom: 100%;
+}
 
-1: //
-2: //
-3: //  𝗖 𝗢 𝗟 𝗢 𝗥
-4: //  v 1.7.0
-5: //
-6: //  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-7: 
-8: 
+.intro {
+  text-align: center;
+  padding-top: 4rem;
+  line-height: 2rem;
+}
 
-Backtrace:
-../../node_modules/open-color/open-color.scss:3
-utils.scss:1
-layout/grid.scss:1
-index.scss:3
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/util.rb:1090:in `rescue in block in find_encoding_error'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/util.rb:1087:in `block in find_encoding_error'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/util.rb:1086:in `each'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/util.rb:1086:in `each_with_index'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/util.rb:1086:in `find_encoding_error'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/util.rb:814:in `check_sass_encoding'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/engine.rb:444:in `check_encoding!'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/engine.rb:400:in `_to_tree'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/engine.rb:321:in `to_tree'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:323:in `block in visit_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:325:in `block (2 levels) in visit_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:325:in `map'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:325:in `block in visit_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:325:in `block (2 levels) in visit_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:325:in `map'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:325:in `block in visit_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:157:in `visit'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:10:in `visit'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/engine.rb:307:in `render_with_sourcemap'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/plugin/compiler.rb:294:in `watch'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/plugin.rb:109:in `method_missing'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/exec/sass_scss.rb:358:in `watch_or_update'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/exec/sass_scss.rb:51:in `process_result'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/exec/base.rb:50:in `parse'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/lib/sass/exec/base.rb:18:in `parse!'
-C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.7.3/bin/sass:13:in `<top (required)>'
-C:/Ruby25-x64/bin/sass:23:in `load'
-C:/Ruby25-x64/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CP949 character \"\xF0\"\A         on line 3 of ../../node_modules/open-color/open-color.scss\A         from line 1 of utils.scss\A         from line 1 of layout/grid.scss\A         from line 3 of index.scss\A \A 1: //\A 2: //\A 3: //  𝗖 𝗢 𝗟 𝗢 𝗥\A 4: //  v 1.7.0\A 5: //\A 6: //  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\A 7: \A 8: "; }
+aside {
+  text-align: center;
+}
+aside h1 {
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+}
+aside p {
+  line-height: 1.5rem;
+}
+
+@keyframes right-waterfall {
+  0% {
+    opacity: 0;
+    right: 50px;
+  }
+  50% {
+    opacity: 1;
+    right: 30px;
+  }
+  100% {
+    opacity: 0;
+    right: 0;
+  }
+}
+@keyframes left-waterfall {
+  0% {
+    opacity: 0;
+    left: 50px;
+  }
+  50% {
+    opacity: 1;
+    left: 30px;
+  }
+  100% {
+    opacity: 0;
+    left: 0;
+  }
+}
+.header-wrap {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1;
+  /* Modal Content */
+  /* The Close Button */
+}
+.header-wrap .header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 0rem;
+  text-align: right;
+}
+.header-wrap .header a {
+  padding: 0.5rem;
+}
+.header-wrap .modal-content {
+  position: absolute;
+  left: 37.5%;
+  top: 0;
+  /* opacity: 0; */
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  padding: 3rem;
+  width: 20%;
+}
+.header-wrap .close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.header-wrap .close:hover,
+.header-wrap .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.header-wrap .form-header {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.header-wrap .input-group {
+  text-align: center;
+  padding: 1rem;
+}
+.header-wrap .input-group input {
+  border: 0;
+  border-bottom: 1px solid #ffe8cc;
+  width: 100%;
+}
+.header-wrap .input-group:nth-child(0) {
+  padding-top: 2rem;
+}
+.header-wrap .form-footer {
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Black w/ opacity */
+}
+
+aside .next-btn {
+  position: absolute;
+  font-family: FontAwesome;
+  text-align: center;
+  transform: rotate(270deg);
+  right: 0;
+  top: 50%;
+  z-index: 2;
+  font-size: 2.8rem;
+  color: gray;
+  animation: right-waterfall 1.5s infinite ease-in-out;
+}
+aside .next-btn:hover {
+  color: black;
+  transition: 1s;
+}
+aside .next-btn:before {
+  content: "";
+}
+aside .prev-btn {
+  position: absolute;
+  font-family: FontAwesome;
+  text-align: center;
+  transform: rotate(90deg);
+  left: 0;
+  top: 50%;
+  z-index: 2;
+  font-size: 2.8rem;
+  color: gray;
+  animation: left-waterfall 1.5s infinite ease-in-out;
+}
+aside .prev-btn:hover {
+  color: green;
+  transition: 1s;
+}
+aside .prev-btn:before {
+  content: "";
+}
+
+.form-btn {
+  border: 0;
+  display: block;
+  border-radius: 4px;
+  padding: 12px 20px;
+  width: 100%;
+  background: #ffc078;
+  box-shadow: 5px 5px 5px 5px #ffe8cc;
+}
+
+.login-btn {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.kko-btn {
+  wdth: 50%;
+  margin: 0 auto;
+  background: #FFDE00 !important;
+  color: #3C1E1E;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.cardContainer img {
+  width: 100px;
+  padding-top: 2rem;
+}
+
+.GameContainer {
+  margin: 0 auto;
+  width: 50%;
+  height: 450px;
+  margin-top: 5rem;
+  background: red;
+}
+
+@keyframes right-waterfall {
+  0% {
+    opacity: 0;
+    right: 50px;
+  }
+  50% {
+    opacity: 1;
+    right: 30px;
+  }
+  100% {
+    opacity: 0;
+    right: 0;
+  }
+}
+@keyframes left-waterfall {
+  0% {
+    opacity: 0;
+    left: 50px;
+  }
+  50% {
+    opacity: 1;
+    left: 30px;
+  }
+  100% {
+    opacity: 0;
+    left: 0;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
