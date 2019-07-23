@@ -381,6 +381,205 @@ aside .prev-btn:before {
   background: red;
 }
 
+th {
+  font-size: 24px;
+}
+
+.choose {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+input {
+  border: 1px solid black;
+  height: 40px;
+  width: 100px;
+}
+
+#wins, #losses, #ties {
+  font-size: 24px;
+}
+
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.box-roulette {
+  position: relative;
+  margin: 50px auto;
+  width: 500px;
+  height: 500px;
+  border: 10px solid #ccc;
+  border-radius: 50%;
+  background: #ccc;
+  overflow: hidden;
+}
+
+.box-roulette .markers {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -25px;
+  width: 0;
+  height: 0;
+  border: 25px solid #fff;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  z-index: 9999;
+}
+
+.box-roulette .roulette {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.box-roulette .item {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  transform-origin: 0 100%;
+}
+
+.box-roulette .label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  white-space: nowrap;
+  transform-origin: 0 0;
+}
+
+.box-roulette .label .text {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+#btn-start {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -50px 0 0 -50px;
+  width: 100px;
+  height: 100px;
+  font-weight: bold;
+  background: #fff;
+  border-radius: 50px;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.panel-score {
+  font-size: 30px;
+  margin: 25px;
+}
+
+.wrap {
+  width: 100%;
+}
+
+.korea-shots {
+  display: inline-block;
+  width: 45%;
+  text-align: center;
+  background: white;
+}
+
+.japen-shots {
+  display: inline-block;
+  width: 45%;
+  text-align: center;
+  background: white;
+}
+
+.score-board {
+  width: 500px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.korea-score {
+  width: 45%;
+  float: left;
+  margin-top: 20%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.japen-score {
+  width: 45%;
+  float: right;
+  margin-top: 20%;
+  text-align: center;
+  font-size: 18px;
+}
+
+#score-text {
+  height: 30px;
+  background-color: #fcfcfc;
+  text-align: center;
+  margin-top: 60%;
+  border-radius: 10px;
+  border: 2px solid steelblue;
+}
+
+.control-panel {
+  width: 500px;
+  margin: 0 auto;
+  height: 200px;
+}
+
+.div-korea {
+  width: 50%;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10%;
+}
+
+.div-japen {
+  width: 50%;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10%;
+}
+
+button {
+  padding: 20px 40px;
+  border-radius: 10px;
+  background-color: #fcfcfc;
+  border: 1px solid #dddddd;
+}
+
+button:hover {
+  border: 1px solid steelblue;
+  color: steelblue;
+  transition: 0.8s;
+}
+
+button:enabled {
+  color: steelblue;
+  font-weight: bold;
+}
+
 @keyframes right-waterfall {
   0% {
     opacity: 0;
