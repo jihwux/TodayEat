@@ -28,6 +28,34 @@
     left: 0;
   }
 }
+@keyframes right-waterfall {
+  0% {
+    opacity: 0;
+    right: 50px;
+  }
+  50% {
+    opacity: 1;
+    right: 30px;
+  }
+  100% {
+    opacity: 0;
+    right: 0;
+  }
+}
+@keyframes left-waterfall {
+  0% {
+    opacity: 0;
+    left: 50px;
+  }
+  50% {
+    opacity: 1;
+    left: 30px;
+  }
+  100% {
+    opacity: 0;
+    left: 0;
+  }
+}
 article {
   position: relative;
   width: 100%;
@@ -235,9 +263,6 @@ aside p {
   padding: 3rem 0rem;
   text-align: right;
 }
-.header-wrap .header a {
-  padding: 0.5rem;
-}
 .header-wrap .modal-content {
   position: absolute;
   left: 37.5%;
@@ -279,6 +304,13 @@ aside p {
 }
 .header-wrap .form-footer {
   text-align: center;
+}
+.header-wrap .form-footer button {
+  cursor: pointer;
+}
+.header-wrap .user-name {
+  display: flex;
+  justify-content: space-between;
 }
 
 .modal {
@@ -375,45 +407,83 @@ aside .prev-btn:before {
 
 .GameContainer {
   margin: 0 auto;
+  position: relative;
   width: 50%;
   height: 450px;
   margin-top: 5rem;
-  background: red;
 }
 
-th {
-  font-size: 24px;
+.rpsGame .grid-btn {
+  width: 100%;
+  position: absolute;
+  bottom: 10%;
+  padding: 1rem;
 }
-
-.choose {
+.rpsGame .grid-btn input {
+  margin: 1rem;
+}
+.rpsGame .game-score table {
+  position: absolute;
+  top: 90%;
+  left: 43%;
+}
+.rpsGame #user-title {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.rpsGame #user-title span {
+  padding: 0rem 14rem;
+}
+.rpsGame .choice {
+  display: flex;
+  text-align: center;
+}
+.rpsGame .choice img {
+  display: flex;
+  margin: 0 auto;
+  width: 200px;
+  height: 150px;
+}
+.rpsGame th {
+  font-size: 12px;
+  font-size: 12px;
+  letter-spacing: 1rem;
+}
+.rpsGame .choose {
   font-size: 24px;
   font-weight: bold;
   margin-top: 15px;
   margin-bottom: 30px;
 }
-
-input {
-  border: 1px solid black;
+.rpsGame input {
   height: 40px;
   width: 100px;
 }
-
-#wins, #losses, #ties {
+.rpsGame #wins, .rpsGame #losses, .rpsGame #ties {
   font-size: 24px;
 }
 
-button {
+.gbtn {
+  border: 0;
+  background: #f1f3f5;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+.gbtn:hover {
+  background: #e9ecef;
+  transition: all 0.1s;
+}
+
+.roulette-game button {
   border: 0;
   margin: 0;
   padding: 0;
 }
-
-.title {
+.roulette-game .title {
   margin-top: 50px;
   text-align: center;
 }
-
-.box-roulette {
+.roulette-game .box-roulette {
   position: relative;
   margin: 50px auto;
   width: 500px;
@@ -423,8 +493,7 @@ button {
   background: #ccc;
   overflow: hidden;
 }
-
-.box-roulette .markers {
+.roulette-game .box-roulette .markers {
   position: absolute;
   left: 50%;
   top: 0;
@@ -437,15 +506,13 @@ button {
   border-bottom-color: transparent;
   z-index: 9999;
 }
-
-.box-roulette .roulette {
+.roulette-game .box-roulette .roulette {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-
-.box-roulette .item {
+.roulette-game .box-roulette .item {
   position: absolute;
   top: 0;
   width: 0;
@@ -453,8 +520,7 @@ button {
   border: 0 solid transparent;
   transform-origin: 0 100%;
 }
-
-.box-roulette .label {
+.roulette-game .box-roulette .label {
   position: absolute;
   left: 0;
   top: 0;
@@ -462,16 +528,14 @@ button {
   white-space: nowrap;
   transform-origin: 0 0;
 }
-
-.box-roulette .label .text {
+.roulette-game .box-roulette .label .text {
   display: inline-block;
   font-size: 20px;
   font-weight: bold;
   line-height: 1;
   vertical-align: middle;
 }
-
-#btn-start {
+.roulette-game #btn-start {
   display: block;
   position: absolute;
   left: 50%;
@@ -486,127 +550,98 @@ button {
   cursor: pointer;
 }
 
-.panel-score {
+.soccer-game .panel-score {
   font-size: 30px;
   margin: 25px;
 }
-
-.wrap {
+.soccer-game .wrap {
   width: 100%;
 }
-
-.korea-shots {
+.soccer-game .korea-shots {
   display: inline-block;
   width: 45%;
   text-align: center;
   background: white;
 }
-
-.japen-shots {
+.soccer-game .japen-shots {
   display: inline-block;
   width: 45%;
   text-align: center;
   background: white;
 }
-
-.score-board {
+.soccer-game .score-board {
   width: 500px;
-  height: 400px;
+  height: 350px;
   margin: 0 auto;
 }
-
-.korea-score {
+.soccer-game .korea-score {
   width: 45%;
   float: left;
   margin-top: 20%;
   text-align: center;
   font-size: 18px;
 }
-
-.japen-score {
+.soccer-game .japen-score {
   width: 45%;
   float: right;
   margin-top: 20%;
   text-align: center;
   font-size: 18px;
 }
-
-#score-text {
+.soccer-game #score-text {
   height: 30px;
   background-color: #fcfcfc;
   text-align: center;
   margin-top: 60%;
   border-radius: 10px;
   border: 2px solid steelblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.control-panel {
+.soccer-game .control-panel {
   width: 500px;
   margin: 0 auto;
   height: 200px;
 }
-
-.div-korea {
+.soccer-game .div-korea {
   width: 50%;
   float: left;
   margin: 0 auto;
   text-align: center;
   margin-top: 10%;
 }
-
-.div-japen {
+.soccer-game .div-japen {
   width: 50%;
   float: left;
   margin: 0 auto;
   text-align: center;
   margin-top: 10%;
 }
-
-button {
+.soccer-game .score-name {
+  display: flex;
+  align-items: center;
+}
+.soccer-game .score-name img {
+  padding: 1rem;
+}
+.soccer-game .panel-name {
+  padding-bottom: 1rem;
+}
+.soccer-game button {
   padding: 20px 40px;
   border-radius: 10px;
   background-color: #fcfcfc;
   border: 1px solid #dddddd;
 }
-
-button:hover {
+.soccer-game button:hover {
   border: 1px solid steelblue;
   color: steelblue;
   transition: 0.8s;
 }
-
-button:enabled {
+.soccer-game button:enabled {
   color: steelblue;
   font-weight: bold;
-}
-
-@keyframes right-waterfall {
-  0% {
-    opacity: 0;
-    right: 50px;
-  }
-  50% {
-    opacity: 1;
-    right: 30px;
-  }
-  100% {
-    opacity: 0;
-    right: 0;
-  }
-}
-@keyframes left-waterfall {
-  0% {
-    opacity: 0;
-    left: 50px;
-  }
-  50% {
-    opacity: 1;
-    left: 30px;
-  }
-  100% {
-    opacity: 0;
-    left: 0;
-  }
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,34 +1,37 @@
-  
-  
-  <body class="container">
+  <div class="rpsGame">
+    <div class="game left col s6">
+      <p class="choose center-align">아래 버튼을 눌러 선택하세요 !</p>
+      <h5 class="center-align" id="user-title">
+        <span>
+          사용자
+        </span>
+        <span>
+          컴퓨터
+        </span>
+      </h5>
+      <h5 class="center-align choice" id="choice" >
 
-      <h1 class="center-align">Rock // Paper // Scissors</h1>
-  
-      <div class="row">
-        <div class="game left col s6">     
-          <p class="choose center-align">Choose your weapon:</p>
-          <input type="button" class="col s4" value="Rock" onclick="chooseWeapon('rock');" />
-          <input type="button" class="col s4" value="Paper" onclick="chooseWeapon('paper');" />
-          <input type="button" class="col s4" value="Scissors" onclick="chooseWeapon('scissors');" />
-        </div>
-        <div class="game right col s5">     
+      </h5>
+      <br>
+      <h5 class="center-align" id="fate"></h5>
+      <div class="grid-btn">
+        <input type="button" class="col s4 gbtn" value="가위" onclick="chooseWeapon('scissors');" />
+        <input type="button" class="col s4 gbtn" value="바위" onclick="chooseWeapon('rock');" />
+        <input type="button" class="col s4 gbtn" value="보" onclick="chooseWeapon('paper');" />
+      </div>
+    </div>
+    <div class="game-score right col s5">     
           <table>
-            <th class="center-align">Wins</th>
-            <th class="center-align">Losses</th>
-            <th class="center-align">Ties</th>
+            <th class="center-align">승리</th>
+            <th class="center-align">패배</th>
+            <th class="center-align">비김</th>
             <tr>
               <td class="center-align" id="wins">0</td>
               <td class="center-align" id="losses">0</td>
               <td class="center-align" id="ties">0</td>
             </tr>
           </table>
-        </div>
-      </div>
-      
-      <br>
-          
-      <h5 class="center-align" id="choice"></h5>
-      
-      <br>
-      
-      <h5 class="center-align" id="fate"></h5>
+    </div>
+  </div>
+
+  <br>

@@ -138,15 +138,19 @@ $(function(){
 
 
 
-
       // papergame
-
-
-
 
    
 });
+
 const arr = ['rock', 'paper', 'scissors'];
+
+// const arr = new Array();
+//  constarr[0].src = '../img/paper_1.png'; 
+//  arr[1].src = '../img/paper_2.png'; 
+//  arr[2].src = '../img/paper_3.png'; 
+  
+
 let rand = "";
 let wins = 0;
 let losses = 0;
@@ -155,7 +159,7 @@ let ties = 0;
 function chooseWeapon(weapon) {
   rand = arr[Math.floor(Math.random() * 3)];
   let choice = document.getElementById("choice");
-  choice.innerHTML = `You chose ${weapon}, computer chose ${rand}.`;
+  choice.innerHTML = `<img src="../img/${weapon}.png"><img src="../img/${rand}.png">`;
   chooseFate(weapon, rand);
 }
 
@@ -164,19 +168,19 @@ function chooseFate(weapon, rand)  {
      weapon === 'paper' && rand === 'rock' ||
      weapon === 'scissors' && rand === 'paper') {
       let fate = document.getElementById("fate");
-      fate.innerHTML = 'You win!';
+      fate.innerHTML = '이겼습니다.';
      tallyUp('win');
   }   
   else if(weapon === 'rock' && rand === 'paper' || 
           weapon === 'paper' && rand === 'scissors' ||
           weapon === 'scissors' && rand === 'rock') {
             let fate = document.getElementById("fate");
-            fate.innerHTML = 'You lose!';
+            fate.innerHTML = '졌습니다.';
     tallyUp('lose'); 
   }   
   else {
     let fate = document.getElementById("fate");
-    fate.innerHTML = 'Push'; 
+    fate.innerHTML = '비겼습니다.'; 
     tallyUp('tie');
   }   
 }

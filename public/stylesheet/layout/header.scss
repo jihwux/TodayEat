@@ -1,4 +1,5 @@
-@import '../utils.scss';
+@import '../base/utils.scss';
+
 
 .header-wrap {
   position: fixed;
@@ -16,9 +17,7 @@
     margin:0 auto;    
     padding: 3rem 0rem;
     text-align: right;
-    a {
-      padding: .5rem;
-    }
+    
   }
 
   /* Modal Content */
@@ -72,7 +71,15 @@
 
   .form-footer {
     text-align: center;
+
+    button {
+      cursor: pointer;
+    }
   }
+.user-name {
+  display: flex;
+  justify-content: space-between;
+}
 }
 
 .modal {

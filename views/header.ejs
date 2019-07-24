@@ -3,13 +3,13 @@
       <div class="profile">
         <% if(user && user.id) { %>
         <div class="user-name">
-          안녕하세요! <%= user.nick %> 님!
+          <span> 안녕하세요! <%= user.nick %> 님!</span>
+          <a href="/auth/logout" id="logout">로그아웃</a>
         </div>
-        <a href="/auth/logout" id="logout">로그아웃</a>
       </div>
       <% } else {%>
 
-      <a href="" id="login">로그인</a>
+      <a href="#" id="login">로그인</a>
       <div id="login-wrap" class="modal">
         <div id="login-content" class="modal-content">
           <!-- <span class="close">×</span> -->
@@ -36,7 +36,6 @@
               <button type="submit" class="form-btn kko-btn">카카오 로그인</button>
             </div>
           </form>
-          <% } %>
         </div>
       </div>
 
@@ -67,6 +66,7 @@
           </form>
         </div>
       </div>
+      <% } %>
 
 
 
