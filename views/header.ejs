@@ -3,12 +3,12 @@
       <div class="profile">
         <% if(user && user.id) { %>
         <div class="user-name">
-          <span> 안녕하세요! <%= user.nick %> 님!</span>
+          <span style="padding-right:57rem;"> 안녕하세요! <%= user.nick %> 님!</span>
           <a href="/auth/logout" id="logout">로그아웃</a>
+          <a href="./myPage" id="logout">마이페이지</a>
         </div>
       </div>
       <% } else {%>
-
       <a href="#" id="login">로그인</a>
       <div id="login-wrap" class="modal">
         <div id="login-content" class="modal-content">

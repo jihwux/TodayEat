@@ -38,4 +38,9 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.get('/myPage', (req, res ) => {
+  res.render('myPage', {title: 'myPage'
+  })
+})
+
 module.exports = router;

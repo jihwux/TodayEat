@@ -144,13 +144,9 @@ $(function(){
 });
 
 const arr = ['rock', 'paper', 'scissors'];
-
-// const arr = new Array();
-//  constarr[0].src = '../img/paper_1.png'; 
-//  arr[1].src = '../img/paper_2.png'; 
-//  arr[2].src = '../img/paper_3.png'; 
+const food = ['김치찌개', '된장찌개', '불고기', '뼈해장국', '짬뽕', '짜장면'];
+const foodSave = [];
   
-
 let rand = "";
 let wins = 0;
 let losses = 0;
@@ -170,6 +166,7 @@ function chooseFate(weapon, rand)  {
       let fate = document.getElementById("fate");
       fate.innerHTML = '이겼습니다.';
      tallyUp('win');
+     foodrand();     
   }   
   else if(weapon === 'rock' && rand === 'paper' || 
           weapon === 'paper' && rand === 'scissors' ||
@@ -185,6 +182,12 @@ function chooseFate(weapon, rand)  {
   }   
 }
 
+function foodrand() {
+  rand = food[Math.floor(Math.random() * 20)];
+  alert(`오늘의 점심은 ${rand} 입니다!`);
+  foodSave.push(rand);
+};
+
 function tallyUp(score) {
   if(score === 'win') {
     let setWins = document.getElementById("wins");
@@ -199,6 +202,8 @@ function tallyUp(score) {
     setTies.innerHTML = ties += 1;
   }
 }
+
+
 // soccergame
 
 var korea = {
