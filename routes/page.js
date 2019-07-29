@@ -38,8 +38,11 @@ router.get('/', (req, res, next) => {
     });
 });
 
-router.get('/myPage', (req, res ) => {
-  res.render('myPage', {title: 'myPage'
+router.get('/mypage', (req, res ) => {
+  res.render('myPage', {
+    title: 'myPage', 
+    user : req.user,
+    loginError: req.flash('loginError')
   })
 })
 

@@ -134,18 +134,13 @@ $(function(){
             top : "0"
           });
         }
-      });
-
-
-
-      // papergame
-
-   
+      }); 
 });
 
+      // papergame
 const arr = ['rock', 'paper', 'scissors'];
-const food = ['김치찌개', '된장찌개', '불고기', '뼈해장국', '짬뽕', '짜장면'];
-const foodSave = [];
+let food = ['김치찌개', '된장찌개', '불고기', '뼈해장국', '짬뽕', '짜장면'];
+let foodSave = [];
   
 let rand = "";
 let wins = 0;
@@ -183,7 +178,7 @@ function chooseFate(weapon, rand)  {
 }
 
 function foodrand() {
-  rand = food[Math.floor(Math.random() * 20)];
+  rand = food[Math.floor(Math.random() * 6)];
   alert(`오늘의 점심은 ${rand} 입니다!`);
   foodSave.push(rand);
 };
@@ -255,10 +250,15 @@ function onJapenShoot(){
     if(soccerGame.jpScoreNumber === 0){
         if(korea.score > japen.score){
           screen("한국팀이 승리했습니다.");
+          foodrand()
         }else if(korea.score < japen.score){
             screen("일본팀이 승리했습니다.")
+          foodrand()
+
         }else{
           screen("비겼습니다.");
+          foodrand()
+
         }
         disabledKrButton(true);
         disabledJpButton(true);
@@ -290,175 +290,167 @@ function disabledJpButton(flag){
    $('.btn-japen').prop('disabled', flag);
 }
  
-$(function(){
-  disabledJpButton(true)
-  disabledKrButton(true)
-        screen(3);
-        window.setTimeout(function(){
-            screen(2);
-          window.setTimeout(function(){
-                  screen(1);
-                  window.setTimeout(function(){
-                     screen('한국팀 부터 시작합니다. !');
-                     disabledKrButton(false)
-            }, 1000);
-          }, 1000);
-        }, 1000);
-    });
 
-    (function($) {
-      $.fn.extend({
-    
-        roulette: function(options) {
-    
-          var defaults = {
-            angle: 0,
-            angleOffset: -45,
-            speed: 5000,
-            easing: "easeInOutElastic",
-          };
-    
-          var opt = $.extend(defaults, options);
-    
-          return this.each(function() {
-            var o = opt;
-    
-            var data = [
-              {
-                color: '#3f297e',
-                text: 'N분의 1'
-              },
-              {
-                color: '#1d61ac',
-                text: '요즘것들'
-              },
-              {
-                color: '#169ed8',
-                text: '도박'
-              },
-              {
-                color: '#209b6c',
-                text: '젓가락'
-              },
-              {
-                color: '#60b236',
-                text: '거북선'
-              },
-              {
-                color: '#efe61f',
-                text: '겁'
-              },
-              {
-                color: '#f7a416',
-                text: 'Day Day'
-              },
-              {
-                color: '#e6471d',
-                text: '호랑나비'
-              },
-              {
-                color: '#dc0936',
-                text: 'Okey Dokey'
-              },
-              {
-                color: '#e5177b',
-                text: '오빠차'
-              },
-              {
-                color: '#be107f',
-                text: 'RESPECT'
-              },
-              {
-                color: '#881f7e',
-                text: '작두'
-              }
-            ];
-    
-            var $wrap = $(this);
-            var $btnStart = $wrap.find("#btn-start");
-            var $roulette = $wrap.find(".roulette");
-            var wrapW = $wrap.width();
-            var angle = o.angle;
-            var angleOffset = o.angleOffset;
-            var speed = o.speed;
-            var esing = o.easing;
-            var itemSize = data.length;
-            var itemSelector = "item";
-            var labelSelector = "label";
-            var d = 360 / itemSize;
-            var borderTopWidth = wrapW;
-            var borderRightWidth = tanDeg(d);
-    
-            for (i = 1; i <= itemSize; i += 1) {
-              var idx = i - 1;
-              var rt = i * d + angleOffset;
-              var itemHTML = $('<div class="' + itemSelector + '">');
-              var labelHTML = '';
-                  labelHTML += '<p class="' + labelSelector + '">';
-                  labelHTML += '	<span class="text">' + data[idx].text + '<\/span>';
-                  labelHTML += '<\/p>';
-    
-              $roulette.append(itemHTML);
-              $roulette.children("." + itemSelector).eq(idx).append(labelHTML);
-              $roulette.children("." + itemSelector).eq(idx).css({
-                "left": wrapW / 2,
-                "top": -wrapW / 2,
-                "border-top-width": borderTopWidth,
-                "border-right-width": borderRightWidth,
-                "border-top-color": data[idx].color,
-                "transform": "rotate(" + rt + "deg)"
-              });
-    
-              var textH = parseInt(((2 * Math.PI * wrapW) / d) * .5);
-    
-              $roulette.children("." + itemSelector).eq(idx).children("." + labelSelector).css({
-                "height": textH + 'px',
-                "line-height": textH + 'px',
-                "transform": 'translateX(' + (textH * 1.3) + 'px) translateY(' + (wrapW * -.3) + 'px) rotateZ(' + (90 + d * .5) + 'deg)'
-              });
-    
-            }
-    
-            function tanDeg(deg) {
-              var rad = deg * Math.PI / 180;
-              return wrapW / (1 / Math.tan(rad));
-            }
-    
-    
-            $btnStart.on("click", function() {
-              rotation();
-            });
-    
-            function rotation() {
-    
-              var completeA = 360 * r(5, 10) + r(0, 360);
-    
-              $roulette.rotate({
-                angle: angle,
-                animateTo: completeA,
-                center: ["50%", "50%"],
-                easing: $.easing.esing,
-                callback: function() {
-                  var currentA = $(this).getRotateAngle();
-    
-                  console.log(currentA);
-    
-                },
-                duration: speed
-              });
-            }
-    
-            function r(min, max) {
-              return Math.floor(Math.random() * (max - min + 1)) + min;
-            }
-    
-          });
-        }
-      });
-    })(jQuery);
-    
-    $(function() {
-    
-      $('.box-roulette').roulette();
-    
-    });
+// $(function(){
+//   disabledJpButton(true)
+//   disabledKrButton(true)
+//         screen(3);
+//         window.setTimeout(function(){
+//             screen(2);
+//           window.setTimeout(function(){
+//                   screen(1);
+//                   window.setTimeout(function(){
+//                      screen('한국팀 부터 시작합니다. !');
+//                      disabledKrButton(false)
+//             }, 1000);
+//           }, 1000);
+//         }, 1000);
+//     });
+
+
+// Create new wheel object specifying the parameters at creation time.
+let theWheel = new Winwheel({
+  'numSegments'  : 8,     // Specify number of segments.
+  'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
+  'textFontSize' : 28,    // Set font size as desired.
+  'segments'     :        // Define segments including colour and text.
+  [
+     {'fillStyle' : '#eae56f', 'text' : 'Prize 1'},
+     {'fillStyle' : '#89f26e', 'text' : 'Prize 2'},
+     {'fillStyle' : '#7de6ef', 'text' : 'Prize 3'},
+     {'fillStyle' : '#e7706f', 'text' : 'Prize 4'},
+     {'fillStyle' : '#eae56f', 'text' : 'Prize 5'},
+     {'fillStyle' : '#89f26e', 'text' : 'Prize 6'},
+     {'fillStyle' : '#7de6ef', 'text' : 'Prize 7'},
+     {'fillStyle' : '#e7706f', 'text' : 'Prize 8'}
+  ],
+  'animation' :           // Specify the animation to use.
+  {
+      'type'     : 'spinToStop',
+      'duration' : 15,
+      'spins'    : 8,
+      'callbackFinished' : alertPrize,
+      'callbackSound'    : playSound,   // Function to call when the tick sound is to be triggered.
+      'soundTrigger'     : 'pin'        // Specify pins are to trigger the sound, the other option is 'segment'.
+  },
+  'pins' :
+  {
+      'number' : 16   // Number of pins. They space evenly around the wheel.
+  }
+});
+
+// -----------------------------------------------------------------
+// This function is called when the segment under the prize pointer changes
+// we can play a small tick sound here like you would expect on real prizewheels.
+// -----------------------------------------------------------------
+let audio = new Audio('tick.mp3');  // Create audio object and load tick.mp3 file.
+
+function playSound()
+{
+  // Stop and rewind the sound if it already happens to be playing.
+  audio.pause();
+  audio.currentTime = 0;
+
+  // Play the sound.
+  audio.play();
+}
+
+// -------------------------------------------------------
+// Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters
+// note the indicated segment is passed in as a parmeter as 99% of the time you will want to know this to inform the user of their prize.
+// -------------------------------------------------------
+function alertPrize(indicatedSegment)
+{
+  // Do basic alert of the segment text.
+  // You would probably want to do something more interesting with this information.
+  alert("You have won " + indicatedSegment.text);
+  foodSave.push(indicatedSegment.text)
+}
+
+// =======================================================================================================================
+// Code below for the power controls etc which is entirely optional. You can spin the wheel simply by
+// calling theWheel.startAnimation();
+// =======================================================================================================================
+let wheelPower    = 0;
+let wheelSpinning = false;
+
+// -------------------------------------------------------
+// Function to handle the onClick on the power buttons.
+// -------------------------------------------------------
+function powerSelected(powerLevel)
+{
+  // Ensure that power can't be changed while wheel is spinning.
+  if (wheelSpinning == false) {
+      // Reset all to grey incase this is not the first time the user has selected the power.
+      document.getElementById('pw1').className = "";
+      document.getElementById('pw2').className = "";
+      document.getElementById('pw3').className = "";
+
+      // Now light up all cells below-and-including the one selected by changing the class.
+      if (powerLevel >= 1) {
+          document.getElementById('pw1').className = "pw1";
+      }
+
+      if (powerLevel >= 2) {
+          document.getElementById('pw2').className = "pw2";
+      }
+
+      if (powerLevel >= 3) {
+          document.getElementById('pw3').className = "pw3";
+      }
+
+      // Set wheelPower var used when spin button is clicked.
+      wheelPower = powerLevel;
+
+      // Light up the spin button by changing it's source image and adding a clickable class to it.
+      document.getElementById('spin_button').src = "./img/spin_on.png";
+      document.getElementById('spin_button').className = "clickable";
+  }
+}
+
+// -------------------------------------------------------
+// Click handler for spin button.
+// -------------------------------------------------------
+function startSpin()
+{
+  // Ensure that spinning can't be clicked again while already running.
+  if (wheelSpinning == false) {
+      // Based on the power level selected adjust the number of spins for the wheel, the more times is has
+      // to rotate with the duration of the animation the quicker the wheel spins.
+      if (wheelPower == 1) {
+          theWheel.animation.spins = 3;
+      } else if (wheelPower == 2) {
+          theWheel.animation.spins = 8;
+      } else if (wheelPower == 3) {
+          theWheel.animation.spins = 15;
+      }
+
+      // Disable the spin button so can't click again while wheel is spinning.
+      document.getElementById('spin_button').src       = "../img/spin_off.png";
+      document.getElementById('spin_button').className = "";
+
+      // Begin the spin animation by calling startAnimation on the wheel object.
+      theWheel.startAnimation();
+
+      // Set to true so that power can't be changed and spin button re-enabled during
+      // the current animation. The user will have to reset before spinning again.
+      wheelSpinning = true;
+  }
+}
+
+// -------------------------------------------------------
+// Function for reset button.
+// -------------------------------------------------------
+function resetWheel()
+{
+  theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
+  theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
+  theWheel.draw();                // Call draw to render changes to the wheel.
+
+  document.getElementById('pw1').className = "";  // Remove all colours from the power level indicators.
+  document.getElementById('pw2').className = "";
+  document.getElementById('pw3').className = "";
+
+  wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
+}
+   

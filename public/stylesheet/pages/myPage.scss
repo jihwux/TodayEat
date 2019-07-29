@@ -1,0 +1,16 @@
+.mypage {
+  background: $oc-gray-2 !important;
+
+
+  .timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top : 10rem;
+  }
+
+  .intro-title {
+    padding: 3rem 0;
+    border-bottom: 2px solid $oc-gray-1;    
+    
+  }
+}
