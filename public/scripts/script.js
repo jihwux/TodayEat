@@ -181,6 +181,16 @@ function foodrand() {
   rand = food[Math.floor(Math.random() * 6)];
   alert(`오늘의 점심은 ${rand} 입니다!`);
   foodSave.push(rand);
+
+  $.ajax({
+    url:"",
+    type: "GET",
+    data: 'JSON',
+    success: function(s) {
+
+    },
+    
+  })
 };
 
 function tallyUp(score) {
@@ -203,7 +213,7 @@ function tallyUp(score) {
 
 var korea = {
   score : 0,
-  percent : 0.75
+  percent : 0.7
 };
 var japen = {
   score : 0,
@@ -310,27 +320,31 @@ function disabledJpButton(flag){
 
 // Create new wheel object specifying the parameters at creation time.
 let theWheel = new Winwheel({
-  'numSegments'  : 8,     // Specify number of segments.
+  'numSegments'  : 12,     // Specify number of segments.
   'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
-  'textFontSize' : 28,    // Set font size as desired.
+  'textFontSize' : 20,    // Set font size as desired.
   'segments'     :        // Define segments including colour and text.
   [
-     {'fillStyle' : '#eae56f', 'text' : 'Prize 1'},
-     {'fillStyle' : '#89f26e', 'text' : 'Prize 2'},
-     {'fillStyle' : '#7de6ef', 'text' : 'Prize 3'},
-     {'fillStyle' : '#e7706f', 'text' : 'Prize 4'},
-     {'fillStyle' : '#eae56f', 'text' : 'Prize 5'},
-     {'fillStyle' : '#89f26e', 'text' : 'Prize 6'},
-     {'fillStyle' : '#7de6ef', 'text' : 'Prize 7'},
-     {'fillStyle' : '#e7706f', 'text' : 'Prize 8'}
+     {'fillStyle' : '#3f297e', 'text' : '된장찌개'},
+     {'fillStyle' : '#1d61ac', 'text' : '불고기'},
+     {'fillStyle' : '#169ed8', 'text' : '김치볶음밥'},
+     {'fillStyle' : '#209b6c', 'text' : '짬뽕'},
+     {'fillStyle' : '#60b236', 'text' : '순대국'},
+     {'fillStyle' : '#efe61f', 'text' : '생선구이'},
+     {'fillStyle' : '#f7a416', 'text' : '스파게티'},
+     {'fillStyle' : '#e6471d', 'text' : '비빔밥'},
+     {'fillStyle' : '#e5177b', 'text' : '어제먹은거'},
+     {'fillStyle' : '#be107f', 'text' : '돈카츠'},
+     {'fillStyle' : '#881f7e', 'text' : '라면'},
+     {'fillStyle' : '#dc0936', 'text' : '냉면'}
   ],
   'animation' :           // Specify the animation to use.
   {
       'type'     : 'spinToStop',
       'duration' : 15,
-      'spins'    : 8,
+      'spins'    : 9,
       'callbackFinished' : alertPrize,
-      'callbackSound'    : playSound,   // Function to call when the tick sound is to be triggered.
+      // 'callbackSound'    : playSound,   // Function to call when the tick sound is to be triggered.
       'soundTrigger'     : 'pin'        // Specify pins are to trigger the sound, the other option is 'segment'.
   },
   'pins' :
@@ -343,17 +357,17 @@ let theWheel = new Winwheel({
 // This function is called when the segment under the prize pointer changes
 // we can play a small tick sound here like you would expect on real prizewheels.
 // -----------------------------------------------------------------
-let audio = new Audio('tick.mp3');  // Create audio object and load tick.mp3 file.
+// let audio = new Audio('tick.mp3');  // Create audio object and load tick.mp3 file.
 
-function playSound()
-{
-  // Stop and rewind the sound if it already happens to be playing.
-  audio.pause();
-  audio.currentTime = 0;
+// function playSound()
+// {
+//   // Stop and rewind the sound if it already happens to be playing.
+//   // audio.pause();
+//   audio.currentTime = 0;
 
-  // Play the sound.
-  audio.play();
-}
+//   // Play the sound.
+//   // audio.play();
+// }
 
 // -------------------------------------------------------
 // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters
@@ -363,7 +377,7 @@ function alertPrize(indicatedSegment)
 {
   // Do basic alert of the segment text.
   // You would probably want to do something more interesting with this information.
-  alert("You have won " + indicatedSegment.text);
+  alert("오늘의 점심은 " + indicatedSegment.text + "입니다!");
   foodSave.push(indicatedSegment.text)
 }
 

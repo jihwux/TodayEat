@@ -41,17 +41,17 @@ function Winwheel(options, drawWheel)
         'drawMode'          : 'code',       // The draw mode. Possible values are 'code', 'image', 'segmentImage'. Default is code which means segments are drawn using canvas arc() function.
         'rotationAngle'     : 0,            // The angle of rotation of the wheel - 0 is 12 o'clock position.
         'textFontFamily'    : 'Arial',      // Segment text font, you should use web safe fonts.
-        'textFontSize'      : 20,           // Size of the segment text.
+        'textFontSize'      : 4,           // Size of the segment text.
         'textFontWeight'    : 'bold',       // Font weight.
         'textOrientation'   : 'horizontal', // Either horizontal, vertical, or curved.
         'textAlignment'     : 'center',     // Either center, inner, or outer.
         'textDirection'     : 'normal',     // Either normal or reversed. In normal mode for horizontal text in segment at 3 o'clock is correct way up, in reversed text at 9 o'clock segment is correct way up.
         'textMargin'        : null,         // Margin between the inner or outer of the wheel (depends on textAlignment).
-        'textFillStyle'     : 'black',      // This is basically the text colour.
+        'textFillStyle'     : 'white',      // This is basically the text colour.
         'textStrokeStyle'   : null,         // Basically the line colour for segment text, only looks good for large text so off by default.
         'textLineWidth'     : 1,            // Width of the lines around the text. Even though this defaults to 1, a line is only drawn if textStrokeStyle specified.
         'fillStyle'         : 'silver',     // The segment background colour.
-        'strokeStyle'       : 'black',      // Segment line colour. Again segment lines only drawn if this is specified.
+        'strokeStyle'       : '',      // Segment line colour. Again segment lines only drawn if this is specified.
         'lineWidth'         : 1,            // Width of lines around segments.
         'clearTheCanvas'    : true,         // When set to true the canvas will be cleared before the wheel is drawn.
         'imageOverlay'      : false,        // If set to true in image drawing mode the outline of the segments will be displayed over the image. Does nothing in code drawMode.
@@ -1960,7 +1960,7 @@ function Pin(options)
         'number'         : 36,       // The number of pins. These are evenly distributed around the wheel.
         'outerRadius'    : 3,        // Radius of the pins which determines their size.
         'fillStyle'      : 'grey',   // Fill colour of the pins.
-        'strokeStyle'    : 'black',  // Line colour of the pins.
+        'strokeStyle'    : '',  // Line colour of the pins.
         'lineWidth'      : 1,        // Line width of the pins.
         'margin'         : 3,        // The space between outside edge of the wheel and the pins.
         'responsive'     : false,    // If set to true the diameter of the pin will resize when the wheel is responsive.

@@ -38,9 +38,9 @@ router.get('/', (req, res, next) => {
     });
 });
 
-router.get('/mypage', (req, res ) => {
-  res.render('myPage', {
-    title: 'myPage', 
+router.get('/mypage', isLoggedIn, (req, res ) => {
+  res.render('mypage', {
+    title: 'mypage', 
     user : req.user,
     loginError: req.flash('loginError')
   })
