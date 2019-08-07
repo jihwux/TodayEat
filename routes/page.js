@@ -46,4 +46,8 @@ router.get('/mypage', isLoggedIn, (req, res ) => {
   })
 })
 
+router.post('/ajax', function(req, res, next){
+
+}) 
+
 module.exports = router;

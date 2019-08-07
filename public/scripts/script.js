@@ -468,3 +468,20 @@ function resetWheel()
   wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
 }
    
+// var testArr = ['a','b'];
+
+$('body').click(function() {
+$.ajax({
+  url:"/ajax",
+  dataType: 'JSON',
+  type: "POST",
+  success: function(s) {
+    // alert('a')
+    console.log('aa')
+  },
+  error: function(e){
+    // alert('error');
+    console.log('error')
+  }
+});
+})
