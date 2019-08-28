@@ -471,17 +471,18 @@ function resetWheel()
 // var testArr = ['a','b'];
 
 $('body').click(function() {
+  var alldata = ["A","B"]
 $.ajax({
   url:"/ajax",
   dataType: 'JSON',
-  type: "POST",
-  success: function(s) {
-    // alert('a')
-    console.log('aa')
+  type: "GET",
+  data: alldata,
+  success: function(data) {
+    alert('a')
+    console.log("aa")
   },
   error: function(e){
-    // alert('error');
-    console.log('error')
+    alert('error');
   }
 });
 })

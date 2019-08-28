@@ -46,8 +46,12 @@ router.get('/mypage', isLoggedIn, (req, res ) => {
   })
 })
 
-router.post('/ajax', function(req, res, next){
-
+router.get('/ajax', function(req, res, next){
+  res.render('ajax', {
+    be : req.alldata
+  })
 }) 
 
+
+//mypage로 바꿔야함 ajax를 mypage에서 렌더를 해야..
 module.exports = router;

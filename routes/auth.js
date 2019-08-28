@@ -26,7 +26,7 @@ router.post('/join', isNotLoggedIn, async (req, res, next) => {
     return next(error);
   }
 });
-
+//foodsave DB 작성
 router.post('/login', isNotLoggedIn, (req, res, next) => {
   passport.authenticate('local', (authError, user, info) => {
     if (authError) {
