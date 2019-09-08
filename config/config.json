@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "0000",
-    "database": "nodebird",
+    "database": "randfood",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
@@ -22,3 +22,5 @@
     "dialect": "mysql"
   }
 }
+
+
