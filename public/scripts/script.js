@@ -470,19 +470,19 @@ function resetWheel()
    
 // var testArr = ['a','b'];
 
-$('body').click(function() {
-  var alldata = ["A","B"]
-$.ajax({
-  url:"/ajax",
-  dataType: 'JSON',
-  type: "GET",
-  data: alldata,
-  success: function(data) {
-    alert('a')
-    console.log("aa")
-  },
-  error: function(e){
-    alert('error');
-  }
-});
-})
+// $('body').click(function() {
+//   var alldata = ["A","B"]
+// $.ajax({
+//   url:"/ajax",
+//   dataType: 'JSON',
+//   type: "GET",
+//   data: alldata,
+//   success: function(data) {
+//     alert('a')
+//     console.log("aa")
+//   },
+//   error: function(e){
+//     alert('error');
+//   }
+// });
+// })

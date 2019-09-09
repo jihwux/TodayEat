@@ -3,14 +3,15 @@ const path = require('path');
 const fs = require('fs');
 
 const { Foodsave , User } = require('../models');
-const { isLoggedIn } = require('./middlewares');
+const { isNotLoggedIn } = require('./middlewares');
 
 const router = express.Router();
 
-router.foodsave('/', isLoggedIn , async (req, res, next) => {
+router.get('/randfod', isNotLoggedIn , async (req,  next) => {
+  const { food  } = req.body;
   try {
-    const foodsave = await foodsave.create({
-      food: req.body.food,
+     await foodsave.create({
+      food 
     });
   } catch(error) {
     console.error(error);

@@ -1,6 +1,6 @@
 const express = require('express');
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
-const { Post, User } = require('../models');
+const { Post, User, foodsave } = require('../models');
 
 const router = express.Router();
 
@@ -51,6 +51,8 @@ router.get('/ajax', function(req, res, next){
     be : req.alldata
   })
 }) 
+
+
 
 
 //mypage로 바꿔야함 ajax를 mypage에서 렌더를 해야..
