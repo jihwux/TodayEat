@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => (
   sequelize.define('foodsave', {
     food: {
       type: DataTypes.STRING(30),
-      allowNull: false,
+      // allowNull: true,
     },    
   }, {
     timestamps: true,
