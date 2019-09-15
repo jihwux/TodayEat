@@ -4,6 +4,10 @@ module.exports = (sequelize, DataTypes) => (
       type: DataTypes.STRING(30),
       // allowNull: true,
     },    
+    userId: {
+      type: DataTypes.STRING(30),
+      // allowNull: true,
+    },    
   }, {
     timestamps: true,
     paranoid: true,

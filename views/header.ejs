@@ -1,5 +1,4 @@
   <div class="header-wrap">
-      <span style="padding-right:57rem;"> 안녕하세요! <%= foodsaves %> 님!</span>
     
     <div class="header">
       <div class="profile">
@@ -83,4 +82,19 @@
         <button type="submit" class="form-btn login-btn">음식보내기</button>               
       </form>
     </div>
+
+    <% if(twit != null && twit.length > 0){ %>
+      <ul class="band-club-list">
+        <% for ( var i = 0; i < twit.length; i++){ %>
+          <!-- href를 이용해서 페이지 이동시  data-ajax="false" 를 추가해줘야 함. 그렇지 않으면 ajax형태로 가져온 데이터(화면)을 추가함.-->
+          
+            <h2><%= twit[i].foods %></h2></a>
+          <span style="padding-right:57rem;"> 안녕하세요! <%= foodsave.food %> 님!</span>
+
+          </li>
+        <% } %>
+      </ul>
+      <% }else{ %>
+      <p>가입한 클럽이 없습니다. 아래에 표시된 네이버밴드 중 하나를 선택해주세요.</p>
+      <% } %>
   </div>

@@ -24,10 +24,10 @@ router.get('/', (req, res, next) => {
     },
     order: [['createdAt', 'DESC']],
   })
-    .then((posts) => {
+    .then((food) => {
       res.render('index', {
         title: 'NodeBird',
-        twits: posts,
+        twit: food,
         user: req.user,
         loginError: req.flash('loginError'),
       });
@@ -38,27 +38,6 @@ router.get('/', (req, res, next) => {
     });
 });
 
-router.get('/', (req, res, next) => {
-  Foodsave.findAll({
-    include: {
-      model: User,
-      attributes: ['id', 'nick'],
-    },
-    order: [['createdAt', 'DESC']],
-  })
-    .then((foodsaves) => {
-      res.render('main', {
-        title: 'NodeBird',
-        foods: foodsaves,
-        user: req.user,
-        loginError: req.flash('loginError'),
-      });
-    })
-    .catch((error) => {
-      console.error(error);
-      next(error);
-    });
-});
 
 router.get('/mypage', isLoggedIn, (req, res ) => {
   res.render('mypage', {

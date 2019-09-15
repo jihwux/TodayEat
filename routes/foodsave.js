@@ -4,18 +4,22 @@ const fs = require('fs');
 
 const { Foodsave, User } = require('../models');
 const { isNotLoggedIn } = require('./middlewares');
+const { isLoggedIn } = require('./middlewares');
 
 const router = express.Router();
 
-router.post('/foodsave', isNotLoggedIn , async (req, res,  next) => {
-  // const { food } = req.body;
+router.post('/foodsave', isLoggedIn , async (req, res,  next) => {
+  const { food } = req.body;
   try {
      await Foodsave.create({      
       food: req.body.food,
-      userId: req.user.id,
-
+      // userId: req.user.id,
     });
     res.redirect('/');
+    return res.render('index', {
+      twit: food
+    });
+
   } catch(error) {
     console.error(error);
     next(error);
