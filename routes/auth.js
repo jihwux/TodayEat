@@ -2,7 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
-const { User, foodsave } = require('../models');
+const { User, Foodsave } = require('../models');
 
 const router = express.Router();
 
@@ -67,11 +67,11 @@ router.get('/kakao/callback', passport.authenticate('kakao', {
 });
 
 router.post('/randfod', isNotLoggedIn , async (req, res, next) => {
-  const { email } = req.body;
+  const { food } = req.body;
   try {
     
-     const foodsave = await User.create({      
-      email
+     const foodsave = await foodsave.create({      
+      food
 
     });
     res.redirect('/');
