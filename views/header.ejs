@@ -1,6 +1,4 @@
   <div class="header-wrap">
-      <span style="padding-right:57rem;"> 안녕하세요! <%= foodsaves %> 님!</span>
-    
     <div class="header">
       <div class="profile">
         <% if(user && user.id) { %>
@@ -74,10 +72,10 @@
 
     </div>
     <div>
-      <form action="/foodsave/foodsave" method="POST">
+      <form action="/auth/randfod" method="post">
         <div class="form-group">
           <label for="username">이메일</label>
-          <input type="text" name="food" value="" placeholder="Email">
+          <input type="text" name="email" value="" placeholder="Email">
           <span class="login-icon1"><i class="material-icons">mail_outline</i></span>
         </div>
         <button type="submit" class="form-btn login-btn">음식보내기</button>               

@@ -14,7 +14,7 @@ db.Post = require('./post')(sequelize, Sequelize);
 db.Hashtag = require('./hashtag')(sequelize, Sequelize);
 db.Foodsave = require('./foodsave')(sequelize, Sequelize);
 
-db.User.hasMany(db.Foodsave);
+db.User.hasMany(db.Post);
 db.Post.belongsTo(db.User);
 db.Foodsave.belongsTo(db.User);
 db.Post.belongsToMany(db.Hashtag, { through: 'PostHashtag' });

@@ -1,11 +1,11 @@
 const express = require('express');
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
-const { Post, User, Foodsave } = require('../models');
+const { Post, User, foodsave } = require('../models');
 
 const router = express.Router();
 
 router.get('/profile', isLoggedIn, (req, res) => {
-  // res.render('profile', { title: '내 정보 - NodeBird', user: req.user });
+  res.render('profile', { title: '내 정보 - NodeBird', user: req.user });
 });
 
 router.get('/join', isNotLoggedIn, (req, res) => {
@@ -28,28 +28,6 @@ router.get('/', (req, res, next) => {
       res.render('index', {
         title: 'NodeBird',
         twits: posts,
-        user: req.user,
-        loginError: req.flash('loginError'),
-      });
-    })
-    .catch((error) => {
-      console.error(error);
-      next(error);
-    });
-});
-
-router.get('/', (req, res, next) => {
-  Foodsave.findAll({
-    include: {
-      model: User,
-      attributes: ['id', 'nick'],
-    },
-    order: [['createdAt', 'DESC']],
-  })
-    .then((foodsaves) => {
-      res.render('main', {
-        title: 'NodeBird',
-        foods: foodsaves,
         user: req.user,
         loginError: req.flash('loginError'),
       });
