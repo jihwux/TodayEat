@@ -66,19 +66,5 @@ router.get('/kakao/callback', passport.authenticate('kakao', {
   res.redirect('/');
 });
 
-router.post('/randfod', isNotLoggedIn , async (req, res, next) => {
-  const { food } = req.body;
-  try {
-    
-     const foodsave = await foodsave.create({      
-      food
-
-    });
-    res.redirect('/');
-  } catch(error) {
-    console.error(error);
-    next(error);
-  }
-})
 
 module.exports = router;

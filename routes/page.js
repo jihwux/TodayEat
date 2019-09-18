@@ -16,18 +16,24 @@ router.get('/join', isNotLoggedIn, (req, res) => {
   });
 });
 
+// router.get('/', (req, res, next) => {
+//   res.render('index', {
+  
+//   user: req.user,
+//   loginError: req.flash('loginError'),
+// })
+// })
 router.get('/', (req, res, next) => {
-  Post.findAll({
-    include: {
-      model: User,
-      attributes: ['id', 'nick'],
-    },
-    order: [['createdAt', 'DESC']],
+  User.findAndCountAll({
+    include: [
+    { model: Foodsave, where: { userId: true }}
+  ]
   })
-    .then((food) => {
+    .then((foodsaves) => {
       res.render('index', {
-        title: 'NodeBird',
-        twit: food,
+        // title: 'NodeBird',
+        foodsave: req.food,
+        twit : foodsaves,
         user: req.user,
         loginError: req.flash('loginError'),
       });
@@ -47,14 +53,6 @@ router.get('/mypage', isLoggedIn, (req, res ) => {
   })
 })
 
-router.get('/ajax', function(req, res, next){
-  res.render('ajax', {
-    be : req.alldata
-  })
-}) 
 
 
-
-
-//mypage로 바꿔야함 ajax를 mypage에서 렌더를 해야..
 module.exports = router;

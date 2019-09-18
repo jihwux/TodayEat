@@ -8,16 +8,16 @@ const { isLoggedIn } = require('./middlewares');
 
 const router = express.Router();
 
-router.post('/foodsave', isLoggedIn , async (req, res,  next) => {
+router.post('/foodsave', isLoggedIn , async (req, res,  next, id) => {
   const { food } = req.body;
   try {
-     await Foodsave.create({      
+    const foodsave = await Foodsave.create({      
       food: req.body.food,
-      // userId: req.user.id,
+      userId: req.user.id,
     });
     res.redirect('/');
     return res.render('index', {
-      twit: food
+      foodsave: food
     });
 
   } catch(error) {
