@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => (
     },
     nick: {
       type: DataTypes.STRING(15),
-      allowNull: false,
+      allowNull: true,
     },
     password: {
       type: DataTypes.STRING(100),
@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => (
     },
     provider: {
       type: DataTypes.STRING(10),
-      allowNull: false,
+      allowNull: true,
       defaultValue: 'local',
     },
     snsId: {

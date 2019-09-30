@@ -2,6 +2,12 @@
   img {
     width: 100px;
     padding-top: 2rem;
+    padding-bottom: 6rem;
+  }
+  p {
+    width: 80%;
+    margin: auto;
+    line-height: 2rem;
   }
 }
 
@@ -10,6 +16,6 @@
   position: relative;
   width: 50%;
   height: 450px;
-  margin-top: 5rem;
+  margin-top: 3rem;
   // background: $oc-gray-2;
 }

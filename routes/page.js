@@ -1,6 +1,6 @@
 const express = require('express');
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
-const { Post, User, Foodsave } = require('../models');
+const {  User, Foodsave } = require('../models');
 
 const router = express.Router();
 
@@ -16,19 +16,28 @@ router.get('/join', isNotLoggedIn, (req, res) => {
   });
 });
 
-router.get('/', (req, res, next) => {
-  Post.findAll({
-    include: {
+
+router.get('/', (req,res) => {
+  res.render('index', {
+    user: req.user,
+    loginError: req.flash('loginError'),    
+  });
+});
+
+
+
+router.get('/mypage', isLoggedIn, (req, res, next) => {
+    Foodsave.findAll({
+    include: [{
       model: User,
-      attributes: ['id', 'nick'],
-    },
-    order: [['createdAt', 'DESC']],
+      where: { id: req.user && req.user.id  },      
+    }],
   })
-    .then((food) => {
-      res.render('index', {
-        title: 'NodeBird',
-        twit: food,
+    .then((foods) => {
+      res.render('mypage', {
+        twit : foods,
         user: req.user,
+        foodsave : req.food,
         loginError: req.flash('loginError'),
       });
     })
@@ -38,23 +47,30 @@ router.get('/', (req, res, next) => {
     });
 });
 
+// try {
+  //   const user = await User.findOne({ where: { id: req.decoded.id } });
+  //   let foods = [];
+  //   if (user){
+  //       foods = await user.getFoods({ include: [{ model: User }] });
+  //   // const foods = await Foodsave.getFoods({
+  //   //   include: {
+  //   //     model: User,              
+  //   //   },
+  //   // })
+  // }
+  //    return res.render('mypage', {
+  //       twit: foods,
+  //       user: req.user,
+  //       loginError: req.flash('loginError'),
+  //     });
+  //   } catch(error) {
+  //     console.error(error);
+  //     next(error);
+  //   }
+  // });
 
-router.get('/mypage', isLoggedIn, (req, res ) => {
-  res.render('mypage', {
-    title: 'mypage', 
-    user : req.user,
-    loginError: req.flash('loginError')
-  })
-})
-
-router.get('/ajax', function(req, res, next){
-  res.render('ajax', {
-    be : req.alldata
-  })
-}) 
 
 
 
 
-//mypage로 바꿔야함 ajax를 mypage에서 렌더를 해야..
 module.exports = router;

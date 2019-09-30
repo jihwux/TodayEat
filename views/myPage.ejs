@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="./stylesheet/index.css">
 
 <body>
@@ -21,16 +22,70 @@
   <div class="mypage si-z">
     <div class="timeline">
       <div class="intro-title">
-        <h1 class="">점심 메뉴 고른 기록</h1>
+        <h1 class="">점심 메뉴 기록</h1>
     </div>
       <div class="content">
+          <table class="table table-striped table-hover">
+              <thead>
+                <tr style="background:  lightslategrey">
+                  <th width="10%">번호</th>
+                  <th width="50%">음식</th>
+                  <th width="10%">닉네임</th>
+                  <th width="20%">식사일</th>
+                  <!-- <th width="10%">칼로리</th> -->
+                </tr>
+              </thead>
+              <tbody>
+            <% if(user && user.id)  {%>                
+              <% for(var i=0; i < twit.length; i++) { %>
+                  <tr>
+                    <td id="title"><%= twit[i].id %></td>                                            
+                    <td id="title"><%= twit[i].food %></td>                                                                
+                    <td id="title"><%= user.nick %></td>
+                    <td id="title"><%= twit[i].moment %></td>
+                  <tr>
+             <% } %>
+             <% } %>
+              </tbody>
+            </table>
+      
+      
         
+
+
+        
+            
+
+
+
+
+                <!-- <form action="/foodsave/<%=user.id%>?_method=DELETE" method="post">
+                  <td><input type="submit" value="삭제하기"></input></td>
+              </form> -->
+
+            
+
+
+                    
+                          
+          
+
+                <!-- if user.Followers
+        for follower in user.Followers -->
       </div>
     </div>
   </div>
 </article>
 </body>
-
+<!-- <form action="/foodsave/foodsave" method="POST">
+          <div class="form-group">
+            <label for="username">이메일</label>
+            <input type="text" name="food" value="" placeholder="Email">
+            <span class="login-icon1"><i class="material-icons">mail_outline</i></span>
+          </div>
+          <button type="submit" class="form-btn login-btn">음식보내기</button>               
+        </form>
+      </div> -->
 
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>

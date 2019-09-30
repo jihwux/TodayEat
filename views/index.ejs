@@ -20,10 +20,10 @@
       <div>
         <% include header %>
       </div>
-      <section class="si-z" >
+      <section class="si-z">
         <div class="contentWrap">
           <h1>오늘뭐 <span>먹지?</span><span>!</span></h2>
-            <img src="img/food.png" alt="순두부지개/">            
+            <img src="img/food.png" alt="순두부지개/">
         </div>
         <aside>
           <a href="#"><span class="next-btn btn"></span></a>
@@ -32,8 +32,8 @@
           <span>본 웹사이트는 크롬브라우저 및 데스크톱 환경에 최적화 되어있습니다.</span>
         </div>
       </section>
-      <div class="Visual_1 si-z" style="display: none;">
-          
+      <div class="Visual_1 si-z">
+
         <div class="intro">
           <h2>게임을 통해 점심을 정해보세요 !</h2>
           <p>총 3가지의 게임이 있습니다.</p>
@@ -44,24 +44,32 @@
               <div class="red">
                 <p>가위바위보</p>
                 <img src="img/rpsGame.png" alt="가위바위보">
+                <p><small>가위바위보 게임에 이겨서 <br>점심 메뉴를 정해보세요!</small> </p>
               </div>
-              <div class="blue">
-                <a href="#" class="top-btn btn">가위바위보</a>                             
+              <div class="skyblue">
+                <a href="#" class="top-btn btn">시작하기</a>
               </div>
             </div>
             <div class="cardContainer">
               <div class="yellow">
-                  <p>돌림판</p>
+                <p>돌림판</p>
                 <img src="img/roulette.png" alt="룰렛">
+                <p><small>음식이 담긴 룰렛을 돌려서 <br>점심 메뉴를 정해보세요!</small> </p>
               </div>
-              <div class="blue"><a href="#" class="bot-btn btn">돌려돌려돌림판</a></div>
+              <div class="yellow"><a href="#" class="bot-btn btn">시작하기</a></div>
             </div>
             <div class="cardContainer">
               <div class="skyblue">
-                  <p>월드컵</p>
+                <p>축구</p>
                 <img src="img/banquet-table.png" alt="음식월드컵">
+                <p><small>승부차기를 이겨서 <br>점심 메뉴를 정해보세요!</small> </p>
               </div>
-              <div class="blue"><a href="#" class="next-btn btn">바로가기</a></div>
+              <div class="red">
+                <a href="#" class="next-btn btn">시작하기</a>
+                
+                <!-- <p><small>음식이 담긴 룰렛을 돌려서 <br>점심 메뉴를 정해보세요!</small> </p> -->
+                
+              </div>
             </div>
           </div>
         </div>
@@ -69,54 +77,55 @@
           <a href="#"><span class="prev-btn btn"></span></a>
         </aside>
       </div>
-          <div class="Visual_2 si-z" >
+      <div class="Visual_2 si-z">
         <aside>
-          <h1>월드컵</h1>
-          <p>승부차기로 이기면 메뉴를 정해 보세요.</p>
+          <h1>축구</h1>
+          <p>승부차기로 이기서 메뉴를 정해 보세요.</p>
+          <p>아래 슛 버튼으로 눌러 시작할 수 있습니다.</p>
           <!-- <p>게임에 졌다면 음식을 정해주지 않습니다. (다이어트)</p> -->
           <a href="#"><span class="prev-btn btn"></span></a>
-          <div class="GameContainer">            
-              <div>
-                  <% include ./Game/SoccerGame %>
-                </div>
+          <div class="GameContainer">
+            <div>
+              <% include ./Game/SoccerGame %>
             </div>
+          </div>
         </aside>
       </div>
-      <div class="Visual_3 si-z" style="position:absolute; top:0 ; left: 0;">
-        <aside> 
+      <div class="Visual_3 si-z">
+        <aside>
           <h1>가위바위보게임</h1>
           <p>컴퓨터와 가위바위보를 통해 승리하면 랜덤으로 음식을 정해줍니다.</p>
-          <p>게임에 졌다면 음식을 정해주지 않습니다. (다이어트)</p>
+          <p>아래 3가지 버튼중 선택해서 클릭하세요!</p>
           <div class="GameContainer">
             <div>
               <% include ./Game/PaperGame %>
-              
+
             </div>
           </div>
-              <a href="#">
-                <span class="prev-top btn prev-btn"></span>
-              </a>
-      </aside>
+          <a href="#">
+            <span class="prev-top btn prev-btn"></span>
+          </a>
+        </aside>
       </div>
       <div class="Visual_4 si-z">
-      <aside>
+        <aside>
           <h1>돌림판</h1>
-          <p>가운데 시작 버튼을 눌러서 룰렛을 돌려보세요 !</p>
+          <p>세기를 지정후 스핀 버튼을 눌러서 룰렛을 돌려보세요 !</p>
           <p>다양한 메뉴중 한가지 메뉴를 정해줍니다.</p>
-        <a href="#"><span class="prev-bot btn prev-btn"></span></a>
-        <div class="GameContainer">
+          <a href="#"><span class="prev-bot btn prev-btn"></span></a>
+          <div class="GameContainer">
             <div>
-                <% include ./Game/RouletteGame %>
-              </div>
+              <% include ./Game/RouletteGame %>
+            </div>
           </div>
-      </aside>
-      </div>      
+        </aside>
+      </div>
     </article>
   </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
-  <script src="https://cdn.sobekrepository.org/includes/jquery-rotate/2.2/jquery-rotate.min.js"></script>
+<script src="https://cdn.sobekrepository.org/includes/jquery-rotate/2.2/jquery-rotate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script type="text/javascript" src="./scripts/Winwheel.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>

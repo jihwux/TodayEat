@@ -23,7 +23,7 @@
   text-align: center;
   padding-bottom: 2rem;
   span {
-    padding: 0rem 14rem;
+    padding: 0rem 10rem;
   }
   
 }
@@ -74,4 +74,9 @@ input {
     transition: all 0.1s;
 
   }
+}
+.rbtn {
+  border: 0;
+  background: $oc-gray-1;
+  font-weight: bold;
 }

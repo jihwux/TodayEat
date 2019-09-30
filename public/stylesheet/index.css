@@ -150,7 +150,7 @@ article .Visual_1 .contentMenu .red {
   background-color: #ffe8cc;
 }
 article .Visual_1 .contentMenu .blue {
-  background-color: blue;
+  background-color: #ffe8cc;
 }
 article .Visual_1 .contentMenu .yellow {
   background-color: #ffd8a8;
@@ -204,7 +204,7 @@ article .Visual_4 {
 
 .intro {
   text-align: center;
-  padding-top: 4rem;
+  padding-top: 6.5rem;
   line-height: 2rem;
 }
 
@@ -403,6 +403,12 @@ aside .prev-btn:before {
 .cardContainer img {
   width: 100px;
   padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+.cardContainer p {
+  width: 80%;
+  margin: auto;
+  line-height: 2rem;
 }
 
 .GameContainer {
@@ -410,7 +416,7 @@ aside .prev-btn:before {
   position: relative;
   width: 50%;
   height: 450px;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .rpsGame .grid-btn {
@@ -432,7 +438,7 @@ aside .prev-btn:before {
   padding-bottom: 2rem;
 }
 .rpsGame #user-title span {
-  padding: 0rem 14rem;
+  padding: 0rem 10rem;
 }
 .rpsGame .choice {
   display: flex;
@@ -472,6 +478,12 @@ aside .prev-btn:before {
 .gbtn:hover {
   background: #e9ecef;
   transition: all 0.1s;
+}
+
+.rbtn {
+  border: 0;
+  background: #f1f3f5;
+  font-weight: bold;
 }
 
 .roulette-game button {
@@ -717,8 +729,23 @@ td.pw3 {
   padding-top: 10rem;
 }
 .mypage .intro-title {
-  padding: 3rem 0;
-  border-bottom: 2px solid #f1f3f5;
+  padding: 2.5rem 0;
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 5px solid #dee2e6;
+}
+.mypage table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  border: 0;
+}
+.mypage .table-striped tbody tr:nth-of-type(odd) {
+  background: ghostwhite !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.mypage .table-striped tbody tr:nth-of-type(odd):hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 /*# sourceMappingURL=index.css.map */
