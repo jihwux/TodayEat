@@ -3,18 +3,23 @@ const path = require('path');
 const fs = require('fs');
 const moment = require('moment');
 
-const { Foodsave, User } = require('../models');
-const { isLoggedIn } = require('./middlewares');
+const {
+  Foodsave,
+  User
+} = require('../models');
+const {
+  isLoggedIn
+} = require('./middlewares');
 
 const router = express.Router();
-router.post('/foodsave', isLoggedIn , async  (req, res,  next) => {
-  
-  
+router.post('/foodsave', isLoggedIn, async (req, res, next) => {
+
+
   try {
-     await Foodsave.create({      
-      food : req.body.food,
-      userId : req.user.id,
-      moment :  moment().format("YYYY-MM-DD") //11-18-2018          
+    await Foodsave.create({
+      food: req.body.food,
+      userId: req.user.id,
+      moment: moment().format("YYYY-MM-DD") //11-18-2018          
       // CreateDate : req.foodsave.CreateDate
       // createdatea: today.getDate()
       // range: [new Date(Date.UTC(2016, 0, 1)), new Date(Date.UTC(2016, 1, 1))]
@@ -22,33 +27,44 @@ router.post('/foodsave', isLoggedIn , async  (req, res,  next) => {
     });
     // var responseData = {'result' : 'ok', '음식값입니당' : req.body.foods}
     // res.json(responseData);
-      res.redirect('/');      
-    } catch(error) {
-      console.error(error);
-      next(error);
-    }
-  });
-router.delete('/foodsave/:id', function(req, res, next) {
-    Foodsave.destroy({ where: { id: req.params.id } })
-      .then((result) => {
-        res.json(result);
-      })
-      .catch((err) => {
-        console.error(err);
-        next(err);
-      });
-  });
+    res.redirect('/');
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+router.post('/:id', function (req, res, next) {
+  
+  Foodsave.destroy({
+      // include: [{
+        // model: User,
+        // where: {
+        //   id: req.user && req.user.id
+        // },
+         where: { id: req.params.id }
+      // }]
+    })
+    res.redirect('/myapge')
+    .then((result) => {
+      res.json(result);
 
-  // router.post('/abc',  (req, res,  next) => {
-  //   console.log(req.body.email);
-  //   console.log("찍히넹");
-  //   var responseData = {'result' : 'ok', '음식값입니당' : req.body.email}
-  //   res.json(responseData);
-  //   // res.render('PaperGame',{  
-  //   //   abb : 'aa',
-  //   // })
-    
-  //   });
+        })
+    .catch((err) => {
+      console.error(err);
+      next(err);
+    });
+});
+
+// router.post('/abc',  (req, res,  next) => {
+//   console.log(req.body.email);
+//   console.log("찍히넹");
+//   var responseData = {'result' : 'ok', '음식값입니당' : req.body.email}
+//   res.json(responseData);
+//   // res.render('PaperGame',{  
+//   //   abb : 'aa',
+//   // })
+
+//   });
 
 
 

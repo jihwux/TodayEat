@@ -205,15 +205,18 @@ function chooseFate(weapon, rand) {
     fate.innerHTML = '비겼습니다.';
     tallyUp('tie');
   }
-  $('.gbtn').attr('disabled', true);
+  $('.gbtn').attr('disabled', true);  
+  $('.rbtn').attr('disabled', false);
 }
     $('.rbtn').click(function() {
       $('.gbtn').attr('disabled', false);
+      $('.rbtn').attr('disabled', true);
+
     })
 
 function foodrand() {
   rand = food[Math.floor(Math.random() * 10)];
-  if (confirm("오늘의 점심은 " + indicatedSegment.text + "입니다! \n" +    "메뉴를 저장 하시겠습니까?") == true) {
+  if (confirm(`오늘의 점심은 ${rand} 입니다! \n메뉴를 저장 하시겠습니까?`) == true) {
     foodSave.push(rand);
     $.ajax({
       url: "/foodsave/foodsave",
@@ -282,16 +285,17 @@ function onKoreaShoot() {
 
   disabledKrButton(true);
   disabledJpButton(false);
+  $('.btn-reset').attr('disabled', true);  
+
 }
 
 function onJapenShoot() {
   krTeam.shift();
-
   if (Math.random() < japen.percent) {
-    screen("일본팀이 슛에 성공했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
+    screen("중국팀이 슛에 성공했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
     updateJpScore();
   } else {
-    screen("일본팀이 슛에 실패했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
+    screen("중국팀이 슛에 실패했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
   }
   var $jpScoreNumberElem = $('#jp-number');
   soccerGame.jpScoreNumber--;
@@ -302,15 +306,19 @@ function onJapenShoot() {
   if (soccerGame.jpScoreNumber === 0) {
     if (korea.score > japen.score) {
       screen("한국팀이 승리했습니다.");
-      foodrand()
+      setTimeout(function() {
+        foodrand(); 
+      }, 100);
+      // onReset();
+  $('.btn-reset').attr('disabled', false);  
+
     } else if (korea.score < japen.score) {
-      screen("일본팀이 승리했습니다.")
-      foodrand()
+      screen("중국팀이 승리했습니다.")
+      $('.btn-reset').attr('disabled', false);  
 
     } else {
       screen("비겼습니다.");
-      foodrand()
-
+      $('.btn-reset').attr('disabled', false);  
     }
     disabledKrButton(true);
     disabledJpButton(true);
@@ -345,6 +353,33 @@ function disabledKrButton(flag) {
 function disabledJpButton(flag) {
   $('.btn-japen').prop('disabled', flag);
 }
+function onReset() {
+  $('.btn-reset').attr('disabled', false);  
+  $('.btn-korea').attr('disabled', false);  
+
+  var $jpElem = $('#jp-score');
+  var $korElem = $('#kr-score');
+  var $krScoreNumberElem = $('#kr-number')
+  var $jpScoreNumberElem = $('#jp-number');
+ krTeam.push("손흥민", "조현우", "황희찬", "이승우", "박지성");
+
+  
+  
+  
+  japen.score = 0;
+  korea.score = 0;
+  $jpElem.html(japen.score);
+  $korElem.html(korea.score);
+  soccerGame.krScoreNumber = 5;
+  soccerGame.jpScoreNumber = 5;
+  $jpScoreNumberElem.html(soccerGame.jpScoreNumber);
+  $krScoreNumberElem.html(soccerGame.krScoreNumber);
+
+}
+// function clickOnReset() {
+//   // $('.btn-japen').attr('disabled', false);  
+//   $('.btn-korea').attr('disabled', false);  
+// }
 
 
 // $(function(){

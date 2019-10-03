@@ -10,6 +10,7 @@ aside{
     z-index: 2;
     font-size: 2.8rem;
     color: gray;
+    cursor: pointer;
 
   animation: right-waterfall 1.5s infinite ease-in-out;
     &:hover{

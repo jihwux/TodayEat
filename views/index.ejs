@@ -16,17 +16,18 @@
 
 <body>
   <div class="wrapper">
-    <article>
+    <article style="overflow: scroll !important">
       <div>
         <% include header %>
       </div>
       <section class="si-z">
         <div class="contentWrap">
           <h1>오늘뭐 <span>먹지?</span><span>!</span></h2>
-            <img src="img/food.png" alt="순두부지개/">
+            <img src="img/food.png" alt="순두부지개/">            
+                <span class="next-btn btn home-start ">시작하기</span>
         </div>
         <aside>
-          <a href="#"><span class="next-btn btn"></span></a>
+          <span class="next-btn btn"></span>
         </aside>
         <div class="info">
           <span>본 웹사이트는 크롬브라우저 및 데스크톱 환경에 최적화 되어있습니다.</span>
@@ -66,9 +67,7 @@
               </div>
               <div class="red">
                 <a href="#" class="next-btn btn">시작하기</a>
-                
                 <!-- <p><small>음식이 담긴 룰렛을 돌려서 <br>점심 메뉴를 정해보세요!</small> </p> -->
-                
               </div>
             </div>
           </div>
@@ -80,8 +79,8 @@
       <div class="Visual_2 si-z">
         <aside>
           <h1>축구</h1>
-          <p>승부차기로 이기서 메뉴를 정해 보세요.</p>
-          <p>아래 슛 버튼으로 눌러 시작할 수 있습니다.</p>
+          <p>승부차기 게임으로 메뉴를 정해 보세요.</p>
+          <p>아래 슛 버튼을 눌러 시작할 수 있습니다.</p>
           <!-- <p>게임에 졌다면 음식을 정해주지 않습니다. (다이어트)</p> -->
           <a href="#"><span class="prev-btn btn"></span></a>
           <div class="GameContainer">
@@ -99,7 +98,6 @@
           <div class="GameContainer">
             <div>
               <% include ./Game/PaperGame %>
-
             </div>
           </div>
           <a href="#">
