@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="./stylesheet/index.css">
 
-<body>
-  <article>
+<body style="overflow: scroll">
+    <article style="overflow: scroll !important">
   <div>
       <% include header .profile %>
   </div>
@@ -32,7 +32,7 @@
                   <th width="50%">음식</th>
                   <th width="10%">닉네임</th>
                   <th width="20%">식사일</th>
-                  <!-- <th width="10%">칼로리</th> -->
+                  <th width="10%">삭제</th>
                 </tr>
               </thead>
               <tbody>
@@ -43,6 +43,11 @@
                     <td id="title"><%= twit[i].food %></td>                                                                
                     <td id="title"><%= user.nick %></td>
                     <td id="title"><%= twit[i].moment %></td>
+                    <td id="title">
+                        <form action="/foodsave/<%=twit[i].id%>"method="post">
+                        <input type="submit">
+                      </form>  
+                    </td>
                   <tr>
              <% } %>
              <% } %>
