@@ -644,13 +644,11 @@ td.pw3 {
   display: inline-block;
   width: 45%;
   text-align: center;
-  background: white;
 }
 .soccer-game .japen-shots {
   display: inline-block;
   width: 45%;
   text-align: center;
-  background: white;
 }
 .soccer-game .score-board {
   width: 500px;
@@ -746,13 +744,22 @@ td.pw3 {
   border-spacing: 0 8px;
   border: 0;
 }
+.mypage table .thead-title th {
+  text-align: center;
+}
 .mypage .table-striped tbody tr:nth-of-type(odd) {
   background: ghostwhite !important;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-align: center;
 }
 .mypage .table-striped tbody tr:nth-of-type(odd):hover {
   background-color: rgba(0, 0, 0, 0.05) !important;
+}
+.mypage #delete {
+  border: 0;
+  padding: 0;
+  background: 0;
 }
 
 /*# sourceMappingURL=index.css.map */

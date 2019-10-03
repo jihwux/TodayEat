@@ -35,18 +35,13 @@ router.post('/foodsave', isLoggedIn, async (req, res, next) => {
 });
 router.post('/:id', function (req, res, next) {
   
-  Foodsave.destroy({
-      // include: [{
-        // model: User,
-        // where: {
-        //   id: req.user && req.user.id
-        // },
+  Foodsave.destroy({     
          where: { id: req.params.id }
-      // }]
     })
-    res.redirect('/myapge')
+    res.status(200).send( "<script>   location.href = '/myPage' </script>") // 에러 난다..
     .then((result) => {
       res.json(result);
+      // res.redirect('/myPage')
 
         })
     .catch((err) => {

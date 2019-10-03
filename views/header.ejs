@@ -1,12 +1,12 @@
   <div class="header-wrap">
-    
     <div class="header">
       <div class="profile">
         <% if(user && user.id) { %>
         <div class="user-name">
           <span style="padding-right:57rem;"> 안녕하세요! <%= user.nick %> 님!</span>
           <a href="/auth/logout" id="logout">로그아웃</a>
-          <a href="./myPage" id="logout">마이페이지</a>
+          <a href="./myPage" id="logout" class="mypage-btn">마이페이지</a>
+          <a href="/" id="myPage-home" style="display:none"> 홈</a>
         </div>
       </div>
       <% } else {%>
@@ -35,21 +35,19 @@
             <div class="form-footer">
               <button type="submit" class="form-btn login-btn">로그인</button>
               <a href="/auth/kakao"><button type="button" class="form-btn kko-btn">카카오 로그인</button></a>
-
             </div>
           </form>
         </div>
       </div>
-
       <a href="#" id="join">회원가입</a>
       <div id="join-wrap" class="modal" style="display: none;">
         <div id="join-content" class="modal-content">
           <form id="join-form" action="/auth/join" method="post">
             <div class="form-header">
-                <h1>
-                  오늘 뭐먹지?
-                </h1>
-              </div>
+              <h1>
+                오늘 뭐먹지?
+              </h1>
+            </div>
             <div class="input-group">
               <!-- <label for="join-email">이메일</label> -->
               <input type="email" name="email" value="" placeholder="Email">
@@ -63,15 +61,11 @@
               <input type="password" name="password" value="" placeholder="Password">
             </div>
             <div class="form-footer">
-                <button type="submit" class="form-btn login-btn">회원가입</button>               
-              </div>
+              <button type="submit" class="form-btn login-btn">회원가입</button>
+            </div>
           </form>
         </div>
       </div>
       <% } %>
-
-
-
     </div>
-
   </div>

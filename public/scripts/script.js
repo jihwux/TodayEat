@@ -1,5 +1,4 @@
 $(function () {
-
   var $nextBtn = $('.next-btn');
   var $prevBtn = $('.prev-btn');
   var $topBtn = $('.top-btn');
@@ -8,24 +7,23 @@ $(function () {
   var $prevBtnTop = $('.prev-top');
 
   var visual = $('article .si-z');
-  var current = 0; // 0이니까 섹션이 들어감. 커런트에
+  var current = 0;
   var next = 1;
 
   $nextBtn.on('click', function () {
-    var currentEI = visual.eq(current); // 커런트는 섹션임 제일 첫번쨰
-    var nextEI = visual.eq(next); //1은 eq가 순서니까 다음꺼 섹션다음인 비쥬얼 1이 되겠네
+    var currentEI = visual.eq(current);
+    var nextEI = visual.eq(next);
     currentEI.css({
       left: 0
     }).stop().animate({
       left: '-100%'
-    }) //섹션이뒤로 이동하게됨 그리고 그자리에는 아무도 없음. 다음엘리먼트가 레프트가 0이되야한다.
+    })
     nextEI.css({
       left: '100%'
     }).stop().animate({
       left: 0
-    }) // 다음 엘리먼트 레프트 100%해주는 이유는 200%인 엘리먼트도 있으니 100%으로 해줘야함. 그리고 애니메이트 래프트 0으로 해줘서
+    })
     next += 1
-    console.log(next)
   });
   $prevBtn.on('click', function () {
     next -= 1
@@ -41,7 +39,6 @@ $(function () {
     }).stop().animate({
       left: '100%'
     });
-    console.log(next)
   });
 
   $topBtn.on('click', function () {
@@ -52,7 +49,7 @@ $(function () {
       left: 0
     }).stop().animate({
       left: '-100%'
-    }) //섹션이뒤로 이동하게됨 그리고 그자리에는 아무도 없음. 다음엘리먼트가 레프트가 0이되야한다.
+    })
     nextEI.css({
       left: '100%',
       top: '-100%'
@@ -62,7 +59,6 @@ $(function () {
     })
     $('.prev-btn').css('display', 'none');
     $('.prev-top').css('display', 'block');
-    console.log(next)
   })
   $botBtn.on('click', function () {
     next += 2
@@ -72,7 +68,7 @@ $(function () {
       left: 0
     }).stop().animate({
       left: '-100%'
-    }) //섹션이뒤로 이동하게됨 그리고 그자리에는 아무도 없음. 다음엘리먼트가 레프트가 0이되야한다.
+    })
     nextEI.css({
       left: '100%',
       bottom: '-100%'
@@ -82,7 +78,6 @@ $(function () {
     })
     $('.prev-btn').css('display', 'none');
     $('.prev-bot').css('display', 'block')
-    console.log(next);
   })
   $prevBtnTop.on('click', function () {
     current += 3
@@ -162,11 +157,11 @@ $(function () {
 
 
 
-  
+
 
 });
 
-// papergame
+// Papergame
 const arr = ['rock', 'paper', 'scissors'];
 let food = ['김치찌개', '된장찌개', '불고기', '뼈해장국', '짬뽕', '짜장면', '백반', '파스타', '볶음밥', '돈까스'];
 let foodSave = [];
@@ -190,10 +185,10 @@ function chooseFate(weapon, rand) {
     let fate = document.getElementById("fate");
     fate.innerHTML = '이겼습니다.';
     tallyUp('win');
-    setTimeout(function() {
-      foodrand(); 
+    setTimeout(function () {
+      foodrand();
     }, 100);
-    
+
   } else if (weapon === 'rock' && rand === 'paper' ||
     weapon === 'paper' && rand === 'scissors' ||
     weapon === 'scissors' && rand === 'rock') {
@@ -205,14 +200,14 @@ function chooseFate(weapon, rand) {
     fate.innerHTML = '비겼습니다.';
     tallyUp('tie');
   }
-  $('.gbtn').attr('disabled', true);  
+  $('.gbtn').attr('disabled', true);
   $('.rbtn').attr('disabled', false);
 }
-    $('.rbtn').click(function() {
-      $('.gbtn').attr('disabled', false);
-      $('.rbtn').attr('disabled', true);
+$('.rbtn').click(function () {
+  $('.gbtn').attr('disabled', false);
+  $('.rbtn').attr('disabled', true);
 
-    })
+})
 
 function foodrand() {
   rand = food[Math.floor(Math.random() * 10)];
@@ -223,7 +218,6 @@ function foodrand() {
       method: "POST",
       data: {
         food: rand,
-        // moment: rand
       },
       success: function (s) {
         alert("저장된 메뉴는 마이페이지에 확인하실 수 있습니다.")
@@ -254,7 +248,6 @@ function tallyUp(score) {
 
 
 // soccergame
-
 var korea = {
   score: 0,
   percent: 0.7
@@ -285,7 +278,7 @@ function onKoreaShoot() {
 
   disabledKrButton(true);
   disabledJpButton(false);
-  $('.btn-reset').attr('disabled', true);  
+  $('.btn-reset').attr('disabled', true);
 
 }
 
@@ -306,19 +299,19 @@ function onJapenShoot() {
   if (soccerGame.jpScoreNumber === 0) {
     if (korea.score > japen.score) {
       screen("한국팀이 승리했습니다.");
-      setTimeout(function() {
-        foodrand(); 
+      setTimeout(function () {
+        foodrand();
       }, 100);
       // onReset();
-  $('.btn-reset').attr('disabled', false);  
+      $('.btn-reset').attr('disabled', false);
 
     } else if (korea.score < japen.score) {
       screen("중국팀이 승리했습니다.")
-      $('.btn-reset').attr('disabled', false);  
+      $('.btn-reset').attr('disabled', false);
 
     } else {
       screen("비겼습니다.");
-      $('.btn-reset').attr('disabled', false);  
+      $('.btn-reset').attr('disabled', false);
     }
     disabledKrButton(true);
     disabledJpButton(true);
@@ -353,19 +346,20 @@ function disabledKrButton(flag) {
 function disabledJpButton(flag) {
   $('.btn-japen').prop('disabled', flag);
 }
+
 function onReset() {
-  $('.btn-reset').attr('disabled', false);  
-  $('.btn-korea').attr('disabled', false);  
+  $('.btn-reset').attr('disabled', false);
+  $('.btn-korea').attr('disabled', false);
 
   var $jpElem = $('#jp-score');
   var $korElem = $('#kr-score');
   var $krScoreNumberElem = $('#kr-number')
   var $jpScoreNumberElem = $('#jp-number');
- krTeam.push("손흥민", "조현우", "황희찬", "이승우", "박지성");
+  krTeam.push("손흥민", "조현우", "황희찬", "이승우", "박지성");
 
-  
-  
-  
+
+
+
   japen.score = 0;
   korea.score = 0;
   $jpElem.html(japen.score);
@@ -376,102 +370,77 @@ function onReset() {
   $krScoreNumberElem.html(soccerGame.krScoreNumber);
 
 }
-// function clickOnReset() {
-//   // $('.btn-japen').attr('disabled', false);  
-//   $('.btn-korea').attr('disabled', false);  
-// }
 
 
-// $(function(){
-//   disabledJpButton(true)
-//   disabledKrButton(true)
-//         screen(3);
-//         window.setTimeout(function(){
-//             screen(2);
-//           window.setTimeout(function(){
-//                   screen(1);
-//                   window.setTimeout(function(){
-//                      screen('한국팀 부터 시작합니다. !');
-//                      disabledKrButton(false)
-//             }, 1000);
-//           }, 1000);
-//         }, 1000);
-//     });
-
-
-// Create new wheel object specifying the parameters at creation time.
 let theWheel = new Winwheel({
-  'numSegments': 12, // Specify number of segments.
-  'outerRadius': 212, // Set outer radius so wheel fits inside the background.
-  'textFontSize': 20, // Set font size as desired.
-  'segments': // Define segments including colour and text.
-    [{
-        'fillStyle': '#3f297e',
-        'text': '된장찌개'
-      },
-      {
-        'fillStyle': '#1d61ac',
-        'text': '불고기'
-      },
-      {
-        'fillStyle': '#169ed8',
-        'text': '김치볶음밥'
-      },
-      {
-        'fillStyle': '#209b6c',
-        'text': '짬뽕'
-      },
-      {
-        'fillStyle': '#60b236',
-        'text': '순대국'
-      },
-      {
-        'fillStyle': '#efe61f',
-        'text': '생선구이'
-      },
-      {
-        'fillStyle': '#f7a416',
-        'text': '스파게티'
-      },
-      {
-        'fillStyle': '#e6471d',
-        'text': '비빔밥'
-      },
-      {
-        'fillStyle': '#e5177b',
-        'text': '어제먹은거'
-      },
-      {
-        'fillStyle': '#be107f',
-        'text': '돈카츠'
-      },
-      {
-        'fillStyle': '#881f7e',
-        'text': '라면'
-      },
-      {
-        'fillStyle': '#dc0936',
-        'text': '냉면'
-      }
-    ],
-  'animation': // Specify the animation to use.
-  {
+  'numSegments': 12,
+  'outerRadius': 212,
+  'textFontSize': 20,
+  'segments': [{
+      'fillStyle': '#3f297e',
+      'text': '된장찌개'
+    },
+    {
+      'fillStyle': '#1d61ac',
+      'text': '불고기'
+    },
+    {
+      'fillStyle': '#169ed8',
+      'text': '김치볶음밥'
+    },
+    {
+      'fillStyle': '#209b6c',
+      'text': '짬뽕'
+    },
+    {
+      'fillStyle': '#60b236',
+      'text': '순대국'
+    },
+    {
+      'fillStyle': '#efe61f',
+      'text': '생선구이'
+    },
+    {
+      'fillStyle': '#f7a416',
+      'text': '스파게티'
+    },
+    {
+      'fillStyle': '#e6471d',
+      'text': '비빔밥'
+    },
+    {
+      'fillStyle': '#e5177b',
+      'text': '어제먹은거'
+    },
+    {
+      'fillStyle': '#be107f',
+      'text': '돈카츠'
+    },
+    {
+      'fillStyle': '#881f7e',
+      'text': '라면'
+    },
+    {
+      'fillStyle': '#dc0936',
+      'text': '냉면'
+    }
+  ],
+  'animation': {
     'type': 'spinToStop',
     'duration': 15,
     'spins': 9,
     'callbackFinished': alertPrize,
-    // 'callbackSound'    : playSound,   // Function to call when the tick sound is to be triggered.
-    'soundTrigger': 'pin' // Specify pins are to trigger the sound, the other option is 'segment'.
+    'soundTrigger': 'pin'
   },
   'pins': {
-    'number': 16 // Number of pins. They space evenly around the wheel.
+    'number': 16
   }
 });
 
-// -------------------------------------------------------
+
 function alertPrize(indicatedSegment) {
-  
-  if (confirm("오늘의 점심은 " + indicatedSegment.text + "입니다! \n" +    "메뉴를 저장 하시겠습니까?") == true) {
+
+  if (confirm("오늘의 점심은 " + indicatedSegment.text + "입니다! \n" + "메뉴를 저장 하시겠습니까?") == true) {
     foodSave.push(indicatedSegment.text);
     $.ajax({
       url: "/foodsave/foodsave",
@@ -491,25 +460,16 @@ function alertPrize(indicatedSegment) {
   };
 }
 
-// =======================================================================================================================
-// Code below for the power controls etc which is entirely optional. You can spin the wheel simply by
-// calling theWheel.startAnimation();
-// =======================================================================================================================
+
 let wheelPower = 0;
 let wheelSpinning = false;
 
-// -------------------------------------------------------
-// Function to handle the onClick on the power buttons.
-// -------------------------------------------------------
 function powerSelected(powerLevel) {
-  // Ensure that power can't be changed while wheel is spinning.
   if (wheelSpinning == false) {
-    // Reset all to grey incase this is not the first time the user has selected the power.
     document.getElementById('pw1').className = "";
     document.getElementById('pw2').className = "";
     document.getElementById('pw3').className = "";
 
-    // Now light up all cells below-and-including the one selected by changing the class.
     if (powerLevel >= 1) {
       document.getElementById('pw1').className = "pw1";
     }
@@ -522,23 +482,18 @@ function powerSelected(powerLevel) {
       document.getElementById('pw3').className = "pw3";
     }
 
-    // Set wheelPower var used when spin button is clicked.
     wheelPower = powerLevel;
 
-    // Light up the spin button by changing it's source image and adding a clickable class to it.
     document.getElementById('spin_button').src = "./img/spin_on.png";
     document.getElementById('spin_button').className = "clickable";
   }
 }
 
-// -------------------------------------------------------
-// Click handler for spin button.
-// -------------------------------------------------------
+
+
+
 function startSpin() {
-  // Ensure that spinning can't be clicked again while already running.
   if (wheelSpinning == false) {
-    // Based on the power level selected adjust the number of spins for the wheel, the more times is has
-    // to rotate with the duration of the animation the quicker the wheel spins.
     if (wheelPower == 1) {
       theWheel.animation.spins = 3;
     } else if (wheelPower == 2) {
@@ -547,49 +502,24 @@ function startSpin() {
       theWheel.animation.spins = 15;
     }
 
-    // Disable the spin button so can't click again while wheel is spinning.
     document.getElementById('spin_button').src = "../img/spin_off.png";
     document.getElementById('spin_button').className = "";
 
-    // Begin the spin animation by calling startAnimation on the wheel object.
     theWheel.startAnimation();
 
-    // Set to true so that power can't be changed and spin button re-enabled during
-    // the current animation. The user will have to reset before spinning again.
     wheelSpinning = true;
   }
 }
 
-// -------------------------------------------------------
-// Function for reset button.
-// -------------------------------------------------------
-function resetWheel() {
-  theWheel.stopAnimation(false); // Stop the animation, false as param so does not call callback function.
-  theWheel.rotationAngle = 0; // Re-set the wheel angle to 0 degrees.
-  theWheel.draw(); // Call draw to render changes to the wheel.
 
-  document.getElementById('pw1').className = ""; // Remove all colours from the power level indicators.
+function resetWheel() {
+  theWheel.stopAnimation(false);
+  theWheel.rotationAngle = 0;
+  theWheel.draw();
+
+  document.getElementById('pw1').className = "";
   document.getElementById('pw2').className = "";
   document.getElementById('pw3').className = "";
 
-  wheelSpinning = false; // Reset to false to power buttons and spin can be clicked again.
+  wheelSpinning = false;
 }
-
-// var testArr = ['a','b'];
-
-// $('body').click(function() {
-//   var alldata = ["A","B"]
-// $.ajax({
-//   url:"/ajax",
-//   dataType: 'JSON',
-//   type: "GET",
-//   data: alldata,
-//   success: function(data) {
-//     alert('a')
-//     console.log("aa")
-//   },
-//   error: function(e){
-//     alert('error');
-//   }
-// });
-// })
