@@ -1,6 +1,6 @@
 {
-  "name": "randfood",
-  "version": "1.0.1",
+  "name": "TodayEat",
+  "version": "0.0.1",
   "description": "메뉴 선택 서비스",
   "main": "app.js",
   "scripts": {
