@@ -4,7 +4,7 @@
   "description": "메뉴 선택 서비스",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app",
+    "start": "cross-env NODE_ENV=production PORT=80 pm2 start app.js -i 0",
     "dev": "nodemon app"
   },
   "author": "Hwan",
