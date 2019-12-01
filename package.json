@@ -1,5 +1,5 @@
 {
-  "name": "randfood",
+  "name": "TodayEat",
   "version": "1.0.1",
   "description": "메뉴 선택 서비스",
   "main": "app.js",
@@ -12,6 +12,7 @@
   "dependencies": {
     "bcrypt": "^2.0.1",
     "connect-flash": "^0.1.1",
+    "connect-redis": "^4.0.3",
     "cookie-parser": "^1.4.3",
     "cross-env": "^6.0.3",
     "dotenv": "^5.0.1",
