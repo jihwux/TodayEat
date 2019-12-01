@@ -7,10 +7,13 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const helmet = require('helmet');
 const hpp = require('hpp');
+const RedisStore = require('connect-redis')(session);
 require('dotenv').config();
 
 const pageRouter = require('./routes/page');
 const authRouter = require('./routes/auth');
+const mycopyRouter = require('./routes/mycopy');
+// const mypageRouter = require('./routes/page/mypage');
 const foodsaveRouter = require('./routes/foodsave');
 const { sequelize } = require('./models');
 const passportConfig = require('./passport');
@@ -42,6 +45,12 @@ const sessionOption = {
     httpOnly: true,
     secure: false,
   },
+  // store: new RedisStore({
+  //   host: process.env.REDIS_HOST,
+  //   port: process.env.REDIS_PORT,
+  //   pass: process.env.REDIS_PASSWORD,
+  //   logErrors: true,
+  // }),
 };
 if (process.env.NODE_ENV === 'production') {
   sessionOption.proxy = true;
@@ -52,6 +61,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', pageRouter);
+app.use('/mycopy', mycopyRouter);
+// app.use('/mypage', mypageRouter);
 app.use('/auth', authRouter);
 app.use('/foodsave', foodsaveRouter);
 
