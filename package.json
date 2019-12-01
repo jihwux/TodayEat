@@ -1,7 +1,7 @@
 {
   "name": "TodayEat",
   "version": "1.0.1",
-  "description": "메뉴 선택 서비스",
+  "description": "메뉴 선택 서s비스",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
