@@ -4,7 +4,7 @@
   "description": "메뉴 선택 서비스",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app",
+    "start": "node app.js",
     "dev": "nodemon app"
   },
   "author": "Hwan",
