@@ -43,12 +43,6 @@ const sessionOption = {
     httpOnly: true,
     secure: false,
   },
-  store: new RedisStore({
-    host: process.env.REDIS_HOST,
-    port: process.env.REDIS_PORT,
-    pass: process.env.REDIS_PASSWORD,
-    logErrors: true,
-  }),
 };
 if (process.env.NODE_ENV === 'production') {
   sessionOption.proxy = true;
