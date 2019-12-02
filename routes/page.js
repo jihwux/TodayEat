@@ -26,7 +26,7 @@ router.get('/', (req,res) => {
 
 
 
-router.get('/mypage', isLoggedIn, (req, res, next) => {
+router.get('/myPage', isLoggedIn, (req, res, next) => {
     Foodsave.findAll({
     include: [{
       model: User,
@@ -34,7 +34,7 @@ router.get('/mypage', isLoggedIn, (req, res, next) => {
     }],
   })
     .then((foods) => {
-      res.render('mypage', {
+      res.render('myPage', {
         twit : foods,
         user: req.user,
         foodsave : req.food,

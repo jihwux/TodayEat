@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>오늘뭐먹지!</title>
+</head>
+
+<link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="./stylesheet/index.min.css">
+
+<style>
+  #myPage-home {
+    display: block !important;
+  }
+
+  .mypage-btn {
+    display: none;
+  }
+</style>
+<body style="overflow: scroll">
+  <article>
+    <div>
+      <% include header .profile %>
+    </div>
+    <div class="mypage si-z">
+      <div class="timeline">
+        <div class="intro-title">
+          <h1 class="">점심 메뉴 기록</h1>
+        </div>
+        <div class="content">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr style="background:  lightslategrey" class="thead-title">
+                <th width="13%">번호</th>
+                <th width="40%">음식</th>
+                <th width="14%">닉네임</th>
+                <th width="20%">식사일</th>
+                <th width="13%">삭제</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if(user && user.id)  {%>
+              <% for(var i=0; i < twit.length; i++) { %>
+              <tr>
+                <td id="title"><%= twit[i].id %></td>
+                <td id="title"><%= twit[i].food %></td>
+                <td id="title"><%= user.nick %></td>
+                <td id="title"><%= twit[i].moment %></td>
+                <td id="title">
+                  <form action="/foodsave/<%=twit[i].id%>" method="post">
+                    <input type="submit" value="지우기" id="delete">
+                  </form>
+                </td>
+              <tr>
+                <% } %>
+                <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </article>
+</body>
+<!-- <form action="/foodsave/foodsave" method="POST">
+          <div class="form-group">
+            <label for="username">이메일</label>
+            <input type="text" name="food" value="" placeholder="Email">
+            <span class="login-icon1"><i class="material-icons">mail_outline</i></span>
+          </div>
+          <button type="submit" class="form-btn login-btn">음식보내기</button>               
+        </form>
+     </div> -->
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script src="https://cdn.sobekrepository.org/includes/jquery-rotate/2.2/jquery-rotate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="./scripts/script.min.js" charset="utf-8"></script>
+
+</html>
