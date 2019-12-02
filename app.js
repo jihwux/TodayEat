@@ -12,8 +12,6 @@ require('dotenv').config();
 
 const pageRouter = require('./routes/page');
 const authRouter = require('./routes/auth');
-const mycopyRouter = require('./routes/mycopy');
-// const mypageRouter = require('./routes/page/mypage');
 const foodsaveRouter = require('./routes/foodsave');
 const { sequelize } = require('./models');
 const passportConfig = require('./passport');
@@ -45,12 +43,12 @@ const sessionOption = {
     httpOnly: true,
     secure: false,
   },
-  // store: new RedisStore({
-  //   host: process.env.REDIS_HOST,
-  //   port: process.env.REDIS_PORT,
-  //   pass: process.env.REDIS_PASSWORD,
-  //   logErrors: true,
-  // }),
+  store: new RedisStore({
+    host: process.env.REDIS_HOST,
+    port: process.env.REDIS_PORT,
+    pass: process.env.REDIS_PASSWORD,
+    logErrors: true,
+  }),
 };
 if (process.env.NODE_ENV === 'production') {
   sessionOption.proxy = true;
@@ -61,8 +59,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', pageRouter);
-app.use('/mycopy', mycopyRouter);
-// app.use('/mypage', mypageRouter);
 app.use('/auth', authRouter);
 app.use('/foodsave', foodsaveRouter);
 
@@ -82,3 +78,4 @@ app.use((err, req, res, next) => {
 app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번 포트에서 대기중');
 });
+ss

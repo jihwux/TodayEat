@@ -34,7 +34,7 @@ router.get('/mypage', isLoggedIn, (req, res, next) => {
     }],
   })
     .then((foods) => {
-      res.render('/mypage', {
+      res.render('mypage', {
         twit : foods,
         user: req.user,
         foodsave : req.food,
@@ -48,26 +48,6 @@ router.get('/mypage', isLoggedIn, (req, res, next) => {
 });
 
 
-router.get('/mycopy1', isLoggedIn, (req, res, next) => {
-  Foodsave.findAll({
-  include: [{
-    model: User,
-    where: { id: req.user && req.user.id  },      
-  }],
-})
-  .then((foods) => {
-    res.render('../views/mypage', {
-      twit : foods,
-      user: req.user,
-      foodsave : req.food,
-      loginError: req.flash('loginError'),
-    });
-  })
-  .catch((error) => {
-    console.error(error);
-    next(error);
-  });
-});
 
 
 
