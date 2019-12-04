@@ -9,6 +9,8 @@ const helmet = require('helmet');
 const hpp = require('hpp');
 const RedisStore = require('connect-redis')(session);
 require('dotenv').config();
+var favicon = require('serve-favicon');
+
 
 const pageRouter = require('./routes/page');
 const authRouter = require('./routes/auth');
@@ -31,7 +33,9 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   app.use(morgan('dev'));
 }
+app.use(favicon(path.join(__dirname, 'public/img', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
+ 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
