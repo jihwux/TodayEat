@@ -154,9 +154,59 @@ $(function () {
       });
     }
   });
+  let mailCheck = $('#email');
+  
+  function check() {
+    let nameTest = nameCheck.val();
+    let pwdTest = pwdCheck.val();
+    let mailTest = mailCheck.val();
+    let contactTest = contactCheck.val();
+    let chkPhoneTest = chkPhone.val();
+    let joinChkbox1 = $('#chkServiceChk');
+    let joinChkbox2 = $('#chkPolicyChk');
+    
+    // console.log(idTest, pwdTest, cpTest, mailTest)
+    if (nameTest.length > 0 && pwdTest.length > 0 && mailTest.length > 0 && contactTest.length > 0 && chkPhoneTest.length > 0) {
+      if ($(joinChkbox1, joinChkbox2).is(':checked') == true) {
+        alert("체크");
+        joinSend();
+      } else {
+        alert("약관에 동의해주세요.");
+      }
+    } else {
+      alert("입력란을 모두 작성해주세요.");
+      // console.log(idTest)
+    }
+  }
+  
+  $.ajax({
+    url: "/auth/mailCheck",
+    method: "POST",
+    data: {
+      email: 
+    },
+    success: function (s) {
+      alert("저장된 메뉴는 마이페이지에 확인하실 수 있습니다.")
+    },
+    error: function (error) {
+      alert('저장하려면 로그인이 필요합니다.')
+    }
+  })
 
-
-
+  mailCheck.blur(function() {
+    var regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+    if (mailCheck.val().match(regEmail) != null) {
+      // $('.check-icon:eq(2)').fadeIn();
+      // $('font[name=checkMail]').html("");
+      conosle.log("true")
+      // mailOverLap();
+    } else {
+      conosle.log("false")
+      // $('.check-icon:eq(2)').fadeOut();
+      // $('font[name=checkMail]').html("정확하지 않은 형식입니다.").addClass('chk-warring');
+      return true;
+    };
+  });
 
 
 });
