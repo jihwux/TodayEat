@@ -19,3 +19,11 @@
  - sequelize db:create --env production
  - sudo npm start
 
+
+
+## DEV 
+
+- pm i -g pm2 cross-env sequelize-cli
+- sequelize db:create
+- bcrypt 에러 npm i windows-build-tools (powershell 에서 관리자 권한)
+
