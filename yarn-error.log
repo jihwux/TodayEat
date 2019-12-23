@@ -1,0 +1,70 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\JinJin\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add --dev @fortawesome/fontawesome-free
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\oracle\product\10.2.0\db_1\bin;C:\oracle\product\10.2.0;E:\oracle\product\10.2.0\client_2;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Sybase\Shared\PowerBuilder;C:\Program Files (x86)\Sybase\Shared\DataDirect;C:\Program Files\MySQL\MySQL Server 5.6\bin;C:\Program Files (x86)\ePapyrus\Papyrus-PlugIn-web;C:\Program Files (x86)\ePapyrus\Papyrus-PlugIn-web\Addins;c:\mysql\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Server 5.6\bin;C:\Program Files\Java\jdk1.8.0_201\bin;C:\Users\JinJin\Server\tomcat\bin;C:\oracle\wls12130;C:\Users\JinJin\Desktop\apache-maven-3.6.0\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\JinJin\.windows-build-tools\python27\;C:\Users\JinJin\scoop\shims;C:\Program Files\Bandizip\;C:\Users\JinJin\AppData\Local\Microsoft\WindowsApps;C:\Users\JinJin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\JinJin\AppData\Local\Microsoft\WindowsApps;C:\Users\JinJin\AppData\Local\GitHubDesktop\bin;C:\Program Files\MongoDB\Server\4.2\bin;C:\Users\JinJin\AppData\Roaming\npm;C:\Program Files (x86)\ESTsoft\ALSee\x64
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.9.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\Users\JinJin\Documents\GitHub\TodayEat\node_modules\bcrypt\lib\binding\bcrypt_lib.node'
+
+npm manifest: 
+  {
+    "name": "ss",
+    "version": "1.0.1",
+    "description": "메뉴 선택 서s비스",
+    "main": "app.js",
+    "scripts": {
+      "start": "nodemon app",
+      "dev": "nodemon app"
+    },
+    "author": "Hwan",
+    "license": "MIT",
+    "dependencies": {
+      "bcrypt": "^3.0.7",
+      "connect-flash": "^0.1.1",
+      "connect-redis": "^4.0.3",
+      "cookie-parser": "^1.4.3",
+      "cross-env": "^6.0.3",
+      "dotenv": "^5.0.1",
+      "ejs": "^2.6.1",
+      "express": "^4.16.3",
+      "express-session": "^1.15.6",
+      "helmet": "^3.21.1",
+      "hoek": "^4.2.1",
+      "hpp": "^0.2.2",
+      "moment": "^2.24.0",
+      "morgan": "^1.9.0",
+      "multer": "^1.3.0",
+      "mysql2": "^1.7.0",
+      "node-pre-gyp": "^0.14.0",
+      "node-sass": "^4.12.0",
+      "nodemon": "^2.0.2",
+      "open-color": "^1.7.0",
+      "passport": "^0.4.0",
+      "passport-kakao": "0.0.5",
+      "passport-local": "^1.0.0",
+      "pm2": "^3.5.1",
+      "pug": "^2.0.3",
+      "sass": "^1.22.3",
+      "sass-loader": "^7.1.0",
+      "sequelize": "^4.44.3",
+      "serve-favicon": "^2.5.0",
+      "windows-build-tools": "^5.2.2",
+      "winston": "^3.1.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

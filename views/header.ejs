@@ -4,13 +4,16 @@
         <% if(user && user.id) { %>
         <div class="user-name">
           <span style="padding-right:57rem;"> 안녕하세요! <%= user.nick %> 님!</span>
+          
           <a href="/auth/logout" id="logout">로그아웃</a>
           <a href="/myPage" id="logout" class="mypage-btn">마이페이지</a>
           <a href="/" id="myPage-home" style="display:none"> 홈</a>
         </div>
       </div>
       <% } else {%>
-      <a href="#" id="login">로그인</a>
+        <a href="#" id="login">로그인</a>
+        <i class="fas fa-check"></i>
+        <i class="fas fa-facebook"></i>
       <div id="login-wrap" class="modal">
         <div id="login-content" class="modal-content">
           <!-- <span class="close">×</span> -->
@@ -56,7 +59,7 @@
             <div class="input-group">
               <!-- <label for="join-email">닉네임</label> -->
               <input type="text" name="nick" value="" placeholder="Name">
-              <i class="fas fa-coffee fa-xs"></i>
+              
               <p>2자 이상 입력해주세요.</p>
             </div>
             <div class="input-group">

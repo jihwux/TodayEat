@@ -19,6 +19,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "font-awesome": "^4.7.0",
     "helmet": "^3.21.1",
     "hoek": "^4.2.1",
     "hpp": "^0.2.2",
@@ -41,5 +42,4 @@
     "serve-favicon": "^2.5.0",
     "winston": "^3.1.0"
   }
-  
 }
