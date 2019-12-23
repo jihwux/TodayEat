@@ -154,6 +154,8 @@ $(function () {
       });
     }
   });
+
+ 
   let mailCheck = $('#email');
   
   function check() {
@@ -179,35 +181,35 @@ $(function () {
     }
   }
   
-  $.ajax({
-    url: "/auth/mailCheck",
-    method: "POST",
-    data: {
-      email: 
-    },
-    success: function (s) {
-      alert("저장된 메뉴는 마이페이지에 확인하실 수 있습니다.")
-    },
-    error: function (error) {
-      alert('저장하려면 로그인이 필요합니다.')
-    }
-  })
+  // $.ajax({
+  //   url: "/auth/mailCheck",
+  //   method: "POST",
+  //   data: {
+  //     email: mailTest
+  //   },
+  //   success: function (s) {
+  //     alert("저장된 메뉴는 마이페이지에 확인하실 수 있습니다.")
+  //   },
+  //   error: function (error) {
+  //     alert('저장하려면 로그인이 필요합니다.')
+  //   }
+  // })
 
   mailCheck.blur(function() {
-    var regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-    if (mailCheck.val().match(regEmail) != null) {
+    let mailTest = $('#email').val();
+    let regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+    if (mailTest.match(regEmail) != null) {
       // $('.check-icon:eq(2)').fadeIn();
       // $('font[name=checkMail]').html("");
-      conosle.log("true")
+      console.log("true")
       // mailOverLap();
     } else {
-      conosle.log("false")
+      console.log("정확하지 않은 형식.")
       // $('.check-icon:eq(2)').fadeOut();
       // $('font[name=checkMail]').html("정확하지 않은 형식입니다.").addClass('chk-warring');
       return true;
     };
   });
-
 
 });
 
