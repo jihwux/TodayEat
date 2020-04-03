@@ -16,7 +16,6 @@ module.exports = (passport) => {
           done(null, exUser);
         } else {
           done(null, false, { message: '비밀번호가 일치하지 않습니다.' });
-          // res.status(403).send( "<script>  alert('로그인이 필요합니다.'); location.href = '/' </script>" );
         }
       } else {
         done(null, false, { message: '가입되지 않은 회원입니다.' });

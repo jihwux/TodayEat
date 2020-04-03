@@ -9,7 +9,6 @@ $(function () {
   var visual = $('article .si-z');
   var current = 0;
   var next = 1;
-
   $nextBtn.on('click', function () {
     var currentEI = visual.eq(current);
     var nextEI = visual.eq(next);
@@ -132,6 +131,7 @@ $(function () {
     }
   });
 
+   var abc =2 ;
   $("#join").click(function () {
     $("#join-wrap").fadeIn();
     $("#join-content").animate({
@@ -181,19 +181,21 @@ $(function () {
     }
   }
   
-  // $.ajax({
-  //   url: "/auth/mailCheck",
-  //   method: "POST",
-  //   data: {
-  //     email: mailTest
-  //   },
-  //   success: function (s) {
-  //     alert("저장된 메뉴는 마이페이지에 확인하실 수 있습니다.")
-  //   },
-  //   error: function (error) {
-  //     alert('저장하려면 로그인이 필요합니다.')
-  //   }
-  // })
+  $.ajax({
+    url: "/auth/login",
+    method: "POST",
+    data: {
+      email: ,
+      password :  
+    },
+    success: function (s) {
+      // alert("저장된 메뉴는 마이페이지에 확인하실 수 있습니다.")
+      console.log('success')
+    },
+    error: function (error) {
+      // alert('저장하려면 로그인이 필요합니다.')
+    }
+  })
 
   mailCheck.blur(function() {
     let mailTest = $('#email').val();
@@ -210,7 +212,6 @@ $(function () {
       return true;
     };
   });
-
 });
 
 // Papergame

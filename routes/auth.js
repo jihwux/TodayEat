@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const { isLoggedIn, isNotLoggedIn } = require("./middlewares");
 const { User, Foodsave } = require("../models");
 
+
 const router = express.Router();
 
 router.post("/join", isNotLoggedIn, async (req, res, next) => {
@@ -26,9 +27,7 @@ router.post("/join", isNotLoggedIn, async (req, res, next) => {
     return next(error);
   }
 });
-//foodsave DB 작성
 
-// router.post('')
 
 router.post("/login", isNotLoggedIn, (req, res, next) => {
   passport.authenticate("local", (authError, user, info) => {
@@ -36,9 +35,9 @@ router.post("/login", isNotLoggedIn, (req, res, next) => {
       console.error(authError);
       return next(authError);
     }
-    if (!user) {
+    if (!user) {      
       req.flash("loginError", info.message);
-      return res.redirect("/");
+      return res.redirect("/");    
     }
     return req.login(user, loginError => {
       if (loginError) {
