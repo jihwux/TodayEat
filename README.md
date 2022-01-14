@@ -1,4 +1,4 @@
-# 오늘뭐먹지? 
+# 오늘뭐먹지? (서비스 중지)
 
 3가지 게임 ( 가위바위보 , 승부차기 , 돌림판 ) 을 통해서 점심 메뉴를 골라서 기록할 수 있는 서비스. 
 
@@ -13,7 +13,7 @@
 
 ## 배포를 위한 AWS 세팅
 
- - aws에서 비트나미 끄기 
+ - bitnami off in aws
  - npm i
  - sudo npm i -g pm2 cross-env sequelize-cli
  - sequelize db:create --env production
@@ -25,5 +25,5 @@
 - npm install -g sequelize-cli 
 - pm i -g pm2 cross-env sequelize-cli
 - sequelize db:create
-- bcrypt 에러 npm i windows-build-tools (powershell 에서 관리자 권한)
+- bcrypt Error = npm i windows-build-tools (powershell 에서 관리자 권한)
 
