@@ -9,7 +9,7 @@
 * SCSS
 * Mysql Sequelize
 * AWS
-* AJAX ( 가입/로그인 비동기 작업중 )
+* AJAX 
 
 ## 배포를 위한 AWS 세팅
 
@@ -25,5 +25,5 @@
 - npm install -g sequelize-cli 
 - pm i -g pm2 cross-env sequelize-cli
 - sequelize db:create
-- bcrypt Error = npm i windows-build-tools (powershell 에서 관리자 권한)
+- bcrypt Error = npm i windows-build-tools
 
