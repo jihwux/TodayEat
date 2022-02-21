@@ -1,20 +1,17 @@
 // @charset "UTF-8";
 
-@import 'base/utils.scss';
-@import 'base/reset.css';
+@import "./base/utils.scss";
+@import "./base/reset.css";
 
-@import 'layout/grid.scss';
-@import 'layout/header.scss';
-@import 'layout/sidebar.scss';
+@import "./layout/grid.scss";
+@import "./layout/header.scss";
+@import "./layout/sidebar.scss";
 
-@import './components/button.scss';
-
+@import "./components/button.scss";
 
 // pages
-@import './pages/CardSelectPage.scss';
-@import './pages/PaperGame.scss';
-@import './pages/RouletteGame.scss';
-@import './pages/SoccerGame.scss';
-@import './pages/myPage.scss';
-
-
+@import "./pages/CardSelectPage.scss";
+@import "./pages/PaperGame.scss";
+@import "./pages/RouletteGame.scss";
+@import "./pages/SoccerGame.scss";
+@import "./pages/myPage.scss";

@@ -1,65 +1,67 @@
-.rpsGame {  
-.grid-btn {
-  width: 100%;
-  position: absolute;
-  bottom: 10%;
-  padding: 1rem;
+@import "../base/utils.scss";
+
+.rpsGame {
+  .grid-btn {
+    width: 100%;
+    position: absolute;
+    bottom: 10%;
+    padding: 1rem;
+
+    input {
+      margin: 1rem;
+    }
+  }
+
+  .game-score {
+    table {
+      position: absolute;
+      top: 90%;
+      left: 43%;
+    }
+  }
+
+  #user-title {
+    text-align: center;
+    padding-bottom: 2rem;
+    span {
+      padding: 0rem 10rem;
+    }
+  }
+  .choice {
+    display: flex;
+    text-align: center;
+    img {
+      display: flex;
+      margin: 0 auto;
+      width: 200px;
+      height: 150px;
+    }
+  }
+
+  th {
+    font-size: 12px;
+    font-size: 12px;
+    letter-spacing: 1rem;
+  }
+
+  .choose {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
 
   input {
-    margin: 1rem;
+    // border: 1px solid black;
+    height: 40px;
+    width: 100px;
   }
-}
 
-.game-score {
-  table {
-    position: absolute;
-    top: 90%;
-    left: 43%;
-
+  #wins,
+  #losses,
+  #ties {
+    font-size: 24px;
   }
-}
-
-#user-title {
-  text-align: center;
-  padding-bottom: 2rem;
-  span {
-    padding: 0rem 10rem;
-  }
-  
-}
-.choice {
-  display: flex;
-  text-align: center;
-  img {
-    display: flex;
-    margin: 0 auto;
-    width: 200px;
-    height: 150px;    
-  }
-}
-
-th {
-  font-size: 12px;
-  font-size: 12px;
-  letter-spacing: 1rem;
-}
-
-.choose{
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 15px;
-  margin-bottom: 30px;
-}
-
-input {
-  // border: 1px solid black;
-  height: 40px;
-  width: 100px;
-}
-
-#wins, #losses, #ties {
-  font-size: 24px;
- }
 }
 
 .gbtn {
@@ -68,11 +70,9 @@ input {
   font-size: 12px;
   box-sizing: border-box;
 
-
   &:hover {
     background: $oc-gray-2;
     transition: all 0.1s;
-
   }
 }
 .rbtn {

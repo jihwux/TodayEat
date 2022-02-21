@@ -1,6 +1,6 @@
-const local = require('./localStrategy');
-const kakao = require('./kakaoStrategy');
-const { User} = require('../models');
+const local = require("./localStrategy");
+const kakao = require("./kakaoStrategy");
+const { User } = require("../models");
 
 module.exports = (passport) => {
   passport.serializeUser((user, done) => {
@@ -9,12 +9,11 @@ module.exports = (passport) => {
 
   passport.deserializeUser((id, done) => {
     User.findOne({
-      where: { id },      
-     
+      where: { id },
     })
 
-      .then(user => done(null, user))
-      .catch(err => done(err));
+      .then((user) => done(null, user))
+      .catch((err) => done(err));
   });
   local(passport);
   kakao(passport);

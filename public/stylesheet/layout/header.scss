@@ -1,12 +1,12 @@
-@import '../base/utils.scss';
-
+@import "../base/utils.scss";
 
 .header-wrap {
-  position: fixed;
-  top: 0;
+  // position: fixed;
+  // top: 0;
   width: 100%;
   height: 70px;
   z-index: 1;
+  position: absolute;
 
   // background: $oc-gray-0;
   // box-shadow: 10px 10px 5px 0px rgb(239, 237, 234);
@@ -14,10 +14,9 @@
   .header {
     width: 100%;
     max-width: 1200px;
-    margin:0 auto;    
+    margin: 0 auto;
     padding: 3rem 0rem;
     text-align: right;
-    
   }
 
   /* Modal Content */
@@ -76,10 +75,10 @@
       cursor: pointer;
     }
   }
-.user-name {
-  display: flex;
-  justify-content: space-between;
-}
+  .user-name {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .modal {

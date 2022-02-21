@@ -1,3 +1,5 @@
+@import "../base/utils.scss";
+
 .form-btn {
   border: 0;
   display: block;
@@ -14,14 +16,13 @@
   margin-top: 1rem;
 }
 .join-btn {
-
 }
 
 .kko-btn {
   wdth: 50%;
-    margin:0 auto;
-    background: #FFDE00 !important;
-    color: #3C1E1E;
-    font-weight: bold;
-    margin-top: 1rem;
+  margin: 0 auto;
+  background: #ffde00 !important;
+  color: #3c1e1e;
+  font-weight: bold;
+  margin-top: 1rem;
 }

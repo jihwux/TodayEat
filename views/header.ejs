@@ -1,75 +1,97 @@
 <div class="header-wrap">
-    <div class="header">
-      <div class="profile">
-        <% if(user && user.id) { %>
-        <div class="user-name">
-          <span style="padding-right:57rem;"> 안녕하세요! <%= user.nick %> 님!</span>
-          
+  <div class="header">
+    <div class="profile">
+      <% if(user && user.id) { %>
+      <div class="user-name">
+        <span><%= user.nick %> 님</span>
+        <div>
           <a href="/auth/logout" id="logout">로그아웃</a>
           <a href="/myPage" id="logout" class="mypage-btn">마이페이지</a>
-          <a href="/" id="myPage-home" style="display:none"> 홈</a>
+          <a href="/" id="myPage-home" style="display: none"> 홈</a>
         </div>
       </div>
-      <% } else {%>
-        <a href="#" id="login">로그인</a>        
-      <div id="login-wrap" class="modal">
-        <div id="login-content" class="modal-content">
-          <!-- <span class="close">×</span> -->
-          <form id="login-form" action="/auth/login" method='post'>
-            <div class="form-header">
-              <h1>
-                오늘 뭐먹지?
-              </h1>
-            </div>
-            <div class="input-group">
-              <!-- <label for="email">이메일</label> -->
-              <input type="email" name="email" required autofocus placeholder="Email">
-            </div>
-            <div class="input-group">
-              <!-- <label for="password">비밀번호</label> -->
-              <input type="password" name="password" value="" required placeholder="Password">
-            </div>
-            <% if (loginError) %>
-            <%=  loginError %>
-            <div class="error-message">
-            </div>
-            <div class="form-footer">
-              <button type="submit" class="form-btn login-btn">로그인</button>
-              <a href="/auth/kakao"><button type="button" class="form-btn kko-btn">카카오 로그인</button></a>
-            </div>
-          </form>
-        </div>
-      </div>
-      <a href="#" id="join">회원가입</a>
-      <div id="join-wrap" class="modal" style="display: none;">
-        <div id="join-content" class="modal-content">
-          <form id="join-form" action="/auth/join" method="post">
-            <div class="form-header">
-              <h1>
-                오늘 뭐먹지?
-              </h1>
-            </div>
-            <div class="input-group">
-              <!-- <label for="join-email">이메일</label> -->
-              <input id="email" type="email" name="email" value="" placeholder="Email">
-              <!-- <i class="fas fa-check"></i> -->
-            </div>
-            <div class="input-group">
-              <!-- <label for="join-email">닉네임</label> -->
-              <input type="text" name="nick" value="" placeholder="Name">
-              <p>2자 이상 입력해주세요.</p>
-            </div>
-            <div class="input-group">
-              <!-- <label for="join-email">비밀번호</label> -->
-              <input type="password" name="password" value="" placeholder="Password">
-              <!-- <i class="fas fa-coffee fa-xs"></i> -->
-            </div>
-            <div class="form-footer">
-              <button type="submit" class="form-btn login-btn">회원가입</button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <% } %>
     </div>
+    <% } else {%>
+    <a href="#" id="login">로그인</a>
+    <div id="login-wrap" class="modal">
+      <div id="login-content" class="modal-content">
+        <!-- <span class="close">×</span> -->
+        <form id="login-form" action="/auth/login" method="post">
+          <div class="form-header">
+            <h1>오늘 뭐먹지?</h1>
+          </div>
+          <div class="input-group">
+            <!-- <label for="email">이메일</label> -->
+            <input
+              type="email"
+              name="email"
+              required
+              autofocus
+              placeholder="Email"
+            />
+          </div>
+          <div class="input-group">
+            <!-- <label for="password">비밀번호</label> -->
+            <input
+              type="password"
+              name="password"
+              value=""
+              required
+              placeholder="Password"
+            />
+          </div>
+          <% if (loginError) %> <%= loginError %>
+          <div class="error-message"></div>
+          <div class="form-footer">
+            <button type="submit" class="form-btn login-btn">로그인</button>
+            <a href="/auth/kakao"
+              ><button type="button" class="form-btn kko-btn">
+                카카오 로그인
+              </button></a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+    <a href="#" id="join">회원가입</a>
+    <div id="join-wrap" class="modal" style="display: none">
+      <div id="join-content" class="modal-content">
+        <form id="join-form" action="/auth/join" method="post">
+          <div class="form-header">
+            <h1>오늘 뭐먹지?</h1>
+          </div>
+          <div class="input-group">
+            <!-- <label for="join-email">이메일</label> -->
+            <input
+              id="email"
+              type="email"
+              name="email"
+              value=""
+              placeholder="Email"
+            />
+            <!-- <i class="fas fa-check"></i> -->
+          </div>
+          <div class="input-group">
+            <!-- <label for="join-email">닉네임</label> -->
+            <input type="text" name="nick" value="" placeholder="Name" />
+            <p>2자 이상 입력해주세요.</p>
+          </div>
+          <div class="input-group">
+            <!-- <label for="join-email">비밀번호</label> -->
+            <input
+              type="password"
+              name="password"
+              value=""
+              placeholder="Password"
+            />
+            <!-- <i class="fas fa-coffee fa-xs"></i> -->
+          </div>
+          <div class="form-footer">
+            <button type="submit" class="form-btn login-btn">회원가입</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <% } %>
   </div>
+</div>

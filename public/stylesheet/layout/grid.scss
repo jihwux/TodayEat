@@ -1,10 +1,15 @@
-@import '../base/utils.scss';
+@import "../base/utils.scss";
 
-// postition inital 해제 dispalt block 
+// postition inital 해제 dispalt block
+
+body {
+  background-color: $oc-gray-0;
+}
+
 article {
   position: relative;
   width: 100%;
-  height: 960px;
+  height: 100vh;
   overflow: hidden;
 
   .contentWrap {
@@ -29,10 +34,10 @@ article {
       width: 150px;
       padding-bottom: 4rem;
     }
-    .home-start {      
+    .home-start {
       display: block;
-        font-size: 1.8rem ;
-        cursor: pointer;
+      font-size: 1.8rem;
+      cursor: pointer;
     }
   }
 
@@ -46,7 +51,7 @@ article {
       z-index: 2;
       color: #fff;
       font-weight: 300;
-      font-size: .9rem;
+      font-size: 0.9rem;
 
       span {
         font-family: FontAwesome;
@@ -58,23 +63,19 @@ article {
           content: "\f05a";
         }
       }
-
     }
   }
 
   .si-z {
     width: 100%;
-    height: 960px;
+    height: 100%;
     position: absolute;
-    background-color: orange
-
-    
+    background-color: orange;
   }
 
   .Visual_1 {
     background-color: $oc-gray-0;
     left: 100%;
-
 
     .contentMenu {
       position: absolute;
@@ -101,7 +102,7 @@ article {
       div.cardContainer div {
         height: inherit;
         width: inherit;
-        color: #FFF;
+        color: #fff;
         font-size: 24px;
         backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
@@ -163,9 +164,7 @@ article {
         -moz-transform: rotateY(0deg);
         -o-transform: rotateY(0deg);
       }
-
     }
-
   }
 
   .Visual_2 {
