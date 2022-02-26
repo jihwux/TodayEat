@@ -26,4 +26,6 @@
 - pm i -g pm2 cross-env sequelize-cli
 - sequelize db:create
 - bcrypt Error = npm i windows-build-tools
+- Client does not support authentication protocol requested by server((MySQL v8 이하) 에러 아래 Sql
+- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
 
