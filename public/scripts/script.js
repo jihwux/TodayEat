@@ -518,8 +518,8 @@ let theWheel = new Winwheel({
   ],
   animation: {
     type: "spinToStop",
-    duration: 15,
-    spins: 9,
+    duration: 5,
+    spins: 10,
     callbackFinished: alertPrize,
     soundTrigger: "pin",
   },
