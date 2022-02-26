@@ -361,14 +361,14 @@ var soccerGame = {
   krScoreNumber: 5,
 };
 
-var krTeam = ["손흥민", "조현우", "황희찬", "이승우", "박지성"];
+var krTeam = ["국수", "김치찌개", "돈까스", "백반", "파스타"];
 
 function onKoreaShoot() {
   if (Math.random() < korea.percent) {
-    screen("한국팀 : " + krTeam[0] + "선수가 슛에 성공했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
+    screen("고지방팀 : " + krTeam[0] + "선수가 슛에 성공했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
     updateKorScore();
   } else {
-    screen("한국팀 : " + krTeam[0] + " 선수가 슛에 실패했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
+    screen("고지방팀 : " + krTeam[0] + " 선수가 슛에 실패했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
   }
 
   var $krScoreNumberElem = $("#kr-number");
@@ -384,10 +384,10 @@ function onKoreaShoot() {
 function onJapenShoot() {
   krTeam.shift();
   if (Math.random() < japen.percent) {
-    screen("중국팀이 슛에 성공했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
+    screen("저지방팀이 슛에 성공했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
     updateJpScore();
   } else {
-    screen("중국팀이 슛에 실패했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
+    screen("저지방팀이 슛에 실패했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
   }
   var $jpScoreNumberElem = $("#jp-number");
   soccerGame.jpScoreNumber--;
@@ -397,14 +397,14 @@ function onJapenShoot() {
 
   if (soccerGame.jpScoreNumber === 0) {
     if (korea.score > japen.score) {
-      screen("한국팀이 승리했습니다.");
+      screen("고지방팀이 승리했습니다.");
       setTimeout(function () {
         foodrand();
       }, 100);
       // onReset();
       $(".btn-reset").attr("disabled", false);
     } else if (korea.score < japen.score) {
-      screen("중국팀이 승리했습니다.");
+      screen("저지방팀이 승리했습니다.");
       $(".btn-reset").attr("disabled", false);
     } else {
       screen("비겼습니다.");
@@ -450,7 +450,7 @@ function onReset() {
   var $korElem = $("#kr-score");
   var $krScoreNumberElem = $("#kr-number");
   var $jpScoreNumberElem = $("#jp-number");
-  krTeam.push("손흥민", "조현우", "황희찬", "이승우", "박지성");
+  krTeam.push("국수", "김치찌개", "돈까스", "백반", "파스타");
 
   japen.score = 0;
   korea.score = 0;
