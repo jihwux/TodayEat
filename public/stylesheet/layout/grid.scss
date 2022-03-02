@@ -76,6 +76,7 @@ article {
   .Visual_1 {
     background-color: $oc-gray-0;
     left: 100%;
+    overflow: auto;
 
     .contentMenu {
       position: absolute;
@@ -170,18 +171,21 @@ article {
   .Visual_2 {
     background-color: $oc-gray-0;
     left: 200%;
+    overflow: auto;
   }
 
   .Visual_3 {
     background-color: $oc-gray-0;
     left: 100%;
     top: 100%;
+    overflow: auto;
   }
 
   .Visual_4 {
     background-color: $oc-gray-0;
     left: 100%;
     bottom: 100%;
+    overflow: auto;
   }
 }
 
