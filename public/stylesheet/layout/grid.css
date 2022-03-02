@@ -69,6 +69,12 @@ article {
   overflow: hidden;
 }
 
+@media screen and (max-width: 459px) {
+  article {
+    overflow-x: hidden;
+  }
+}
+
 article .contentWrap {
   width: 100%;
   position: absolute;
@@ -134,7 +140,7 @@ article .si-z {
 article .Visual_1 {
   background-color: #f8f9fa;
   left: 100%;
-  overflow: auto;
+  overflow-x: hidden;
 }
 
 article .Visual_1 .contentMenu {
@@ -229,21 +235,21 @@ article .Visual_1 .contentMenu div.cardContainer:hover div:last-child {
 article .Visual_2 {
   background-color: #f8f9fa;
   left: 200%;
-  overflow: auto;
+  overflow-x: hidden;
 }
 
 article .Visual_3 {
   background-color: #f8f9fa;
   left: 100%;
   top: 100%;
-  overflow: auto;
+  overflow-x: hidden;
 }
 
 article .Visual_4 {
   background-color: #f8f9fa;
   left: 100%;
   bottom: 100%;
-  overflow: auto;
+  overflow-x: hidden;
 }
 
 .intro {

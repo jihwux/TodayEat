@@ -17,6 +17,9 @@
       position: absolute;
       top: 90%;
       left: 43%;
+      @media screen and (max-width: 459px) {
+        left: 32%;
+      }
     }
   }
 

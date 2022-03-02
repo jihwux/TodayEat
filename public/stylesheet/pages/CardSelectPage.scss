@@ -18,4 +18,9 @@
   height: 450px;
   margin-top: 3rem;
   // background: $oc-gray-2;
+
+  @media screen and (max-width: 459px) {
+    width: 100%;
+    // left: 32%;
+  }
 }

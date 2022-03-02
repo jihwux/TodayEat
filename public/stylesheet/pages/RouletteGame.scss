@@ -1,160 +1,165 @@
-.roulette-game{
+.roulette-game {
+  button {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
 
-button {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
+  .title {
+    margin-top: 50px;
+    text-align: center;
+  }
 
-.title {
-  margin-top: 50px;
-  text-align: center;
-}
-
-.box-roulette {
-  position: relative;
-  margin: 50px auto;
-  width: 500px;
-  height: 500px;
-  border: 10px solid #ccc;
-  border-radius: 50%;
-  background: #ccc;
-  overflow: hidden;
-}
-
-.box-roulette .markers {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  margin-left: -25px;
-  width: 0;
-  height: 0;
-  border: 25px solid #fff;
-  border-left-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  z-index: 9999;
-}
-
-.box-roulette .roulette {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.box-roulette .item {
-  position: absolute;
-  top: 0;
-  width: 0;
-  height: 0;
-  border: 0 solid transparent;
-  transform-origin: 0 100%;
-}
-
-.box-roulette .label {
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #fff;
-  white-space: nowrap;
-  transform-origin: 0 0;
-}
-
-.box-roulette .label .text {
-  display: inline-block;
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 1;
-  vertical-align: middle;
-}
-
-#btn-start {
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: -50px 0 0 -50px;
-  width: 100px;
-  height: 100px;
-  font-weight: bold;
-  background: #fff;
-  border-radius: 50px;
-  z-index: 9999;
-  cursor: pointer;
-}
-}
-td.the_wheel
-{
-    background-image: url(../img/wheel_back.gif);
-    background-position: center;
-    background-repeat: no-repeat;
+  .box-roulette {
     position: relative;
-    bottom: 4rem;
-    left: -5rem;
+    margin: 50px auto;
+    width: 500px;
+    height: 500px;
+    border: 10px solid #ccc;
+    border-radius: 50%;
+    background: #ccc;
+    overflow: hidden;
+  }
+
+  .box-roulette .markers {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -25px;
+    width: 0;
+    height: 0;
+    border: 25px solid #fff;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    z-index: 9999;
+  }
+
+  .box-roulette .roulette {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .box-roulette .item {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    transform-origin: 0 100%;
+  }
+
+  .box-roulette .label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+    white-space: nowrap;
+    transform-origin: 0 0;
+  }
+
+  .box-roulette .label .text {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1;
+    vertical-align: middle;
+  }
+
+  #btn-start {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -50px 0 0 -50px;
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+    background: #fff;
+    border-radius: 50px;
+    z-index: 9999;
+    cursor: pointer;
+  }
+}
+td.the_wheel {
+  background-image: url(../img/wheel_back.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  bottom: 5rem;
+  left: -3rem;
+  width: 438px;
+  height: 582px;
+  @media screen and (max-width: 459px) {
+    bottom: 7rem;
+    background-size: 235px;
+  }
 }
 #canvas {
   position: relative;
   top: 6.3rem;
+  width: 434px;
+  height: 434px;
+  @media screen and (max-width: 459px) {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 /* Do some css reset on selected elements */
-h1, p
-{
-    margin: 0;
+h1,
+p {
+  margin: 0;
 }
 
 div.power_controls {
-    margin-right:70px;
-    position: relative;
-    top: -15rem;
-    left: -5rem;
+  margin-right: 70px;
+  position: relative;
+  top: -15rem;
+  left: -5rem;
+  @media screen and (max-width: 459px) {
+    margin-right: 0;
+    top: 4rem;
+    left: 2.5rem;
+  }
 }
 
-div.html5_logo
-{
-    margin-left:70px;
-    
+div.html5_logo {
+  margin-left: 70px;
 }
-
 
 /* Styles for the power selection controls */
-table.power
-{
-    background-color: #cccccc;
-    cursor: pointer;
-    border:1px solid #333333;
+table.power {
+  background-color: #cccccc;
+  cursor: pointer;
+  border: 1px solid #333333;
 }
 
-table.power th
-{
-    background-color: white;
-    cursor: default;
+table.power th {
+  background-color: white;
+  cursor: default;
 }
 
-td.pw1
-{
-    background-color: #6fe8f0;
+td.pw1 {
+  background-color: #6fe8f0;
 }
 
-td.pw2
-{
-    background-color: #86ef6f;
+td.pw2 {
+  background-color: #86ef6f;
 }
 
-td.pw3
-{
-    background-color: #ef6f6f;
+td.pw3 {
+  background-color: #ef6f6f;
 }
 
 /* Style applied to the spin button once a power has been selected */
-.clickable
-{
-    cursor: pointer;
+.clickable {
+  cursor: pointer;
 }
 
 /* Other misc styles */
-.margin_bottom
-{
-    margin-bottom: 5px;
+.margin_bottom {
+  margin-bottom: 5px;
 }

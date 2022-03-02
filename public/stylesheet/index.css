@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "base/reset.css";
 @-webkit-keyframes right-waterfall {
   0% {
@@ -99,6 +100,12 @@ article {
   overflow: hidden;
 }
 
+@media screen and (max-width: 459px) {
+  article {
+    overflow-x: hidden;
+  }
+}
+
 article .contentWrap {
   width: 100%;
   position: absolute;
@@ -164,7 +171,7 @@ article .si-z {
 article .Visual_1 {
   background-color: #f8f9fa;
   left: 100%;
-  overflow: auto;
+  overflow-x: hidden;
 }
 
 article .Visual_1 .contentMenu {
@@ -259,21 +266,21 @@ article .Visual_1 .contentMenu div.cardContainer:hover div:last-child {
 article .Visual_2 {
   background-color: #f8f9fa;
   left: 200%;
-  overflow: auto;
+  overflow-x: hidden;
 }
 
 article .Visual_3 {
   background-color: #f8f9fa;
   left: 100%;
   top: 100%;
-  overflow: auto;
+  overflow-x: hidden;
 }
 
 article .Visual_4 {
   background-color: #f8f9fa;
   left: 100%;
   bottom: 100%;
-  overflow: auto;
+  overflow-x: hidden;
 }
 
 .intro {
@@ -555,6 +562,12 @@ aside .prev-btn:before {
   margin-top: 3rem;
 }
 
+@media screen and (max-width: 459px) {
+  .GameContainer {
+    width: 100%;
+  }
+}
+
 @keyframes right-waterfall {
   0% {
     opacity: 0;
@@ -600,6 +613,12 @@ aside .prev-btn:before {
   position: absolute;
   top: 90%;
   left: 43%;
+}
+
+@media screen and (max-width: 459px) {
+  .rpsGame .game-score table {
+    left: 32%;
+  }
 }
 
 .rpsGame #user-title {
@@ -762,13 +781,31 @@ td.the_wheel {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  bottom: 4rem;
-  left: -5rem;
+  bottom: 5rem;
+  left: -3rem;
+  width: 438px;
+  height: 582px;
+}
+
+@media screen and (max-width: 459px) {
+  td.the_wheel {
+    bottom: 7rem;
+    background-size: 235px;
+  }
 }
 
 #canvas {
   position: relative;
   top: 6.3rem;
+  width: 434px;
+  height: 434px;
+}
+
+@media screen and (max-width: 459px) {
+  #canvas {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 /* Do some css reset on selected elements */
@@ -782,6 +819,14 @@ div.power_controls {
   position: relative;
   top: -15rem;
   left: -5rem;
+}
+
+@media screen and (max-width: 459px) {
+  div.power_controls {
+    margin-right: 0;
+    top: 4rem;
+    left: 2.5rem;
+  }
 }
 
 div.html5_logo {
@@ -849,6 +894,12 @@ td.pw3 {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 459px) {
+  .soccer-game .score-board {
+    width: 100%;
+  }
+}
+
 .soccer-game .korea-score {
   width: 45%;
   float: left;
@@ -887,6 +938,12 @@ td.pw3 {
   width: 500px;
   margin: 0 auto;
   height: 200px;
+}
+
+@media screen and (max-width: 459px) {
+  .soccer-game .control-panel {
+    width: 100%;
+  }
 }
 
 .soccer-game .div-korea {
