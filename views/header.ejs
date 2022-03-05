@@ -73,8 +73,12 @@
           </div>
           <div class="input-group">
             <!-- <label for="join-email">닉네임</label> -->
-            <input type="text" name="nick" value="" placeholder="Name" />
-            <p>2자 이상 입력해주세요.</p>
+            <input
+              type="text"
+              name="nick"
+              value=""
+              placeholder="Name(2자 이상 입력해주세요)"
+            />
           </div>
           <div class="input-group">
             <!-- <label for="join-email">비밀번호</label> -->
@@ -88,6 +92,11 @@
           </div>
           <div class="form-footer">
             <button type="submit" class="form-btn login-btn">회원가입</button>
+            <a href="/auth/kakao"
+              ><button type="button" class="form-btn kko-btn">
+                카카오 로그인
+              </button></a
+            >
           </div>
         </form>
       </div>
