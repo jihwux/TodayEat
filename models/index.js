@@ -1,21 +1,34 @@
-  
-const Sequelize = require('sequelize');
-const env = process.env.NODE_ENV || 'development';
-const config = require('../config/config')[env];
+const Sequelize = require("sequelize");
+const env = process.env.NODE_ENV || "development";
+const config = require("../config/config")[env];
 const db = {};
 
-const sequelize = new Sequelize(
-  config.database, config.username, config.password, config,
-);
+// const sequelize = new Sequelize(
+//   config.database, config.username, config.password, config,
+// );
+let sequelize = null;
+if (process.env.DATABASE_URL) {
+  sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: "postgres",
+    native: true, //2021 5월에 추가: pg-native를 npm으로 설치해야함
+    protocol: "postgres",
+  });
+} else {
+  sequelize = new Sequelize(
+    config.database,
+    config.username,
+    config.password,
+    config
+  );
+}
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-db.User = require('./user')(sequelize, Sequelize);
-db.Foodsave = require('./foodsave')(sequelize, Sequelize);
+db.User = require("./user")(sequelize, Sequelize);
+db.Foodsave = require("./foodsave")(sequelize, Sequelize);
 
-db.User.hasMany(db.Foodsave );
-db.Foodsave.belongsTo(db.User );
-
+db.User.hasMany(db.Foodsave);
+db.Foodsave.belongsTo(db.User);
 
 // db.User.belongsToMany(db.Foodsave, {
 //   foreignKey: 'foodsid',
@@ -33,7 +46,6 @@ db.Foodsave.belongsTo(db.User );
 //   through: 'Follow',
 
 // });
-
 
 module.exports = db;
 
