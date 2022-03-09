@@ -12,6 +12,9 @@ if (process.env.DATABASE_URL) {
     dialect: "postgres",
     native: true, //2021 5월에 추가: pg-native를 npm으로 설치해야함
     protocol: "postgres",
+    port: 5432,
+    host: "ec2-44-194-167-63.compute-1.amazonaws.com",
+    logging: true, //false
   });
 } else {
   sequelize = new Sequelize(
