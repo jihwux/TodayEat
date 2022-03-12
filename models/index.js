@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const env = process.env.NODE_ENV || "development";
+const env = process.env.NODE_ENV || "production";
 const config = require("../config/config")[env];
 const db = {};
 
@@ -16,7 +16,7 @@ if (process.env.DATABASE_URL) {
     native: true, //2021 5월에 추가: pg-native를 npm으로 설치해야함
     protocol: "postgres",
     port: 5432,
-
+    database: "dfcib1vn0j6hhl",
     host: "ec2-44-194-167-63.compute-1.amazonaws.com",
     // logging: true, //false
   });
