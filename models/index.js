@@ -18,6 +18,8 @@ if (process.env.DATABASE_URL) {
     database: "dfcib1vn0j6hhl",
     host: "ec2-44-194-167-63.compute-1.amazonaws.com",
     ssl: {
+      require: true,
+
       rejectUnauthorized: false,
     },
     // logging: true, //false
