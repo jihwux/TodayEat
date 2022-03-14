@@ -13,7 +13,6 @@ if (process.env.DATABASE_URL) {
     username: "ofujtwlefqkpqp",
     password:
       "92dc7c4dd831cbe67a8a8e4a9615990f1428033fadc1163ff7ebe76d977c80ba",
-    native: true, //2021 5월에 추가: pg-native를 npm으로 설치해야함
     protocol: "postgres",
     port: 5432,
     database: "dfcib1vn0j6hhl",
