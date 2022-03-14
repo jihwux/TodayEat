@@ -10,17 +10,19 @@ const db = {};
 let sequelize = null;
 if (process.env.DATABASE_URL) {
   sequelize = new Sequelize(process.env.DATABASE_URL, {
+    type: "postgres",
+    database: "dfcib1vn0j6hhl",
     username: "ofujtwlefqkpqp",
     password:
       "92dc7c4dd831cbe67a8a8e4a9615990f1428033fadc1163ff7ebe76d977c80ba",
-    protocol: "postgres",
     port: 5432,
-    database: "dfcib1vn0j6hhl",
     host: "ec2-44-194-167-63.compute-1.amazonaws.com",
-    ssl: {
-      require: true,
-
-      rejectUnauthorized: false,
+    dialect: "postgres",
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
     },
     // logging: true, //false
   });
