@@ -462,6 +462,8 @@ function onReset() {
   $krScoreNumberElem.html(soccerGame.krScoreNumber);
 }
 
+// Wheel
+
 let theWheel = new Winwheel({
   numSegments: 12,
   outerRadius: 212,
@@ -477,11 +479,11 @@ let theWheel = new Winwheel({
     },
     {
       fillStyle: "#169ed8",
-      text: "김치볶음밥",
+      text: "김치볶음밥(700kcal)",
     },
     {
       fillStyle: "#209b6c",
-      text: "짬뽕",
+      text: "짬뽕(764kcal)",
     },
     {
       fillStyle: "#60b236",

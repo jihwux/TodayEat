@@ -16,8 +16,7 @@ if (process.env.DATABASE_URL) {
     // port: 3306,
     host: "us-cdbr-east-05.cleardb.net",
     dialect: "mysql",
-    // dialectOptions: {   ssl: {     require: true,     rejectUnauthorized: false,
-    //  }, }, logging: true, //false
+    dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
   });
 } else {
   sequelize = new Sequelize(
