@@ -14,15 +14,15 @@ module.exports = {
     database: "heroku_933e0f01e3d9aab",
     username: "b8eb2711b3efec",
     password: "8b62bb99",
-    // port: 3306,
+    // port: 3306,xw
     host: "us-cdbr-east-05.cleardb.net",
     dialect: "mysql",
-    // dialectOptions: {
-    //   ssl: {
-    //     require: true,
-    //     rejectUnauthorized: false,
-    //   },
-    // },
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
     // protocol: "postgres",
   },
   // production: {
