@@ -11,11 +11,11 @@ module.exports = {
   },
   production: {
     // type: "mysql",
-    database: "heroku_933e0f01e3d9aab",
-    username: "b8eb2711b3efec",
-    password: "8b62bb99",
-    // port: 3306,xw
-    host: "us-cdbr-east-05.cleardb.net",
+    database: "yw82vvgqbn05tb77",
+    username: "h1f1dl1qr9z5jt9r",
+    password: "by1prn1403oiyurc",
+    // port: 3306,
+    host: "uyu7j8yohcwo35j3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     dialect: "mysql",
     dialectOptions: {
       ssl: {
