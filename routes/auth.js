@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 const { isLoggedIn, isNotLoggedIn } = require("./middlewares");
 const { User, Foodsave } = require("../models");
 
-
 const router = express.Router();
 
 router.post("/join", isNotLoggedIn, async (req, res, next) => {
@@ -19,15 +18,22 @@ router.post("/join", isNotLoggedIn, async (req, res, next) => {
     await User.create({
       email,
       nick,
-      password: hash
+      password: hash,
     });
-    return res.redirect("/");
+    passport.authenticate("local")(req, res, () => {
+      req.session.save((err) => {
+        if (err) {
+          return next(err);
+        }
+        res.redirect("/");
+      });
+    });
+    // return res.redirect("/");
   } catch (error) {
     console.error(error);
     return next(error);
   }
 });
-
 
 router.post("/login", isNotLoggedIn, (req, res, next) => {
   passport.authenticate("local", (authError, user, info) => {
@@ -35,11 +41,11 @@ router.post("/login", isNotLoggedIn, (req, res, next) => {
       console.error(authError);
       return next(authError);
     }
-    if (!user) {      
+    if (!user) {
       req.flash("loginError", info.message);
-      return res.redirect("/");    
+      return res.redirect("/");
     }
-    return req.login(user, loginError => {
+    return req.login(user, (loginError) => {
       if (loginError) {
         console.error(loginError);
         return next(loginError);
@@ -60,7 +66,7 @@ router.get("/kakao", passport.authenticate("kakao"));
 router.get(
   "/kakao/callback",
   passport.authenticate("kakao", {
-    failureRedirect: "/"
+    failureRedirect: "/",
   }),
   (req, res) => {
     res.redirect("/");
