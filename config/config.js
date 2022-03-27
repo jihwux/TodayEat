@@ -2,11 +2,11 @@ require("dotenv").config();
 
 module.exports = {
   development: {
-    username: "hwan",
+    username: "root",
     password: process.env.SEQUELIZE_PASSWORD,
     database: "randfood",
     host: "127.0.0.1",
-    dialect: "postgres",
+    dialect: "mysql",
     operatorsAliases: "false",
   },
   production: {
@@ -23,7 +23,6 @@ module.exports = {
         rejectUnauthorized: false,
       },
     },
-    // protocol: "postgres",
   },
   // production: {
   //   use_env_variable: "DATABASE_URL",
