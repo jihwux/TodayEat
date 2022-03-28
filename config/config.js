@@ -3,6 +3,7 @@ require("dotenv").config();
 module.exports = {
   development: {
     username: "root",
+    username: process.env.SEQUELIZE_USER,
     password: process.env.SEQUELIZE_PASSWORD,
     database: "randfood",
     host: "127.0.0.1",
@@ -11,11 +12,10 @@ module.exports = {
   },
   production: {
     // type: "mysql",
-    database: "yw82vvgqbn05tb77",
-    username: "h1f1dl1qr9z5jt9r",
-    password: "by1prn1403oiyurc",
-    // port: 3306,
-    host: "uyu7j8yohcwo35j3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    database: process.env.SEQUELIZE_HEROKU_DATABASE,
+    username: process.env.SEQUELIZE_HEROKU_USER,
+    password: process.env.SEQUELIZE_HEROKU_PASSWORD,
+    host: process.env.SEQUELIZE_HEROKU_HOST,
     dialect: "mysql",
     dialectOptions: {
       ssl: {
