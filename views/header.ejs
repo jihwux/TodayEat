@@ -61,7 +61,6 @@
             <h1>오늘 뭐먹지?</h1>
           </div>
           <div class="input-group">
-            <!-- <label for="join-email">이메일</label> -->
             <input
               id="email"
               type="email"
@@ -69,29 +68,36 @@
               value=""
               placeholder="Email"
             />
-            <!-- <i class="fas fa-check"></i> -->
+            <label for="join-email">이메일</label>
+            <i class="fas fa-check"></i>
           </div>
           <div class="input-group">
-            <!-- <label for="join-email">닉네임</label> -->
             <input
+              id="nick"
               type="text"
               name="nick"
               value=""
               placeholder="Name(2자 이상 입력해주세요)"
             />
           </div>
+          <label for="join-email">이메일</label>
+          <i class="fas fa-check"></i>
+
           <div class="input-group">
-            <!-- <label for="join-email">비밀번호</label> -->
             <input
+              id="password"
               type="password"
               name="password"
               value=""
               placeholder="Password"
             />
-            <!-- <i class="fas fa-coffee fa-xs"></i> -->
           </div>
+          <label for="join-email">이메일</label>
+          <i class="fas fa-check"></i>
           <div class="form-footer">
-            <button type="submit" class="form-btn login-btn">회원가입</button>
+            <button type="submit" class="form-btn login-btn" onClick="check()">
+              회원가입
+            </button>
             <a href="/auth/kakao"
               ><button type="button" class="form-btn kko-btn">
                 카카오 로그인
