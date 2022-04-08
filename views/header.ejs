@@ -66,10 +66,11 @@
               type="email"
               name="email"
               value=""
+              required
               placeholder="Email"
             />
-            <label for="join-email">이메일</label>
-            <i class="fas fa-check"></i>
+            <!-- <label for="join-email">이메일</label> -->
+            <!-- <i class="fas fa-check"></i> -->
           </div>
           <div class="input-group">
             <input
@@ -77,11 +78,12 @@
               type="text"
               name="nick"
               value=""
+              required
               placeholder="Name(2자 이상 입력해주세요)"
             />
           </div>
-          <label for="join-email">이메일</label>
-          <i class="fas fa-check"></i>
+          <!-- <label for="join-email">이메일</label> -->
+          <!-- <i class="fas fa-check"></i> -->
 
           <div class="input-group">
             <input
@@ -89,15 +91,14 @@
               type="password"
               name="password"
               value=""
+              required
               placeholder="Password"
             />
           </div>
-          <label for="join-email">이메일</label>
-          <i class="fas fa-check"></i>
+          <!-- <label for="join-email">이메일</label> -->
+          <!-- <i class="fas fa-check"></i> -->
           <div class="form-footer">
-            <button type="submit" class="form-btn login-btn" onClick="check()">
-              회원가입
-            </button>
+            <button type="submit" class="form-btn login-btn">회원가입</button>
             <a href="/auth/kakao"
               ><button type="button" class="form-btn kko-btn">
                 카카오 로그인
