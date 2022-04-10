@@ -337,6 +337,8 @@ aside p {
   height: 70px;
   z-index: 1;
   position: absolute;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+
   /* Modal Content */
   /* The Close Button */
 }
@@ -345,7 +347,7 @@ aside p {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 0rem;
+  padding: 1.75rem 0rem;
   text-align: right;
 }
 
