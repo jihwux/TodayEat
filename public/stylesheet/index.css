@@ -121,7 +121,7 @@ article .contentWrap h1 {
 article .contentWrap span {
   font-weight: 1000;
   font-size: 3.8rem;
-  color: saddlebrown;
+  color: whitesmoke;
 }
 
 article .contentWrap img {
@@ -349,7 +349,7 @@ aside p {
   height: 70px;
   z-index: 1;
   position: absolute;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
 
   /* Modal Content */
   /* The Close Button */
