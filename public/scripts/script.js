@@ -184,49 +184,31 @@ $(function () {
     }
   });
 
-  // Papergame
-  const arr = ["rock", "paper", "scissors"];
-  let food = [
-    "김치찌개",
-    "된장찌개",
-    "불고기",
-    "뼈해장국",
-    "짬뽕",
-    "짜장면",
-    "백반",
-    "파스타",
-    "볶음밥",
-    "돈까스",
-  ];
-  let foodSave = [];
-
-  let rand = "";
-  let wins = 0;
-  let losses = 0;
-  let ties = 0;
-
-  function chooseWeapon(weapon) {
-    rand = arr[Math.floor(Math.random() * 3)];
-    let choice = document.getElementById("choice");
-    choice.innerHTML = `<img src="../img/${weapon}.png"><img src="../img/${rand}.png">`;
-    chooseFate(weapon, rand);
-  }
-
-  // function check() {
-  //   console.log("s");
-  // }
+  let mailCheck = $("#email");
 
   function check() {
-    let mailCheck = $("#email");
-    let pwdCheck = $("#password");
-    let nameCheck = $("#nick");
-
     let nameTest = nameCheck.val();
     let pwdTest = pwdCheck.val();
     let mailTest = mailCheck.val();
+    let contactTest = contactCheck.val();
+    let chkPhoneTest = chkPhone.val();
+    let joinChkbox1 = $("#chkServiceChk");
+    let joinChkbox2 = $("#chkPolicyChk");
 
-    console.log(pwdTest, cpTest, mailTest);
-    if (nameTest.length > 0 && pwdTest.length > 0 && mailTest.length > 0) {
+    // console.log(idTest, pwdTest, cpTest, mailTest)
+    if (
+      nameTest.length > 0 &&
+      pwdTest.length > 0 &&
+      mailTest.length > 0 &&
+      contactTest.length > 0 &&
+      chkPhoneTest.length > 0
+    ) {
+      if ($(joinChkbox1, joinChkbox2).is(":checked") == true) {
+        alert("체크");
+        joinSend();
+      } else {
+        alert("약관에 동의해주세요.");
+      }
     } else {
       alert("입력란을 모두 작성해주세요.");
       // console.log(idTest)
@@ -234,19 +216,18 @@ $(function () {
   }
 
   $.ajax({
-    url: "/auth/join",
+    url: "/auth/login",
     method: "POST",
     data: {
       email,
       password,
-      nick,
     },
     success: function (s) {
-      alert("회원가입이 완료 되었습니다.");
+      // alert("저장된 메뉴는 마이페이지에 확인하실 수 있습니다.")
       console.log("success");
     },
     error: function (error) {
-      alert("회원가입에 실패 하였습니다.");
+      // alert('저장하려면 로그인이 필요합니다.')
     },
   });
 
@@ -267,6 +248,34 @@ $(function () {
     }
   });
 });
+
+// Papergame
+const arr = ["rock", "paper", "scissors"];
+let food = [
+  "김치찌개",
+  "된장찌개",
+  "불고기",
+  "뼈해장국",
+  "짬뽕",
+  "짜장면",
+  "백반",
+  "파스타",
+  "볶음밥",
+  "돈까스",
+];
+let foodSave = [];
+
+let rand = "";
+let wins = 0;
+let losses = 0;
+let ties = 0;
+
+function chooseWeapon(weapon) {
+  rand = arr[Math.floor(Math.random() * 3)];
+  let choice = document.getElementById("choice");
+  choice.innerHTML = `<img src="../img/${weapon}.png"><img src="../img/${rand}.png">`;
+  chooseFate(weapon, rand);
+}
 
 function chooseFate(weapon, rand) {
   if (
