@@ -471,23 +471,23 @@ let theWheel = new Winwheel({
   segments: [
     {
       fillStyle: "#3f297e",
-      text: "된장찌개",
+      text: "된장(김치)찌개",
     },
     {
       fillStyle: "#1d61ac",
-      text: "불고기",
+      text: "백반정식",
     },
     {
       fillStyle: "#169ed8",
-      text: "김치볶음밥(700kcal)",
+      text: "국수",
     },
     {
       fillStyle: "#209b6c",
-      text: "짬뽕(764kcal)",
+      text: "짬뽕&짜장",
     },
     {
       fillStyle: "#60b236",
-      text: "순대국",
+      text: "순대(돼지)국밥",
     },
     {
       fillStyle: "#efe61f",
@@ -495,11 +495,11 @@ let theWheel = new Winwheel({
     },
     {
       fillStyle: "#f7a416",
-      text: "스파게티",
+      text: "파스타&양식",
     },
     {
       fillStyle: "#e6471d",
-      text: "비빔밥",
+      text: "햄버거",
     },
     {
       fillStyle: "#e5177b",
@@ -507,15 +507,15 @@ let theWheel = new Winwheel({
     },
     {
       fillStyle: "#be107f",
-      text: "돈카츠",
+      text: "돈가스",
     },
     {
       fillStyle: "#881f7e",
-      text: "라면",
+      text: "라면&김밥",
     },
     {
       fillStyle: "#dc0936",
-      text: "냉면",
+      text: "쌀국수",
     },
   ],
   animation: {
