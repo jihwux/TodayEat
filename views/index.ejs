@@ -152,8 +152,10 @@ fatsecret.setCanvas("home"); */
 
     $.ajax({
       url: "http://platform.fatsecret.com/api/1.0/",
-      method: "food.get.v2",
+      method: "POST",
+      
       data: {
+        method: 'food.get.v2',
         food_id: '4384'
       },
       
@@ -164,25 +166,16 @@ fatsecret.setCanvas("home"); */
         console.log('error22' + error)
       },
     });
-    $.ajax({
-      url: "http://platform.fatsecret.com/api/1.0/",
-      method: "GET",
-      data: {
-        food_id: '4384'
-      },
-      
-      success: function (s) {
-        console.log('success' ,data)
-      },
-      error: function (error) {
-        console.log('error22' + error)
-      },
-    });
+
     $.ajax({
       url: "http://platform.fatsecret.com/api/1.0/",
       method: "POST",
+      headers: {
+		    "Content-Type": "application/json;charset=UTF-8"
+		  },
       data: {
-        food_id: '4384'
+        method: "food.get.v2",
+        food_id: 4384
       },
       
       success: function (s) {
@@ -192,6 +185,81 @@ fatsecret.setCanvas("home"); */
         console.log('error22' + error)
       },
     });
+
+    $.ajax({
+      url: "http://platform.fatsecret.com/api/1.0/",
+      method: "GET",
+      headers: {
+		    "Content-Type": "application/json;charset=UTF-8"
+		  },
+      data: {
+        method: "food.get.v2",
+        food_id: 4384
+      },
+      
+      success: function (s) {
+        console.log('success' ,data)
+      },
+      error: function (error) {
+        console.log('error22' + error)
+      },
+    });
+
+    $.ajax({
+      url: "http://platform.fatsecret.com/api/1.0/",
+      method: "GET",
+      headers: {
+		    "Content-Type": "application/json;charset=UTF-8"
+		  },
+      data: {
+        method: "food.get.v2",
+        food_id: "4384"
+      },
+      
+      success: function (s) {
+        console.log('success' ,data)
+      },
+      error: function (error) {
+        console.log('error22' + error)
+      },
+    });
+
+    $.ajax({
+      url: "http://platform.fatsecret.com/api/1.0/",
+      method: "food.get.v2",
+      headers: {
+		    "Content-Type": "application/json;charset=UTF-8"
+		  },
+      data: {
+        food_id: 4384
+      },
+      
+      success: function (s) {
+        console.log('success' ,data)
+      },
+      error: function (error) {
+        console.log('error22' + error)
+      },
+    });
+
+    $.ajax({
+      url: "http://platform.fatsecret.com/api/1.0/",
+      method: "food.get.v2",
+      headers: {
+		    "Content-Type": "application/json;charset=UTF-8"
+		  },
+      data: {
+        food_id: "4384"
+      },
+      
+      success: function (s) {
+        console.log('success' ,data)
+      },
+      error: function (error) {
+        console.log('error22' + error)
+      },
+    });
+
 </script>
 
 
