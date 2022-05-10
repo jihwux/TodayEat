@@ -150,16 +150,28 @@
 /* fatsecret.setContainer("my_div");
 fatsecret.setCanvas("home"); */ 
 
+    
+
+    
+let clientID = '2086cd74bbb0488f8ee1f690352a8b45'
+let clientSecret = 'e640dc606e6342bca239f82942636530'
     $.ajax({
-      url: "http://platform.fatsecret.com/api/1.0/",
-      method: "POST",
       
-      data: {
-        method: 'food.get.v2',
-        food_id: 4384
-      },
-      
-      success: function (s) {
+       method: 'POST',
+       url: 'https://oauth.fatsecret.com/connect/token',
+       method : 'POST',
+       auth : {
+          user : clientID,
+          password : clientSecret
+       },
+       headers: { 'content-type': 'application/x-www-form-urlencoded'},
+       form: {
+          'grant_type': 'client_credentials',
+          'scope' : 'basic'
+       },
+       json: true,
+
+       success: function (s) {
         console.log('success' ,data)
       },
       error: function (error) {
@@ -167,6 +179,36 @@ fatsecret.setCanvas("home"); */
       },
     });
 
+    $.ajax({
+      
+      url: 'https://oauth.fatsecret.com/connect/token',
+      method : 'POST',
+      data : {
+         user : clientID,
+         password : clientSecret
+      },
+      headers: { 'content-type': 'application/x-www-form-urlencoded'},
+      form: {
+         'grant_type': 'client_credentials',
+         'scope' : 'basic'
+      },
+      json: true,
+
+      success: function (s) {
+       console.log('success' ,data)
+     },
+     error: function (error) {
+       console.log('error22' + error)
+     },
+   });
+    
+    
+
+ 
+
+
+
+/*
     $.ajax({
       url: "http://platform.fatsecret.com/api/1.0/",
       method: "POST",
@@ -259,7 +301,7 @@ fatsecret.setCanvas("home"); */
         console.log('error22' + error)
       },
     });
-
+*/
 </script>
 
 
