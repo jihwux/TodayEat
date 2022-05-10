@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>오늘뭐먹지?</title>
 </head>
 
@@ -163,7 +164,34 @@ fatsecret.setCanvas("home"); */
         console.log('error22' + error)
       },
     });
-
+    $.ajax({
+      url: "http://platform.fatsecret.com/api/1.0/",
+      method: "GET",
+      data: {
+        food_id: '4384'
+      },
+      
+      success: function (s) {
+        console.log('success' ,data)
+      },
+      error: function (error) {
+        console.log('error22' + error)
+      },
+    });
+    $.ajax({
+      url: "http://platform.fatsecret.com/api/1.0/",
+      method: "POST",
+      data: {
+        food_id: '4384'
+      },
+      
+      success: function (s) {
+        console.log('success' ,data)
+      },
+      error: function (error) {
+        console.log('error22' + error)
+      },
+    });
 </script>
 
 
