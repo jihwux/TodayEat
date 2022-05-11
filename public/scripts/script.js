@@ -183,81 +183,17 @@ $(function () {
       });
     }
   });
-
-  let mailCheck = $("#email");
-
-  function check() {
-    let nameTest = nameCheck.val();
-    let pwdTest = pwdCheck.val();
-    let mailTest = mailCheck.val();
-    let contactTest = contactCheck.val();
-    let chkPhoneTest = chkPhone.val();
-    let joinChkbox1 = $("#chkServiceChk");
-    let joinChkbox2 = $("#chkPolicyChk");
-
-    // console.log(idTest, pwdTest, cpTest, mailTest)
-    if (
-      nameTest.length > 0 &&
-      pwdTest.length > 0 &&
-      mailTest.length > 0 &&
-      contactTest.length > 0 &&
-      chkPhoneTest.length > 0
-    ) {
-      if ($(joinChkbox1, joinChkbox2).is(":checked") == true) {
-        alert("체크");
-        joinSend();
-      } else {
-        alert("약관에 동의해주세요.");
-      }
-    } else {
-      alert("입력란을 모두 작성해주세요.");
-      // console.log(idTest)
-    }
-  }
-
-  $.ajax({
-    url: "/auth/login",
-    method: "POST",
-    data: {
-      email,
-      password,
-    },
-    success: function (s) {
-      // alert("저장된 메뉴는 마이페이지에 확인하실 수 있습니다.")
-      console.log("success");
-    },
-    error: function (error) {
-      // alert('저장하려면 로그인이 필요합니다.')
-    },
-  });
-
-  mailCheck.blur(function () {
-    let mailTest = $("#email").val();
-    let regEmail =
-      /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-    if (mailTest.match(regEmail) != null) {
-      // $('.check-icon:eq(2)').fadeIn();
-      // $('font[name=checkMail]').html("");
-      console.log("true");
-      // mailOverLap();
-    } else {
-      console.log("정확하지 않은 형식.");
-      // $('.check-icon:eq(2)').fadeOut();
-      // $('font[name=checkMail]').html("정확하지 않은 형식입니다.").addClass('chk-warring');
-      return true;
-    }
-  });
 });
 
 // Papergame
 const arr = ["rock", "paper", "scissors"];
 let food = [
-  "김치찌개",
-  "된장찌개",
-  "불고기",
-  "뼈해장국",
-  "짬뽕",
-  "짜장면",
+  "김치찌개10kcal",
+  "된장찌개10kcal",
+  "불고기10kcal",
+  "뼈해장국10kcal",
+  "짬뽕 10kcal",
+  "짜장면 10kcal",
   "백반",
   "파스타",
   "볶음밥",
@@ -472,50 +408,62 @@ let theWheel = new Winwheel({
     {
       fillStyle: "#3f297e",
       text: "된장(김치)찌개",
+      kcal: "200kcal",
     },
     {
       fillStyle: "#1d61ac",
       text: "백반정식",
+      kcal: "200kcal",
     },
     {
       fillStyle: "#169ed8",
       text: "국수",
+      kcal: "200kcal",
     },
     {
       fillStyle: "#209b6c",
       text: "짬뽕&짜장",
+      kcal: "200kcal",
     },
     {
       fillStyle: "#60b236",
       text: "순대(돼지)국밥",
+      kcal: "200kcal",
     },
     {
       fillStyle: "#efe61f",
       text: "생선구이",
+      kcal: "200kcal",
     },
     {
       fillStyle: "#f7a416",
       text: "파스타&양식",
+      kcal: "200kcal",
     },
     {
       fillStyle: "#e6471d",
       text: "햄버거",
+      kcal: "200kcal",
     },
     {
       fillStyle: "#e5177b",
-      text: "어제먹은거",
+      text: "어제 먹은 음식",
+      kcal: "200kcal",
     },
     {
       fillStyle: "#be107f",
       text: "돈가스",
+      kcal: "200kcal",
     },
     {
       fillStyle: "#881f7e",
       text: "라면&김밥",
+      kcal: "200kcal",
     },
     {
       fillStyle: "#dc0936",
       text: "쌀국수",
+      kcal: "200kcal",
     },
   ],
   animation: {
@@ -535,6 +483,7 @@ function alertPrize(indicatedSegment) {
     confirm(
       "오늘의 점심은 " +
         indicatedSegment.text +
+        indicatedSegment.kcal +
         "입니다! \n" +
         "메뉴를 저장 하시겠습니까?"
     ) == true
@@ -544,7 +493,7 @@ function alertPrize(indicatedSegment) {
       url: "/foodsave/foodsave",
       method: "POST",
       data: {
-        food: indicatedSegment.text,
+        food: indicatedSegment.text + indicatedSegment.kcal,
       },
       success: function (s) {
         alert("저장된 메뉴는 마이페이지에 확인하실 수 있습니다.");
