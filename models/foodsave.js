@@ -6,6 +6,10 @@ module.exports = (sequelize, DataTypes) =>
         type: DataTypes.STRING(100),
         allowNull: true,
       },
+      foodKcal: {
+        type: DataTypes.STRING(80),
+        allowNull: true,
+      },
       moment: {
         type: DataTypes.STRING(30),
         allowNull: true,

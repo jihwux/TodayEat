@@ -34,6 +34,7 @@ router.get("/myPage", isLoggedIn, (req, res, next) => {
         twit: foods,
         user: req.user,
         foodsave: req.food,
+        foodsave: req.foodKcal,
         loginError: req.flash("loginError"),
       });
     })

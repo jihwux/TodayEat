@@ -408,62 +408,62 @@ let theWheel = new Winwheel({
     {
       fillStyle: "#3f297e",
       text: "된장(김치)찌개",
-      kcal: "200kcal",
+      kcal: "465kcal",
     },
     {
       fillStyle: "#1d61ac",
       text: "백반정식",
-      kcal: "200kcal",
+      kcal: "500 ~ 770kcal",
     },
     {
       fillStyle: "#169ed8",
       text: "국수",
-      kcal: "200kcal",
+      kcal: "400 ~ 700kcal",
     },
     {
       fillStyle: "#209b6c",
       text: "짬뽕&짜장",
-      kcal: "200kcal",
+      kcal: "788 ~ 864kcal",
     },
     {
       fillStyle: "#60b236",
       text: "순대(돼지)국밥",
-      kcal: "200kcal",
+      kcal: "360 ~ 488kcal",
     },
     {
       fillStyle: "#efe61f",
       text: "생선구이",
-      kcal: "200kcal",
+      kcal: "150 ~ 379kcal",
     },
     {
       fillStyle: "#f7a416",
       text: "파스타&양식",
-      kcal: "200kcal",
+      kcal: "436 ~ 830kcal",
     },
     {
       fillStyle: "#e6471d",
       text: "햄버거",
-      kcal: "200kcal",
+      kcal: "682 ~ 1437kcal",
     },
     {
       fillStyle: "#e5177b",
       text: "어제 먹은 음식",
-      kcal: "200kcal",
+      kcal: "",
     },
     {
       fillStyle: "#be107f",
       text: "돈가스",
-      kcal: "200kcal",
+      kcal: "500 ~ 755kcal",
     },
     {
       fillStyle: "#881f7e",
       text: "라면&김밥",
-      kcal: "200kcal",
+      kcal: "500 ~ 985kcal",
     },
     {
       fillStyle: "#dc0936",
       text: "쌀국수",
-      kcal: "200kcal",
+      kcal: "320 ~ 467kcal",
     },
   ],
   animation: {
@@ -493,7 +493,8 @@ function alertPrize(indicatedSegment) {
       url: "/foodsave/foodsave",
       method: "POST",
       data: {
-        food: indicatedSegment.text + indicatedSegment.kcal,
+        food: indicatedSegment.text,
+        foodKcal: indicatedSegment.kcal,
       },
       success: function (s) {
         alert("저장된 메뉴는 마이페이지에 확인하실 수 있습니다.");

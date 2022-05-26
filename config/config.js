@@ -2,7 +2,6 @@ require("dotenv").config();
 
 module.exports = {
   development: {
-    username: "root",
     username: process.env.SEQUELIZE_USER,
     password: process.env.SEQUELIZE_PASSWORD,
     database: "randfood",

@@ -11,8 +11,9 @@ router.post("/foodsave", isLoggedIn, async (req, res, next) => {
   try {
     await Foodsave.create({
       food: req.body.food,
+      foodKcal: req.body.foodKcal,
       userId: req.user.id,
-      moment: moment().format("YYYY-MM-DD") //11-18-2018
+      moment: moment().format("YYYY-MM-DD"), //11-18-2018
     });
     res.redirect("/");
   } catch (error) {
@@ -20,18 +21,18 @@ router.post("/foodsave", isLoggedIn, async (req, res, next) => {
     next(error);
   }
 });
-router.post("/:id", function(req, res, next) {
+router.post("/:id", function (req, res, next) {
   Foodsave.destroy({
-    where: { id: req.params.id }
+    where: { id: req.params.id },
   });
   res
     .status(200)
     .send("<script>   location.href = '/myPage' </script>") // 에러 난다..
-    .then(result => {
+    .then((result) => {
       res.json(result);
       // res.redirect('/myPage')
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err);
       next(err);
     });
