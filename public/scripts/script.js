@@ -187,17 +187,56 @@ $(function () {
 
 // Papergame
 const arr = ["rock", "paper", "scissors"];
-let food = [
-  "김치찌개10kcal",
-  "된장찌개10kcal",
-  "불고기10kcal",
-  "뼈해장국10kcal",
-  "짬뽕 10kcal",
-  "짜장면 10kcal",
-  "백반",
-  "파스타",
-  "볶음밥",
-  "돈까스",
+
+const food = [
+  {
+    text: "된장(김치)찌개",
+    kcal: "465kcal",
+  },
+  {
+    text: "백반정식",
+    kcal: "500 ~ 770kcal",
+  },
+  {
+    text: "국수",
+    kcal: "400 ~ 700kcal",
+  },
+  {
+    text: "짬뽕&짜장",
+    kcal: "788 ~ 864kcal",
+  },
+  {
+    text: "순대(돼지)국밥",
+    kcal: "360 ~ 488kcal",
+  },
+  {
+    text: "생선구이",
+    kcal: "150 ~ 379kcal",
+  },
+  {
+    text: "파스타&양식",
+    kcal: "436 ~ 830kcal",
+  },
+  {
+    text: "햄버거",
+    kcal: "682 ~ 1437kcal",
+  },
+  {
+    text: "어제 먹은 음식",
+    kcal: "",
+  },
+  {
+    text: "돈가스",
+    kcal: "500 ~ 755kcal",
+  },
+  {
+    text: "라면&김밥",
+    kcal: "500 ~ 985kcal",
+  },
+  {
+    text: "쌀국수",
+    kcal: "320 ~ 467kcal",
+  },
 ];
 let foodSave = [];
 
@@ -247,16 +286,21 @@ $(".rbtn").click(function () {
 });
 
 function foodrand() {
-  rand = food[Math.floor(Math.random() * 10)];
+  rand = food[Math.floor(Math.random() * 12)];
+  let foodName = rand.text;
+  let foodKcal = rand.kcal;
+
   if (
-    confirm(`오늘의 점심은 ${rand} 입니다! \n메뉴를 저장 하시겠습니까?`) == true
+    confirm(`  오늘의 점심은 ${foodName}입니다! \n메뉴를 저장 하시겠습니까?`) ==
+    true
   ) {
     foodSave.push(rand);
     $.ajax({
       url: "/foodsave/foodsave",
       method: "POST",
       data: {
-        food: rand,
+        food: foodName,
+        foodKcal: foodKcal,
       },
       success: function (s) {
         alert("저장된 메뉴는 마이페이지에 확인하실 수 있습니다.");
