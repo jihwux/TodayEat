@@ -21,21 +21,18 @@ router.post("/foodsave", isLoggedIn, async (req, res, next) => {
     next(error);
   }
 });
-router.post("/:id", function (req, res, next) {
-  Foodsave.destroy({
-    where: { id: req.params.id },
-  });
-  res
-    .status(200)
-    .send("<script>   location.href = '/myPage' </script>") // 에러 난다..
-    .then((result) => {
-      res.json(result);
-      // res.redirect('/myPage')
-    })
-    .catch((err) => {
-      console.error(err);
-      next(err);
+router.post("/:id", isLoggedIn, async (req, res, next) => {
+  try {
+    await Foodsave.destroy({
+      where: { id: req.params.id },
+      force: true,
     });
+
+    res.status(200).redirect("/myPage");
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
 });
 
 module.exports = router;

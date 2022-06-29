@@ -34,8 +34,12 @@
     .mypage-btn {
       display: none;
     }
+    article {
+      overflow: auto;
+      background-color: #e9ecef;
+    }
   </style>
-  <body style="overflow: scroll">
+  <body>
     <article>
       <div><% include header .profile %></div>
       <div class="mypage si-z">
@@ -47,10 +51,8 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr style="background: lightslategrey" class="thead-title">
-                  <th width="10%">번호</th>
                   <th width="26%">음식</th>
                   <th width="20%">칼로리</th>
-                  <!-- <th width="14%">닉네임</th> -->
                   <th width="20%">식사일</th>
                   <th width="10%">삭제</th>
                 </tr>
@@ -59,10 +61,8 @@
                 <% if(user && user.id) {%> <% for(var i=0; i < twit.length; i++)
                 { %>
                 <tr>
-                  <td id="title"><%= twit[i].id %></td>
                   <td id="title"><%= twit[i].food %></td>
                   <td id="title"><%= twit[i].foodKcal %></td>
-                  <!-- <td id="title"><%= user.nick %></td> -->
                   <td id="title"><%= twit[i].moment %></td>
                   <td id="title">
                     <form action="/foodsave/<%=twit[i].id%>" method="post">
@@ -70,12 +70,15 @@
                     </form>
                   </td>
                 </tr>
-
                 <tr>
                   <% } %> <% } %>
                 </tr>
               </tbody>
             </table>
+            <!-- <div>
+              <button>이전</button>
+              <button>다음</button>
+            </div> -->
           </div>
         </div>
       </div>

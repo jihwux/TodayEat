@@ -291,7 +291,7 @@ function foodrand() {
   let foodKcal = rand.kcal;
 
   if (
-    confirm(`  오늘의 점심은 ${foodName}입니다! \n메뉴를 저장 하시겠습니까?`) ==
+    confirm(`오늘의 점심은 ${foodName}입니다! \n메뉴를 저장 하시겠습니까?`) ==
     true
   ) {
     foodSave.push(rand);
@@ -527,7 +527,7 @@ function alertPrize(indicatedSegment) {
     confirm(
       "오늘의 점심은 " +
         indicatedSegment.text +
-        indicatedSegment.kcal +
+        // indicatedSegment.kcal +
         "입니다! \n" +
         "메뉴를 저장 하시겠습니까?"
     ) == true
