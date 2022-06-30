@@ -527,7 +527,6 @@ function alertPrize(indicatedSegment) {
     confirm(
       "오늘의 점심은 " +
         indicatedSegment.text +
-        // indicatedSegment.kcal +
         "입니다! \n" +
         "메뉴를 저장 하시겠습니까?"
     ) == true
