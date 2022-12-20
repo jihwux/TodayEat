@@ -11,7 +11,7 @@
 * Sequelize
 
 ## 배포를 위한 AWS Set (~~현재는 Heroku에 배포~~)
-### Heroku 프리티어 종료로 인해 koyeb에D DB제외 배포
+### Heroku 프리티어 종료로 인해 koyeb에 DB제외 배포
 
  
  - bitnami off in aws
