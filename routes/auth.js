@@ -9,7 +9,7 @@ const router = express.Router();
 router.post("/join", isNotLoggedIn, async (req, res, next) => {
   const { email, nick, password } = req.body;
   try {
-    const exUser = await User.find({ where: { email } });
+    const exUser = await User.findOne({ where: { email } });
     if (exUser) {
       req.flash("joinError", "이미 가입된 이메일입니다.");
       return res.redirect("/");
@@ -55,10 +55,20 @@ router.post("/login", isNotLoggedIn, (req, res, next) => {
   })(req, res, next); // 미들웨어 내의 미들웨어에는 (req, res, next)를 붙입니다.
 });
 
-router.get("/logout", isLoggedIn, (req, res) => {
-  req.logout();
-  req.session.destroy();
-  res.redirect("/");
+// passport 0.5 version
+
+// router.get("/logout", isLoggedIn, (req, res) => {
+//   req.logout();
+//   req.session.destroy();
+//   res.redirect("/");
+// });
+
+router.get('/logout', isLoggedIn, (req, res, next) => {
+  req.logout((err) => {
+    if (err) { return next(err); }
+    req.session.destroy();
+    res.redirect('/');
+  });
 });
 
 router.get("/kakao", passport.authenticate("kakao"));
