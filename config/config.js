@@ -2,9 +2,9 @@ require("dotenv").config();
 
 module.exports = {
   development: {
+    database: "randfood",
     username: process.env.SEQUELIZE_USER,
     password: process.env.SEQUELIZE_PASSWORD,
-    database: "randfood",
     host: "127.0.0.1",
     dialect: "mysql",
     operatorsAliases: "false",
