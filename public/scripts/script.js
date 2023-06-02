@@ -1,188 +1,179 @@
-$(function () {
-  var $nextBtn = $(".next-btn");
-  var $prevBtn = $(".prev-btn");
-  var $topBtn = $(".top-btn");
-  var $botBtn = $(".bot-btn");
-  var $prevBtnBot = $(".prev-bot");
-  var $prevBtnTop = $(".prev-top");
+// $(function () {
+document.addEventListener("DOMContentLoaded", function () {
+  var nextBtn = document.querySelectorAll(".next-btn");
+  var prevBtn = document.querySelectorAll(".prev-btn");
+  var topBtn = document.querySelectorAll(".top-btn");
+  var botBtn = document.querySelectorAll(".bot-btn");
+  var prevBtnBot = document.querySelectorAll(".prev-bot");
+  var prevBtnTop = document.querySelectorAll(".prev-top");
 
-  var visual = $("article .si-z");
+  var visual = document.querySelectorAll("article .si-z");
   var current = 0;
   var next = 1;
-  $nextBtn.on("click", function () {
-    var currentEI = visual.eq(current);
-    var nextEI = visual.eq(next);
-    currentEI
-      .css({
-        left: 0,
-      })
-      .stop()
-      .animate({
-        left: "-100%",
-      });
-    nextEI
-      .css({
-        left: "100%",
-      })
-      .stop()
-      .animate({
-        left: 0,
-      });
-    next += 1;
-  });
-  $prevBtn.on("click", function () {
-    next -= 1;
-    var currentEI = visual.eq(current);
-    var prevEI = visual.eq(next);
-    currentEI
-      .css({
-        left: "100%",
-      })
-      .stop()
-      .animate({
-        left: 0,
-      });
-    prevEI
-      .css({
-        left: 0,
-      })
-      .stop()
-      .animate({
-        left: "100%",
-      });
-  });
 
-  $topBtn.on("click", function () {
-    next += 1;
-    var currentEI = visual.eq(current);
-    var nextEI = visual.eq(next);
-    currentEI
-      .css({
-        left: 0,
-      })
-      .stop()
-      .animate({
-        left: "-100%",
-      });
-    nextEI
-      .css({
-        left: "100%",
-        top: "-100%",
-      })
-      .stop()
-      .animate({
-        left: 0,
-        top: 0,
-      });
-    $(".prev-btn").css("display", "none");
-    $(".prev-top").css("display", "block");
-  });
-  $botBtn.on("click", function () {
-    next += 2;
-    var currentEI = visual.eq(current);
-    var nextEI = visual.eq(next);
-    currentEI
-      .css({
-        left: 0,
-      })
-      .stop()
-      .animate({
-        left: "-100%",
-      });
-    nextEI
-      .css({
-        left: "100%",
-        bottom: "-100%",
-      })
-      .stop()
-      .animate({
-        left: 0,
-        bottom: 0,
-      });
-    $(".prev-btn").css("display", "none");
-    $(".prev-bot").css("display", "block");
-  });
-  $prevBtnTop.on("click", function () {
-    current += 3;
-    var currentEI = visual.eq(current);
-    currentEI
-      .css({
-        left: 0,
-        top: 0,
-      })
-      .stop()
-      .animate({
-        left: "100%",
-        top: "100%",
-      });
-    next = 2;
-    current = 0;
-    $(".prev-btn").css("display", "block");
-  });
-  $prevBtnBot.on("click", function () {
-    $(".prev-btn").css("display", "block");
-    current += 4;
-    var currentEI = visual.eq(current);
-    currentEI
-      .css({
-        left: 0,
-        bottom: 0,
-      })
-      .stop()
-      .animate({
-        left: "100%",
-        bottom: "100%",
-      });
-    next = 2;
-    current = 0;
-  });
+  nextBtn.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var currentEI = visual[current];
+      var nextEI = visual[next];
+      currentEI.style.left = "0";
+      currentEI.style.transition = "left 0.3s";
+      currentEI.style.left = "-100%";
 
-  $("#login").click(function () {
-    $("#login-wrap").fadeIn();
-    $("#login-content").animate({
-      top: "30%",
+      nextEI.style.left = "100%";
+      nextEI.style.transition = "left 0.3s";
+      nextEI.style.left = "0";
+
+      next += 1;
     });
   });
 
-  $(".close").click(function () {
-    $("#login-wrap").fadeOut();
-    $("#login-content").animate({
-      top: "0",
+  prevBtn.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      next -= 1;
+      var currentEI = visual[current];
+      var prevEI = visual[next];
+      currentEI.style.left = "100%";
+      currentEI.style.transition = "left 0.3s";
+      currentEI.style.left = "0";
+
+      prevEI.style.left = "0";
+      prevEI.style.transition = "left 0.3s";
+      prevEI.style.left = "100%";
     });
   });
 
-  $("html").click(function (event) {
-    if (event.target.id === "login-wrap") {
-      $("#login-wrap").fadeOut();
-      $("#login-content").animate({
-        top: "0",
-      });
+  topBtn.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      next += 1;
+      var currentEI = visual[current];
+      var nextEI = visual[next];
+      currentEI.style.left = "0";
+      currentEI.style.transition = "left 0.3s";
+      currentEI.style.left = "-100%";
+
+      nextEI.style.left = "100%";
+      nextEI.style.top = "-100%";
+      nextEI.style.transition = "left 0.3s, top 0.3s";
+      nextEI.style.left = "0";
+      nextEI.style.top = "0";
+
+      document.querySelector(".prev-btn").style.display = "none";
+      document.querySelector(".prev-top").style.display = "block";
+    });
+  });
+
+  botBtn.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      next += 2;
+      var currentEI = visual[current];
+      var nextEI = visual[next];
+      currentEI.style.left = "0";
+      currentEI.style.transition = "left 0.3s";
+      currentEI.style.left = "-100%";
+
+      nextEI.style.left = "100%";
+      nextEI.style.bottom = "-100%";
+      nextEI.style.transition = "left 0.3s, bottom 0.3s";
+      nextEI.style.left = "0";
+      nextEI.style.bottom = "0";
+
+      document.querySelector(".prev-btn").style.display = "none";
+      document.querySelector(".prev-bot").style.display = "block";
+    });
+  });
+
+  prevBtnTop.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      current += 3;
+      var currentEI = visual[current];
+      currentEI.style.left = "0";
+      currentEI.style.top = "0";
+      currentEI.style.transition = "left 0.3s, top 0.3s";
+      currentEI.style.left = "100%";
+      currentEI.style.top = "100%";
+
+      next = 2;
+      current = 0;
+
+      document.querySelector(".prev-btn").style.display = "block";
+    });
+  });
+
+  function fadeIn(element, duration) {
+    element.style.opacity = 0;
+    element.style.display = "block";
+
+    var start = performance.now();
+
+    function animate(currentTime) {
+      var elapsed = currentTime - start;
+      var progress = elapsed / duration;
+
+      element.style.opacity = Math.min(progress, 1);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
     }
-  });
 
-  var abc = 2;
-  $("#join").click(function () {
-    $("#join-wrap").fadeIn();
-    $("#join-content").animate({
-      top: "30%",
-    });
-  });
+    requestAnimationFrame(animate);
+  }
 
-  $(".close").click(function () {
-    $("#join-wrap").fadeOut();
-    $("#join-content").animate({
-      top: "0",
-    });
-  });
+  function fadeOut(element, duration) {
+    element.style.opacity = 1;
 
-  $("html").click(function (event) {
-    if (event.target.id === "join-wrap") {
-      $("#join-wrap").fadeOut();
-      $("#join-content").animate({
-        top: "0",
-      });
+    var start = performance.now();
+
+    function animate(currentTime) {
+      var elapsed = currentTime - start;
+      var progress = elapsed / duration;
+
+      element.style.opacity = Math.max(1 - progress, 0);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        element.style.display = "none";
+      }
     }
+
+    requestAnimationFrame(animate);
+  }
+
+  document.querySelector("#login").addEventListener("click", function (event) {
+    event.stopPropagation();
+    var loginWrap = document.querySelector("#login-wrap");
+    fadeIn(loginWrap, 100);
+    loginWrap.style.display = "block";
+    document.querySelector("#login-content").style.top = "30%";
   });
+
+  document.querySelector("#join").addEventListener("click", function (event) {
+    event.stopPropagation();
+    var joinWrap = document.querySelector("#join-wrap");
+    fadeIn(joinWrap, 100);
+    joinWrap.style.display = "block";
+    document.querySelector("#join-content").style.top = "30%";
+  });
+
+  document
+    .querySelector("")
+    .document.addEventListener("click", function (event) {
+      var loginWrap = document.querySelector("#login-wrap");
+      var joinWrap = document.querySelector("#join-wrap");
+
+      if (!loginWrap.contains(event.target)) {
+        fadeOut(loginWrap, 100);
+        loginWrap.style.display = "none";
+        document.querySelector("#login-content").style.top = "0";
+      }
+
+      if (!joinWrap.contains(event.target)) {
+        fadeOut(joinWrap, 100);
+        joinWrap.style.display = "none";
+        document.querySelector("#join-content").style.top = "0";
+      }
+    });
 });
 
 // Papergame
