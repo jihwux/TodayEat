@@ -1,20 +1,19 @@
-// $(function () {
 document.addEventListener("DOMContentLoaded", function () {
-  var nextBtn = document.querySelectorAll(".next-btn");
-  var prevBtn = document.querySelectorAll(".prev-btn");
-  var topBtn = document.querySelectorAll(".top-btn");
-  var botBtn = document.querySelectorAll(".bot-btn");
-  var prevBtnBot = document.querySelectorAll(".prev-bot");
-  var prevBtnTop = document.querySelectorAll(".prev-top");
+  let nextBtn = document.querySelectorAll(".next-btn");
+  let prevBtn = document.querySelectorAll(".prev-btn");
+  let topBtn = document.querySelectorAll(".top-btn");
+  let botBtn = document.querySelectorAll(".bot-btn");
+  let prevBtnBot = document.querySelectorAll(".prev-bot");
+  let prevBtnTop = document.querySelectorAll(".prev-top");
 
-  var visual = document.querySelectorAll("article .si-z");
-  var current = 0;
-  var next = 1;
+  let visual = document.querySelectorAll("article .si-z");
+  let current = 0;
+  let next = 1;
 
   nextBtn.forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var currentEI = visual[current];
-      var nextEI = visual[next];
+      let currentEI = visual[current];
+      let nextEI = visual[next];
       currentEI.style.left = "0";
       currentEI.style.transition = "left 0.3s";
       currentEI.style.left = "-100%";
@@ -30,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
   prevBtn.forEach(function (btn) {
     btn.addEventListener("click", function () {
       next -= 1;
-      var currentEI = visual[current];
-      var prevEI = visual[next];
+      let currentEI = visual[current];
+      let prevEI = visual[next];
       currentEI.style.left = "100%";
       currentEI.style.transition = "left 0.3s";
       currentEI.style.left = "0";
@@ -45,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
   topBtn.forEach(function (btn) {
     btn.addEventListener("click", function () {
       next += 1;
-      var currentEI = visual[current];
-      var nextEI = visual[next];
+      let currentEI = visual[current];
+      let nextEI = visual[next];
       currentEI.style.left = "0";
       currentEI.style.transition = "left 0.3s";
       currentEI.style.left = "-100%";
@@ -65,8 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
   botBtn.forEach(function (btn) {
     btn.addEventListener("click", function () {
       next += 2;
-      var currentEI = visual[current];
-      var nextEI = visual[next];
+      let currentEI = visual[current];
+      let nextEI = visual[next];
       currentEI.style.left = "0";
       currentEI.style.transition = "left 0.3s";
       currentEI.style.left = "-100%";
@@ -85,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
   prevBtnTop.forEach(function (btn) {
     btn.addEventListener("click", function () {
       current += 3;
-      var currentEI = visual[current];
+      let currentEI = visual[current];
       currentEI.style.left = "0";
       currentEI.style.top = "0";
       currentEI.style.transition = "left 0.3s, top 0.3s";
@@ -99,15 +98,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  prevBtnBot.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      current += 4;
+      let currentEI = visual[current];
+      currentEI.style.left = "0";
+      currentEI.style.bottom = "0";
+      currentEI.style.transition = "left 0.3s, bottom 0.3s";
+      currentEI.style.left = "100%";
+      currentEI.style.bottom = "100%";
+
+      next = 2;
+      current = 0;
+
+      document.querySelector(".prev-btn").style.display = "block";
+    });
+  });
+
   function fadeIn(element, duration) {
     element.style.opacity = 0;
     element.style.display = "block";
 
-    var start = performance.now();
+    let start = performance.now();
 
     function animate(currentTime) {
-      var elapsed = currentTime - start;
-      var progress = elapsed / duration;
+      let elapsed = currentTime - start;
+      let progress = elapsed / duration;
 
       element.style.opacity = Math.min(progress, 1);
 
@@ -122,11 +138,11 @@ document.addEventListener("DOMContentLoaded", function () {
   function fadeOut(element, duration) {
     element.style.opacity = 1;
 
-    var start = performance.now();
+    let start = performance.now();
 
     function animate(currentTime) {
-      var elapsed = currentTime - start;
-      var progress = elapsed / duration;
+      let elapsed = currentTime - start;
+      let progress = elapsed / duration;
 
       element.style.opacity = Math.max(1 - progress, 0);
 
@@ -142,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelector("#login").addEventListener("click", function (event) {
     event.stopPropagation();
-    var loginWrap = document.querySelector("#login-wrap");
+    let loginWrap = document.querySelector("#login-wrap");
     fadeIn(loginWrap, 100);
     loginWrap.style.display = "block";
     document.querySelector("#login-content").style.top = "30%";
@@ -150,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelector("#join").addEventListener("click", function (event) {
     event.stopPropagation();
-    var joinWrap = document.querySelector("#join-wrap");
+    let joinWrap = document.querySelector("#join-wrap");
     fadeIn(joinWrap, 100);
     joinWrap.style.display = "block";
     document.querySelector("#join-content").style.top = "30%";
@@ -159,8 +175,8 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .querySelector("")
     .document.addEventListener("click", function (event) {
-      var loginWrap = document.querySelector("#login-wrap");
-      var joinWrap = document.querySelector("#join-wrap");
+      let loginWrap = document.querySelector("#login-wrap");
+      let joinWrap = document.querySelector("#join-wrap");
 
       if (!loginWrap.contains(event.target)) {
         fadeOut(loginWrap, 100);
@@ -319,20 +335,20 @@ function tallyUp(score) {
 }
 
 // soccergame
-var korea = {
+let korea = {
   score: 0,
   percent: 0.7,
 };
-var japen = {
+let japen = {
   score: 0,
   percent: 0.7,
 };
-var soccerGame = {
+let soccerGame = {
   jpScoreNumber: 5,
   krScoreNumber: 5,
 };
 
-var krTeam = ["국수", "김치찌개", "돈까스", "백반", "파스타"];
+let krTeam = ["국수", "김치찌개", "돈까스", "백반", "파스타"];
 
 function onKoreaShoot() {
   if (Math.random() < korea.percent) {
@@ -342,7 +358,7 @@ function onKoreaShoot() {
     screen("고지방팀 : " + krTeam[0] + " 선수가 슛에 실패했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
   }
 
-  var $krScoreNumberElem = $("#kr-number");
+  let $krScoreNumberElem = $("#kr-number");
 
   soccerGame.krScoreNumber--;
   $krScoreNumberElem.html(soccerGame.krScoreNumber);
@@ -360,7 +376,7 @@ function onJapenShoot() {
   } else {
     screen("저지방팀이 슛에 실패했습니다."); // 스크린 인자값에 들어갈 상황 텍스트
   }
-  var $jpScoreNumberElem = $("#jp-number");
+  let $jpScoreNumberElem = $("#jp-number");
   soccerGame.jpScoreNumber--;
   $jpScoreNumberElem.html(soccerGame.jpScoreNumber);
   disabledKrButton(false);
@@ -387,19 +403,19 @@ function onJapenShoot() {
 }
 
 function screen(s) {
-  var $textElem = $("#score-text");
+  let $textElem = $("#score-text");
   $textElem.html(s);
 }
 
 function updateKorScore() {
-  var $korElem = $("#kr-score");
+  let $korElem = $("#kr-score");
 
   korea.score += 1; // 슛이 성공하면 한국 스코어 1 증가 .
   $korElem.html(korea.score);
 }
 
 function updateJpScore() {
-  var $jpElem = $("#jp-score");
+  let $jpElem = $("#jp-score");
 
   japen.score += 1; // 슛이 성공하면 한국 스코어 1 증가 .
   $jpElem.html(japen.score);
@@ -417,10 +433,10 @@ function onReset() {
   $(".btn-reset").attr("disabled", false);
   $(".btn-korea").attr("disabled", false);
 
-  var $jpElem = $("#jp-score");
-  var $korElem = $("#kr-score");
-  var $krScoreNumberElem = $("#kr-number");
-  var $jpScoreNumberElem = $("#jp-number");
+  let $jpElem = $("#jp-score");
+  let $korElem = $("#kr-score");
+  let $krScoreNumberElem = $("#kr-number");
+  let $jpScoreNumberElem = $("#jp-number");
   krTeam.push("국수", "김치찌개", "돈까스", "백반", "파스타");
 
   japen.score = 0;
