@@ -1,4 +1,4 @@
-<img width="100%" height="600px" alt="image" src="https://github.com/devhwann/TodayEat/assets/37394823/b19720f2-36d0-41da-bf37-b2e411051105">
+<img width="100%"  alt="image" src="https://github.com/devhwann/TodayEat/assets/37394823/b19720f2-36d0-41da-bf37-b2e411051105">
 
 # 오늘뭐먹지? 
 
